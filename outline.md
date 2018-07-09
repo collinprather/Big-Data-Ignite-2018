@@ -20,8 +20,22 @@
 1. Give ML Overview (begin to start pulling resources/links/quotes from across the internet)
 
     * Pull a graph of google search trends indicating how terms like "Data Science" and "Machine Learning" have blown up. 
+    * Try to form talk around hitting on the theoretical mathematical side of ML as well as the difficluties/complexities faced in Applied ML
     
-2. Bias/Variance Tradeoff
+2. Bias/Variance Tradeoff (Applied ML)
+
+3. Feature Engineering (Applied ML)
+
+    * define what it is
+    * give some motivation for it's importance (the data is the most crucial part of of ML!)(garbage in, garbage out)
+    * Give some examples and difficulties
+        * encoding categorical variables
+        * scaling 
+        * how to deal with missing data (go over how I handled missing ages)
+        * examples of creating new features
+            * Sometimes you can use your data to make new feautres that summarize
+            * sometimes you can use your data to make new features that better model reality
+                * example with projecting the 1-d hours feature in 2-d space
 
 
 
