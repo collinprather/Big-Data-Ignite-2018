@@ -14,6 +14,8 @@
 * Figure out how to present code v. math -- Jupyter slides? [blog on jupyter slides intro](https://medium.com/@mjspeck/presenting-code-using-jupyter-notebook-slides-a8a3c3b59d67)
 * Have final notebook downloadable as .ipynb
 * Find great classification problem -- if necessary preprocess the data to be analyzed and document each step
+* At every step that I adress some sort of complexity, provide resources that consider and explain the tradeoffs
+* Read and address [this academic paper on predicting hit and run accidents](http://ptl.sys.virginia.edu/ptl/sites/default/files/sbp2012_wgb.pdf) and potentially reference it in the paper!
 
 ### Presentation Outline
 
@@ -59,6 +61,9 @@
 
     * The beauty of Scikit-learn: [Andriy Burkov's explanation](https://www.linkedin.com/feed/update/urn:li:activity:6414996287057461248)
 
+5. Talk through the complexities of measuring the accuracy of a classifier (particularly for an unbalanced dataset like ours)
+
+5. Talk through why I chose a dataset that I wan't able to perfectly classify -- I felt that this project felt very real: Acknowledge that most ML projects fail - talk about why!
 
 5. Benefits of understanding how to implement SVM from scratch
 
