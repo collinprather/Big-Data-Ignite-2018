@@ -23,6 +23,7 @@
 
     * Pull a graph of google search trends indicating how terms like "Data Science" and "Machine Learning" have blown up. 
     * Try to form talk around hitting on the theoretical mathematical side of ML as well as the difficluties/complexities faced in Applied ML
+    * classification v. regression
     
 2. Bias/Variance Tradeoff (Applied ML)
     * overfitting/underfitting
@@ -72,6 +73,12 @@
             * [Hinge loss on wikipedia](https://en.wikipedia.org/wiki/Hinge_loss)
             * [Presentation on Hinge Loss](https://davidrosenberg.github.io/ml2015/docs/3a.loss-functions.pdf) (slides 10-14 are particularly good)
             * [This video](https://www.youtube.com/watch?v=y6E7aIp9bO4) looks like it will be good too.
+            * look up ISLR chapter on Ridge Regression to express sound formulation of the purpose of the lambda regularizer term
+            * use Stanford's [CS231n](http://cs231n.github.io/linear-classify/#webdemo) linear classifier page
+                * and their [interactive dashboard!](http://vision.stanford.edu/teaching/cs231n-demos/linear-classify/)
+            * [another good explanation of hinge loss (with regularizer term)](https://yeolab.weebly.com/uploads/2/5/5/0/25509700/class06-svm.pdf)
+            
+        * touch on how the hinge loss function is very similar to the Logistic regression loss function
     
 4. SVM with Scikit-learn
 
