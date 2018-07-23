@@ -25,6 +25,7 @@
     * Try to form talk around hitting on the theoretical mathematical side of ML as well as the difficluties/complexities faced in Applied ML
     
 2. Bias/Variance Tradeoff (Applied ML)
+    * overfitting/underfitting
 
 3. Feature Engineering (Applied ML)
 
@@ -55,7 +56,22 @@
 
 1. Hyper-parameter tuning
 
-    * walk through the complexities and factors that go into tuning
+    * walk through the complexities and factors that go into tuning (In an SVM, C is the tuning parameter, and NG talks about it at the end of the Kernels II video)
+    
+1. SVM from scratch:
+    * Sources to read through and synthesize:
+        * Support Vector Machinces Succintly
+        * ISLR
+        * Coursera ML
+        * Siraj Raval SVM's
+    * Outline
+        * Use Ng's SVM Learning algorithm? (7:12 in Kernels II video)
+            * It's very similar to log reg cost function (it's clever)
+            Use it without kernels
+        * Use the hinge loss function (siraj's video can be a guide) and Stochastic Gradient Descent
+            * [Hinge loss on wikipedia](https://en.wikipedia.org/wiki/Hinge_loss)
+            * [Presentation on Hinge Loss](https://davidrosenberg.github.io/ml2015/docs/3a.loss-functions.pdf) (slides 10-14 are particularly good)
+            * [This video](https://www.youtube.com/watch?v=y6E7aIp9bO4) looks like it will be good too.
     
 4. SVM with Scikit-learn
 
