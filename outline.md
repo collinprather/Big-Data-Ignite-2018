@@ -79,6 +79,7 @@
             * [another good explanation of hinge loss (with regularizer term)](https://yeolab.weebly.com/uploads/2/5/5/0/25509700/class06-svm.pdf)
             
         * touch on how the hinge loss function is very similar to the Logistic regression loss function
+        * this [mini-lecture](https://lectures.quantecon.org/jl/orth_proj.html) explains how you can apply orthogonal projection to least squares
     
 4. SVM with Scikit-learn
 

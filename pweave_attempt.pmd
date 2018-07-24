@@ -1,0 +1,57 @@
+# This is just a first try at pweave
+First, i'll just import the necessary libraries
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+from sklearn.svm import SVC
+%matplotlib inline
+
+import ipywidgets as widgets
+
+
+def plot_data_and_separating_hyperplane():
+    num = np.random.randint(1,1000)
+    X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=num)
+    
+    plt.scatter(X[:,0], X[:,1], c=y, cmap = 'jet')
+    # Create support vector classifier
+    svc = SVC(kernel='linear')
+    # Train model
+    clf = svc.fit(X, y)
+    # Get x and y lims
+    ax_1 = plt.gca()
+    xlim = ax_1.get_xlim()
+    ylim = ax_1.get_ylim()
+
+    # get the separating hyperplane
+    w = clf.coef_[0]
+    a = -w[0] / w[1]
+    xx = np.linspace(xlim[0], xlim[1], 100)
+    yy = a * xx - (clf.intercept_[0]) / w[1]
+
+    # plot optimal separating hyperplane
+    plt.plot(xx, yy, 'k-')
+    plt.show()
+```
+
+Here is a little sample widget
+
+```python
+button = widgets.Button(description = 'Generate new data!')
+out = widgets.Output()
+
+def on_button_clicked(b):
+    with out:
+        plot_data_and_separating_hyperplane()
+        out.clear_output(wait=True)
+        
+
+button.on_click(on_button_clicked)
+button.on_displayed(on_button_clicked)
+widgets.VBox([button, out])
+```
+
+looks nice!
