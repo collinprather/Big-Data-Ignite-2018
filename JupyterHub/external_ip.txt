@@ -1,2 +1,5 @@
 # copy this into the browser
 35.225.18.17
+
+# this is a super helpful link
+https://github.com/odewahn/jupyterhub-on-gcloud
