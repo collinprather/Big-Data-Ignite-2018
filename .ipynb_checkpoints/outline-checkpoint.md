@@ -23,12 +23,15 @@
 
     * Pull a graph of google search trends indicating how terms like "Data Science" and "Machine Learning" have blown up. 
     * Try to form talk around hitting on the theoretical mathematical side of ML as well as the difficluties/complexities faced in Applied ML
+    * data + algorthms = predicting the future
+        * (it's really a lot more than this -- understanding context and how to frame the question (usually) from a business perspective is huge)
     * classification v. regression
+    * supervised/unsupervised/reinforcement learning
+        * when talking on reinforcement learning, mention and recommend AlphaGo documentary (it's on netflix!)
     
-2. Bias/Variance Tradeoff (Applied ML)
-    * overfitting/underfitting
 
-3. Feature Engineering (Applied ML)
+
+2. Feature Engineering (Applied ML)
 
     * define what it is
     * give some motivation for it's importance (the data is the most crucial part of of ML!)(garbage in, garbage out)
@@ -41,7 +44,11 @@
             * sometimes you can use your data to make new features that better model reality
                 * example with projecting the 1-d hours feature in 2-d space
 
-
+3. Bias/Variance Tradeoff (Applied ML)
+    * overfitting/underfitting [Ng's description](https://www.coursera.org/learn/machine-learning/lecture/ACpTQ/the-problem-of-overfitting)
+    * regularization (looks different in different contexts (represented with "C" in SVM's, $\lambda$ in ridge regression), but plays the role of controlling the bias-variance trade-off)
+    * hyper-parameter tuning:
+        * * walk through the complexities and factors that go into tuning (In an SVM, C is the tuning parameter, and NG talks about it at the end of the Kernels II video)
 
 3. Logistic Regression from Scratch
 1. The complexities of the threshold value (ch.4 ISLR)
@@ -49,15 +56,8 @@
     * When a lower classification rate brings higher business value (good time to bring up the importance of business acumen)
     * When a higher threshold value makes more sense, given the context (predicting credit card fraud)
 
-4. The problem of overfitting
 
-    * overfitting v. underfitting [Ng's description](https://www.coursera.org/learn/machine-learning/lecture/ACpTQ/the-problem-of-overfitting)
     
-5. Regularization
-
-1. Hyper-parameter tuning
-
-    * walk through the complexities and factors that go into tuning (In an SVM, C is the tuning parameter, and NG talks about it at the end of the Kernels II video)
     
 1. SVM from scratch:
     * Sources to read through and synthesize:
