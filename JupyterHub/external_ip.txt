@@ -3,3 +3,6 @@
 
 # this is a super helpful link
 https://github.com/odewahn/jupyterhub-on-gcloud
+
+# the real config.yaml file is in:
+Users/collinprather/Jupyterhub
