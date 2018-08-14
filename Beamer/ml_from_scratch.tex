@@ -1,9 +1,8 @@
-\documentclass{beamer}
+\documentclass[notes]{beamer}
 
-\mode<presentation>{\usetheme{Pittsburgh}}
+\mode<presentation>{\usetheme{Montpellier}}
 %\usecolortheme{beaver}
 
-\usepackage{ulem}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -19,22 +18,96 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
+ 
+
 
 \begin{document}
+
+
 	
 \frame{\titlepage}
+
+\note{\textbf{\Large Make sure that everyone launches binder or colab.google first!!}}
+
 \section{Machine Learning Overview}
 \frame{\tableofcontents[currentsection]}
 
-\begin{frame}
+\note{Pull a graph of google search trends indicating how terms like "Data Science" and "Machine Learning" have blown up. \\
+	Try to form talk around hitting on the theoretical mathematical side of ML as well as the difficluties/complexities faced in Applied ML\\
+	data + algorthms = predicting the future
+	(it's really a lot more than this -- understanding context and how to frame the question (usually) from a business perspective is huge)\\
+	classification v. regression\\
+	supervised/unsupervised/reinforcement learning\\
+		when talking on reinforcement learning, mention and recommend AlphaGo documentary (it's on netflix!)\\
+		considerations/complexities in building ML models}
+
+\begin{frame}{What is Machine Learning?}
+\begin{center}
+	\includegraphics[scale=.35]{Figures/mlcoursera1}
+\end{center}
+\begin{block}{Arthur Samuel:}
+	Machine learning is ``Field of study that gives computers the ability to learn without being explicitly programmed".
+\end{block}
+\end{frame}
+
+\note{Even according to the experts, the exact definifion of the field of machine learning is a bit fuzzy, but  As early as 1959, Arthur Samuel quote. .\\
+	
+\vspace{5pt}
+
+also, include Ng's explanation from MLYearning!}
+
+\begin{frame}{What is Machine Learning}
+	data + algorithms = predicting the future\\
+	combo of statistics, calculus, etc...
+\end{frame}
+
+\note{ML techniqes can be applied to a wide range of problems in diverse industries. In fact, ML has become ubiquitous in our everyday lives
+	* Siri/ Amazon Alexa\\
+	* Recommendation systems (amazon, netflix)\\
+	* Fraud Detection\\
+	* Disease diagnosis\\
+	* Supply Chain Optimization}
+
+
+
+\begin{frame}{According to Google...}
 \begin{center}
 	\includegraphics[scale=.55]{Figures/google_trends}
 \end{center}
 \end{frame}
 
+\begin{frame}{What has caused this spike?}
+	
+\begin{enumerate}
+	\item Data Availability
+	\begin{itemize}
+		\item ecommerce
+		\item Iot (sensor data)
+	\end{itemize}
+	\item Computational Scale
+	\begin{itemize}
+		\item Moore's Law
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+\note{The math that powers machine learning algorithms has been around for quite a few years... so what's changed?\\
+1. Data Availability\\
+2. Computational Scale (NG MLY 01 pg 10)\\
+The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
+
 \section{Steps in the Machine Learning Process}
+\frame{\tableofcontents[currentsection]}
 
 \subsection{Step 0: Identify The Problem}
+
+\begin{frame}
+\begin{center}
+	\includegraphics[scale=.45]{Figures/gr_logo}
+\end{center}
+\note{Let's say that you work for the city of Grand Rapids, and you find that there are an increased number of hit and runs when the driver 1 was drinkin.\\
+\textbf{Do some research, maybe find a way to graph this?? You can do it!}}
+	
+\end{frame}
 
 \subsection{Step 1: Get the Data}
 
@@ -46,6 +119,14 @@
 
 
 \subsection{Step 4: Cross-validation/Hyper-parameter tuning}
+
+\section{Building a Support Vector Machine from Scratch}
+
+\frame{\tableofcontents[currentsection]}
+
+\section{Exploring Scikit-Learn and applying to GR Crash dataset}
+\frame{\tableofcontents[currentsection]}
+
 
 
 
