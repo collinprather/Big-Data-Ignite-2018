@@ -2,8 +2,9 @@
 \beamer@sectionintoc {2}{Steps in the Machine Learning Process}{12}{0}{2}
 \beamer@subsectionintoc {2}{1}{Step 0: Identify The Problem}{13}{0}{2}
 \beamer@subsectionintoc {2}{2}{Step 1: Get the Data}{15}{0}{2}
-\beamer@subsectionintoc {2}{3}{Step 2: Data Preparation/Exploration}{15}{0}{2}
-\beamer@subsectionintoc {2}{4}{Step 3: Model Selection}{15}{0}{2}
-\beamer@subsectionintoc {2}{5}{Step 4: Cross-validation/Hyper-parameter tuning}{15}{0}{2}
-\beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{15}{0}{3}
-\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{16}{0}{4}
+\beamer@subsectionintoc {2}{3}{Step 2: Data Exploration}{20}{0}{2}
+\beamer@subsectionintoc {2}{4}{Step 3: Data Preparation}{35}{0}{2}
+\beamer@subsectionintoc {2}{5}{Step 4: Model Selection}{39}{0}{2}
+\beamer@subsectionintoc {2}{6}{Step 5: Cross-validation/Hyper-parameter tuning}{39}{0}{2}
+\beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{39}{0}{3}
+\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{40}{0}{4}

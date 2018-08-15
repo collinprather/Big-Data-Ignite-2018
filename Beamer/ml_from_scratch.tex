@@ -27,7 +27,8 @@
 	
 \frame{\titlepage}
 
-\note{\textbf{\Large Make sure that everyone launches binder or colab.google first!!}}
+\note{\textbf{\Large Make sure that everyone launches binder or colab.google first!!}\\
+Also, give them a walkthrough of the whole presentation and tell them what we'll be building and what we'll be predicting!}
 
 \section{Machine Learning Overview}
 \frame{\tableofcontents[currentsection]}
@@ -111,14 +112,112 @@ The rise of the big data era has given us access to astounding amounts of data. 
 
 \subsection{Step 1: Get the Data}
 
+\begin{frame}{Get the Data}
+	This may look like:
+	\begin{itemize}
+		\item<1-2> SQL query
+		\item<1-2> CSV download
+		\item<1-2> Web-scraping
+		\item<1-2> Designing experiments/surveys and collecting data yourself
+	\end{itemize}
 
-\subsection{Step 2: Data Preparation/Exploration}
+	\vspace{10pt}
+
+	\only<2->{In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}.}
+\end{frame}
+\note{Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity -- For particular social research, you may need to scrape the web. In some cases, you may even need to collect some data yourself! Here are two examples:\\
+1. You're developing a new data product at your company and are collecting data to fuel it\\
+2. You're in public health and are working to make healthcare accessible to all residents of the greater GR area. You may need to conduct your own research to identify what may be inhibitting people from reaching healthcare.\\
+In our case, we're lucky enough to have access to a meticulously maintained public database on the city of GR: GRData. Scroll through, show them the site and data, etc.}
+
+\begin{frame}{Get the Data}
+	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
+	
+	\vspace{10pt}
+	
+	\includegraphics[scale=.35]{Figures/crash_head}
+\end{frame}
+\note{After downloading the csv file, we can read the file into a pandas dataframe and explore it in our Jupyter notebook.}
 
 
-\subsection{Step 3: Model Selection}
+\subsection{Step 2: Data Exploration}
+
+\begin{frame}{Explore the Data}
+	\begin{itemize}
+		\item Verify data
+		\item Visualize data
+		\item Identify patterns
+		\item Give direction to analysis
+	\end{itemize}
+\end{frame}
+\note{This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration} Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
+The main idea hear is to build an understanding of your data. Without an appreciation for the context of the data, it's just numbers. But when you see the data in context, it's fascinating, it's a story.\\
+ More often than not, your exploration of the data leads to more questions than answers.}
+
+\begin{frame}
+\includegraphics[scale=.5]{Figures/coords}
+\only<2>{\includegraphics[scale=.3]{Figures/coords_graphed}}
+\end{frame}
+\note{With our dataset, on car crashes, a logical place to begin would be the first two columns, containing latitudes and longitudes of each crash. This is just a snapshot of the data on the left side, and on the right, each dot represents a car crash.}
+
+\begin{frame}
+\includegraphics[scale=.23]{Figures/coords_graphed}
+\includegraphics[scale=.21]{Figures/gr_map}
+\end{frame}
+\note{Now, this is pretty telling about our data, remember, there is nearly 73,000 crashes recorded, and if we juxtapose this plot with the city of GR, we actually see that the plot of crashes outline the city boundaries!}
+
+\begin{frame}
+\begin{center}
+	\includegraphics[scale=.33]{Figures/coords_graphed_hitnrun}
+\end{center}
+\end{frame}
+\note{We may be interested in hit and runs...\\
+I should add a caption or title to this plot}
+
+\begin{frame}{Check the variable's distribution}
+	\includegraphics[scale=.35]{Figures/veh3}
+\end{frame}
+\note{It's also often very helpful to check the distribution of the different variables. For example, our dataset contains many characteristics about what it defines as "DRIVER1", "DRIVER2", "DRIVER3". When I first came across that, I was impressed, like that's some seriously accurate data! But upon further examination, we find that many of the "DRIVER2" and "DRIVER3" columns are empty or contain errors. (This makes sense... not all crashes involve 3 driver!)\\
+When we check the counts of the different values found in the "VEH3" column, we see that over 67,000 of them are errors! Now, this doesn't mean that the column is useless, but in terms of building a predictive model, this column probably won't be much help, so as we'll see in the data processing step, we'll end up dropping it. }
+
+\begin{frame}{Check the variable's distribution}
+\includegraphics[scale=.35]{Figures/driver1}
+\end{frame}
+\note{Continuing on, here we check the distribution of the age's of all the "DRIVER1"s recorded in the dataset. In my head, I would think that age would be an important feature in car crashes. And so we check it out, and i appears that there are a ton of instances bunched up between 1 and 100... that makes sense... then there is also a decent cluster of observations around 1000 years old... that does not make sense.}
+
+\begin{frame}{Check the variable's distribution}
+\includegraphics[scale=.3]{Figures/driver1_num}
+\end{frame}
+\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.}
 
 
-\subsection{Step 4: Cross-validation/Hyper-parameter tuning}
+\subsection{Step 3: Data Preparation}
+
+\begin{frame}{Data Selection}
+
+\end{frame}
+\note{Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.\\
+The first step in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model.
+As seen in our EDA some columns have a lot of missing data, and we'll drop them entirely.\\
+IT's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
+* computationally efficient\\
+* more easily interpretable\\
+* simpler is better\\
+So how do we actually determine which features to use?, we can use various statistical tests, and even some algorithms to determine which features are going to be most relevant to predicting our target variable (which for us is whether or not the driver who caused the crash was drinking).\\
+When you are first beginning to iterate through different ml models, it is okay to kind of eyeball it, or use what you know about the context of the data to choose some features.
+
+}
+
+\begin{frame}{Data Processing}
+	
+\end{frame}
+\note{the data preparation stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
+It's important to note that some of the preprocessing steps we'll talk about here may actually be necessary for you to do to get the data in a format where you can explore it.}
+
+\subsection{Step 4: Model Selection}
+
+
+\subsection{Step 5: Cross-validation/Hyper-parameter tuning}
 
 \section{Building a Support Vector Machine from Scratch}
 
@@ -127,6 +226,12 @@ The rise of the big data era has given us access to astounding amounts of data. 
 \section{Exploring Scikit-Learn and applying to GR Crash dataset}
 \frame{\tableofcontents[currentsection]}
 
+
+\begin{frame}
+	\begin{thebibliography}{9}
+		\bibitem{Data_exploration} https://www.sisense.com/glossary/data-exploration/
+	\end{thebibliography}
+\end{frame}
 
 
 

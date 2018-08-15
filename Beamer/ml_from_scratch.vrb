@@ -1,0 +1,6 @@
+\begin{pyin}
+	  	print("hello")
+	  \end{pyin}
+  \begin{pyprint}
+  	hello
+  \end{pyprint}

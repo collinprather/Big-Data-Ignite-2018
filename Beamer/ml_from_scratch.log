@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 AUG 2018 15:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 AUG 2018 15:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -939,11 +939,11 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ] [4
 
 ]
-<Figures/mlcoursera1.png, id=148, 871.255pt x 324.21124pt>
+<Figures/mlcoursera1.png, id=158, 871.255pt x 324.21124pt>
 File: Figures/mlcoursera1.png Graphic file (type png)
 
 <use Figures/mlcoursera1.png>
-Package pdftex.def Info: Figures/mlcoursera1.png used on input line 51.
+Package pdftex.def Info: Figures/mlcoursera1.png used on input line 52.
 (pdftex.def)             Requested size: 304.94382pt x 113.47563pt.
  [5
 
@@ -954,27 +954,27 @@ Package pdftex.def Info: Figures/mlcoursera1.png used on input line 51.
 ] [8
 
 ]
-<Figures/google_trends.png, id=224, 504.88625pt x 346.29375pt>
+<Figures/google_trends.png, id=234, 504.88625pt x 346.29375pt>
 File: Figures/google_trends.png Graphic file (type png)
 
 <use Figures/google_trends.png>
-Package pdftex.def Info: Figures/google_trends.png used on input line 77.
+Package pdftex.def Info: Figures/google_trends.png used on input line 78.
 (pdftex.def)             Requested size: 277.68828pt x 190.46214pt.
  [9
 
  <./Figures/google_trends.png>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 92.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 92.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 92.
+line 93.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -986,22 +986,174 @@ thkerncmss.
 ] (./ml_from_scratch.toc) [12
 
 ]
-<Figures/gr_logo.jpg, id=328, 422.5386pt x 215.8464pt>
+<Figures/gr_logo.jpg, id=339, 422.5386pt x 215.8464pt>
 File: Figures/gr_logo.jpg Graphic file (type jpg)
 
 <use Figures/gr_logo.jpg>
-Package pdftex.def Info: Figures/gr_logo.jpg used on input line 110.
+Package pdftex.def Info: Figures/gr_logo.jpg used on input line 111.
 (pdftex.def)             Requested size: 190.14061pt x 97.12997pt.
  [13
 
  <./Figures/gr_logo.jpg>] [14
 
-]
-(./ml_from_scratch.toc) [15
+] [15
 
-] (./ml_from_scratch.toc) [16
+] [16
 
 ]
+Overfull \vbox (3.69005pt too high) detected at line 131
+ []
+
+[17
+
+] <Figures/crash_head.png, id=455, 909.3975pt x 358.33875pt>
+File: Figures/crash_head.png Graphic file (type png)
+
+<use Figures/crash_head.png>
+Package pdftex.def Info: Figures/crash_head.png used on input line 139.
+(pdftex.def)             Requested size: 318.2939pt x 125.42044pt.
+
+Overfull \hbox (11.00403pt too wide) in paragraph at lines 139--139
+[][]  
+ []
+
+[18
+
+ <./Figures/crash_head.png>] [19
+
+] [20
+
+]
+Missing character: There is no â in font cmss10!
+Missing character: There is no € in font cmss10!
+Missing character: There is no ™ in font cmss10!
+ [21
+
+]
+<Figures/coords.png, id=541, 182.6825pt x 393.47pt>
+File: Figures/coords.png Graphic file (type png)
+ <use Figures/coords.png>
+Package pdftex.def Info: Figures/coords.png used on input line 160.
+(pdftex.def)             Requested size: 91.34102pt x 196.73451pt.
+
+[22
+
+ <./Figures/coords.png>]
+File: Figures/coords.png Graphic file (type png)
+ <use Figures/coords.png>
+Package pdftex.def Info: Figures/coords.png used on input line 160.
+(pdftex.def)             Requested size: 91.34102pt x 196.73451pt.
+
+<Figures/coords_graphed.png, id=575, 744.7825pt x 628.3475pt>
+File: Figures/coords_graphed.png Graphic file (type png)
+
+<use Figures/coords_graphed.png>
+Package pdftex.def Info: Figures/coords_graphed.png used on input line 160.
+(pdftex.def)             Requested size: 223.43648pt x 188.50569pt.
+
+Overfull \hbox (7.48763pt too wide) in paragraph at lines 160--160
+[][][]  
+ []
+
+[23
+
+ <./Figures/coords_graphed.png>] [24
+
+]
+File: Figures/coords_graphed.png Graphic file (type png)
+ <use Figures/coords_graphed.png>
+Package pdftex.def Info: Figures/coords_graphed.png used on input line 166.
+(pdftex.def)             Requested size: 171.29637pt x 144.51688pt.
+
+<Figures/gr_map.png, id=615, 695.59875pt x 637.38126pt>
+File: Figures/gr_map.png Graphic file (type png)
+
+<use Figures/gr_map.png>
+Package pdftex.def Info: Figures/gr_map.png used on input line 166.
+(pdftex.def)             Requested size: 146.08005pt x 133.854pt.
+
+Overfull \hbox (10.08655pt too wide) in paragraph at lines 166--166
+[][][]  
+ []
+
+[25
+
+ <./Figures/gr_map.png>] [26
+
+]
+<Figures/coords_graphed_hitnrun.png, id=659, 867.24pt x 722.7pt>
+File: Figures/coords_graphed_hitnrun.png Graphic file (type png)
+
+<use Figures/coords_graphed_hitnrun.png>
+Package pdftex.def Info: Figures/coords_graphed_hitnrun.png used on input line 
+173.
+(pdftex.def)             Requested size: 286.1901pt x 238.49173pt.
+
+Overfull \vbox (17.34499pt too high) detected at line 173
+ []
+
+[27
+
+ <./Figures/coords_graphed_hitnrun.png>] [28
+
+]
+<Figures/veh3.png, id=701, 908.39375pt x 495.8525pt>
+File: Figures/veh3.png Graphic file (type png)
+ <use Figures/veh3.png>
+Package pdftex.def Info: Figures/veh3.png used on input line 179.
+(pdftex.def)             Requested size: 317.94258pt x 173.55096pt.
+
+Overfull \hbox (10.65271pt too wide) in paragraph at lines 179--179
+[][]  
+ []
+
+[29
+
+ <./Figures/veh3.png>] [30
+
+]
+<Figures/driver1.png, id=743, 827.09pt x 502.87875pt>
+File: Figures/driver1.png Graphic file (type png)
+
+<use Figures/driver1.png>
+Package pdftex.def Info: Figures/driver1.png used on input line 185.
+(pdftex.def)             Requested size: 289.48582pt x 176.0102pt.
+ [31
+
+ <./Figures/driver1.png>] [32
+
+]
+<Figures/driver1_num.png, id=787, 995.72pt x 553.06625pt>
+File: Figures/driver1_num.png Graphic file (type png)
+
+<use Figures/driver1_num.png>
+Package pdftex.def Info: Figures/driver1_num.png used on input line 190.
+(pdftex.def)             Requested size: 298.7183pt x 165.92114pt.
+ [33
+
+ <./Figures/driver1_num.png>] [34
+
+] [35
+
+]
+Overfull \vbox (81.64003pt too high) detected at line 209
+ []
+
+[36
+
+] [37
+
+] [38
+
+] (./ml_from_scratch.toc) [39
+
+] (./ml_from_scratch.toc) [40
+
+]
+[41
+
+ </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
+>]
 \tf@nav=\write6
 \openout6 = `ml_from_scratch.nav'.
 
@@ -1011,14 +1163,13 @@ Package pdftex.def Info: Figures/gr_logo.jpg used on input line 110.
 \tf@snm=\write8
 \openout8 = `ml_from_scratch.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
-
-(./ml_from_scratch.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 241.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 241.
+ (./ml_from_scratch.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 241.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 241.
 Package rerunfilecheck Info: File `ml_from_scratch.out' has not changed.
-(rerunfilecheck)             Checksum: 4562002AF84423114A0CB5655DD02982;707.
+(rerunfilecheck)             Checksum: 46A323D0BCE66A68DC443E09C9387514;770.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1026,11 +1177,11 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 20048 strings out of 492995
- 397364 string characters out of 6132704
- 461063 words of memory out of 5000000
- 23106 multiletter control sequences out of 15000+600000
- 9649 words of font info for 35 fonts, out of 8000000 for 9000
+ 20216 strings out of 492995
+ 400319 string characters out of 6132704
+ 461096 words of memory out of 5000000
+ 23208 multiletter control sequences out of 15000+600000
+ 12936 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,59p,781b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
@@ -1038,11 +1189,13 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on ml_from_scratch.pdf (16 pages, 290582 bytes).
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.
+pfb>
+Output written on ml_from_scratch.pdf (41 pages, 959279 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 418 compressed objects within 5 object streams
- 42 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1066 PDF objects out of 1200 (max. 8388607)
+ 910 compressed objects within 10 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
