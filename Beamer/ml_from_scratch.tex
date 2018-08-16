@@ -18,7 +18,16 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 
- 
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+		\hbox{}\nobreak\hfill #1%
+		\parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+{\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+	{\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
 
 
 \begin{document}
@@ -28,7 +37,8 @@
 \frame{\titlepage}
 
 \note{\textbf{\Large Make sure that everyone launches binder or colab.google first!!}\\
-Also, give them a walkthrough of the whole presentation and tell them what we'll be building and what we'll be predicting!}
+Also, give them a walkthrough of the whole presentation and tell them what we'll be building and what we'll be predicting!\\
+* we'll be talking about how to apply machine learning to problems!}
 
 \section{Machine Learning Overview}
 \frame{\tableofcontents[currentsection]}
@@ -137,7 +147,8 @@ In our case, we're lucky enough to have access to a meticulously maintained publ
 	
 	\includegraphics[scale=.35]{Figures/crash_head}
 \end{frame}
-\note{After downloading the csv file, we can read the file into a pandas dataframe and explore it in our Jupyter notebook.}
+\note{After downloading the csv file, we can read the file into a pandas dataframe and explore it in our Jupyter notebook.\\
+* note something about how we'll often refer to each row as an observation and each column as a feature}
 
 
 \subsection{Step 2: Data Exploration}
@@ -188,31 +199,96 @@ When we check the counts of the different values found in the "VEH3" column, we 
 \begin{frame}{Check the variable's distribution}
 \includegraphics[scale=.3]{Figures/driver1_num}
 \end{frame}
-\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.}
+\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.\\
+
+\vspace{3pt}
+
+Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.\\
+}
 
 
 \subsection{Step 3: Data Preparation}
 
 \begin{frame}{Data Selection}
+Use as minimal features as possible\\
 
+\vspace{10pt}
+
+\begin{enumerate}
+	\item Computationally efficient
+	\item Easier to interpret
+	\item Simpler is better
+\end{enumerate}
+\only<2>{\includegraphics[scale=.4]{Figures/data_selection}}
 \end{frame}
-\note{Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.\\
-The first step in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model.
+\note{The first step in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model.
 As seen in our EDA some columns have a lot of missing data, and we'll drop them entirely.\\
-IT's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
+It's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
 * computationally efficient\\
 * more easily interpretable\\
 * simpler is better\\
-So how do we actually determine which features to use?, we can use various statistical tests, and even some algorithms to determine which features are going to be most relevant to predicting our target variable (which for us is whether or not the driver who caused the crash was drinking).\\
-When you are first beginning to iterate through different ml models, it is okay to kind of eyeball it, or use what you know about the context of the data to choose some features.
+So how do we actually determine which features to use?, we can use various statistical tests, and even some algorithms to determine which features are going to be most relevant to predicting our target variable (which for us is whether or not the driver who caused the crash was drinking).We won't go into detail here.\\
 
-}
+When you are first beginning to iterate through different ml models, it is okay to kind of eyeball it, or use what you know about the context of the data to choose some features.\\
+You'll see here the python code I've used to index our dataframe and select the feature's we'll use in building our predictive model.}
+
+
+\begin{frame}{Feature Engineering}
+\includegraphics[scale=.07]{Figures/ng}
+	\begin{aquote}{Prof. Andrew Ng}
+		Coming up with features is difficult, time-consuming, requires expert knowledge. ‘Applied machine learning’ is basically feature engineering.    
+	\end{aquote}
+
+\vspace{1cm}
+
+\includegraphics[scale=.08]{Figures/domingo}
+	\begin{aquote}{Prof. Pedro Domingo}
+		At the end of the day, some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.    
+	\end{aquote}
+\end{frame}
+\note{So now we have our 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
+“Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.” - Jason Brownlee \cite{DS_blog}
+\\
+We acknowledge, however, that the data that's being recorded (from those UD10 reports) isn't necessarily guaranteed to accurately represent reality. Which is an important thing if we want to build accurate, stable predictive models.\\
+The examples we've shown here are absolutely not exhaustive when it comes to feature engineering...}
+
+\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
+
+\end{frame}
+
+\begin{frame}{Feature Engineering: \textit{imputing missing ages} }
+	content...
+\end{frame}
+
 
 \begin{frame}{Data Processing}
+	Two general types of data to deal with:\\
+	
+	\vspace{10pt}
+	
+	\begin{itemize}
+		\item Numerical variables (Quantitative)
+		\begin{itemize}
+			\item Driver 1 age, number of injuries, etc
+		\end{itemize}
+	
+	\vspace{5pt}
+	
+		\item Categorical variables (Qualitative)
+		\begin{itemize}
+			\item Hit and run, motorcycle involved, etc
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\note{Now, we move onto processing the data that we've selcted. the data processing stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
+It's important to note that some of the preprocessing steps we'll talk about here may actually be necessary for you to do to get the data in a format where you can explore it.\\
+Numerical variables are quantitative -- it's something you can measure. In our case, some numerical variables are Driver1 age, and number of injuries.\\
+Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories, for example, which car insurance provider you choose: (Nationwide, Statefarm, BlueCross BlueShield) There is obviously a lot of them, but all drivers fit into one of those categories... or at least they should.\\
+There is some grey area between the two... maybe mention speedlimits or hour of day?}
+
+\begin{frame}{Data Processing: \textit{numerical variables}}
 	
 \end{frame}
-\note{the data preparation stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
-It's important to note that some of the preprocessing steps we'll talk about here may actually be necessary for you to do to get the data in a format where you can explore it.}
 
 \subsection{Step 4: Model Selection}
 
@@ -230,6 +306,8 @@ It's important to note that some of the preprocessing steps we'll talk about her
 \begin{frame}
 	\begin{thebibliography}{9}
 		\bibitem{Data_exploration} https://www.sisense.com/glossary/data-exploration/
+		\bibitem{DS_blog}
+		https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63
 	\end{thebibliography}
 \end{frame}
 

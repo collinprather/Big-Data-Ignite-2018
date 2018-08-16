@@ -4,7 +4,7 @@
 \BOOKMARK [3][]{Outline0.2.2.15}{Step 1: Get the Data}{Outline0.2}% 4
 \BOOKMARK [3][]{Outline0.2.3.20}{Step 2: Data Exploration}{Outline0.2}% 5
 \BOOKMARK [3][]{Outline0.2.4.35}{Step 3: Data Preparation}{Outline0.2}% 6
-\BOOKMARK [3][]{Outline0.2.5.39}{Step 4: Model Selection}{Outline0.2}% 7
-\BOOKMARK [3][]{Outline0.2.6.39}{Step 5: Cross-validation/Hyper-parameter tuning}{Outline0.2}% 8
+\BOOKMARK [3][]{Outline0.2.5.45}{Step 4: Model Selection}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.6.45}{Step 5: Cross-validation/Hyper-parameter tuning}{Outline0.2}% 8
 \BOOKMARK [2][]{Outline0.3}{Building a Support Vector Machine from Scratch}{}% 9
 \BOOKMARK [2][]{Outline0.4}{Exploring Scikit-Learn and applying to GR Crash dataset}{}% 10

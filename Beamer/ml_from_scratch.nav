@@ -42,26 +42,34 @@
 \headcommand {\slideentry {2}{3}{7}{33/33}{Step 2: Data Exploration}{0}}
 \headcommand {\beamer@framepages {33}{33}}
 \headcommand {\beamer@subsectionentry {0}{2}{4}{35}{Step 3: Data Preparation}}\headcommand {\beamer@subsectionpages {20}{34}}
-\headcommand {\slideentry {2}{4}{1}{35/35}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {2}{4}{2}{37/37}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {37}{37}}
-\headcommand {\beamer@subsectionentry {0}{2}{5}{39}{Step 4: Model Selection}}\headcommand {\beamer@subsectionpages {35}{38}}
-\headcommand {\beamer@subsectionentry {0}{2}{6}{39}{Step 5: Cross-validation/Hyper-parameter tuning}}\headcommand {\beamer@subsectionpages {39}{38}}
-\headcommand {\sectionentry {3}{Building a Support Vector Machine from Scratch}{39}{Building a Support Vector Machine from Scratch}{0}}
-\headcommand {\beamer@sectionpages {12}{38}}
-\headcommand {\beamer@subsectionpages {39}{38}}
-\headcommand {\slideentry {3}{0}{1}{39/39}{}{0}}
-\headcommand {\beamer@framepages {39}{39}}
-\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{40}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
-\headcommand {\beamer@sectionpages {39}{39}}
-\headcommand {\beamer@subsectionpages {39}{39}}
-\headcommand {\slideentry {4}{0}{1}{40/40}{}{0}}
+\headcommand {\slideentry {2}{4}{1}{35/36}{Step 3: Data Preparation}{0}}
+\headcommand {\beamer@framepages {35}{36}}
+\headcommand {\slideentry {2}{4}{2}{38/38}{Step 3: Data Preparation}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {2}{4}{3}{40/40}{Step 3: Data Preparation}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {4}{0}{2}{41/41}{}{0}}
+\headcommand {\slideentry {2}{4}{4}{41/41}{Step 3: Data Preparation}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\beamer@partpages {1}{41}}
-\headcommand {\beamer@subsectionpages {40}{41}}
-\headcommand {\beamer@sectionpages {40}{41}}
-\headcommand {\beamer@documentpages {41}}
-\headcommand {\def \inserttotalframenumber {22}}
+\headcommand {\slideentry {2}{4}{5}{42/42}{Step 3: Data Preparation}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {2}{4}{6}{44/44}{Step 3: Data Preparation}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{45}{Step 4: Model Selection}}\headcommand {\beamer@subsectionpages {35}{44}}
+\headcommand {\beamer@subsectionentry {0}{2}{6}{45}{Step 5: Cross-validation/Hyper-parameter tuning}}\headcommand {\beamer@subsectionpages {45}{44}}
+\headcommand {\sectionentry {3}{Building a Support Vector Machine from Scratch}{45}{Building a Support Vector Machine from Scratch}{0}}
+\headcommand {\beamer@sectionpages {12}{44}}
+\headcommand {\beamer@subsectionpages {45}{44}}
+\headcommand {\slideentry {3}{0}{1}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{46}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
+\headcommand {\beamer@sectionpages {45}{45}}
+\headcommand {\beamer@subsectionpages {45}{45}}
+\headcommand {\slideentry {4}{0}{1}{46/46}{}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {4}{0}{2}{47/47}{}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\beamer@partpages {1}{47}}
+\headcommand {\beamer@subsectionpages {46}{47}}
+\headcommand {\beamer@sectionpages {46}{47}}
+\headcommand {\beamer@documentpages {47}}
+\headcommand {\def \inserttotalframenumber {26}}
