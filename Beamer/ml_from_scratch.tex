@@ -38,7 +38,17 @@
 
 \note{\textbf{\Large Make sure that everyone launches binder or colab.google first!!}\\
 Also, give them a walkthrough of the whole presentation and tell them what we'll be building and what we'll be predicting!\\
-* we'll be talking about how to apply machine learning to problems!}
+* we'll be talking about how to apply machine learning to problems!\\
+* mention the applied v. theoretical contrast. \\
+Part 1) Applied Machine Learning case study: Drunk Driving Car Crashes\\
+PArt 2) [We totally change gears] SVM from scratch that exemplifies/applies the general math process that each ML project follows (by that I mean: Representation, Evaluation, Optimization)\\
+The main goal here is to expose you to a wide spectrum of technical/theoretical machine learning considerations in as applied of a setting as possible.}
+
+\begin{frame}{Special Thanks}
+	Dr. D\\
+	Dr. Michael Bloem
+\end{frame}
+\note{I'd like to offer a very special thank you to Dr.Devereaux and Dr. Michael Bloem for all that they've done to help me in putting this together -- would not be possible without them!}
 
 \section{Machine Learning Overview}
 \frame{\tableofcontents[currentsection]}
@@ -161,7 +171,7 @@ Let's say that you work for the city of Grand Rapids, and you find that there ar
 
 	\only<2->{In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}.}
 \end{frame}
-\note{Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity -- For particular social research, you may need to scrape the web. In some cases, you may even need to collect some data yourself! Here are two examples:\\
+\note{Step 1! Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity -- For particular social research, you may need to scrape the web. In some cases, you may even need to collect some data yourself! Here are two examples:\\
 1. You're developing a new data product at your company and are collecting data to fuel it\\
 2. You're in public health and are working to make healthcare accessible to all residents of the greater GR area. You may need to conduct your own research to identify what may be inhibitting people from reaching healthcare.\\
 In our case, we're lucky enough to have access to a meticulously maintained public database on the city of GR: GRData. Scroll through, show them the site and data, etc.}
@@ -196,7 +206,7 @@ In our case, we're lucky enough to have access to a meticulously maintained publ
 		\item Give direction to analysis
 	\end{itemize}
 \end{frame}
-\note{This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration} Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
+\note{Step 2! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration} Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
 The main idea hear is to build an understanding of your data. Without an appreciation for the context of the data, it's just numbers. But when you see the data in context, it's fascinating, it's a story.\\
  More often than not, your exploration of the data leads to more questions than answers.}
 
@@ -262,7 +272,7 @@ Use as minimal features as possible\\
 \end{enumerate}
 \only<2>{\includegraphics[scale=.4]{Figures/data_selection}}
 \end{frame}
-\note{The first step in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model.
+\note{This kicks off step 3, Data Preparation! The first part in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model.
 As seen in our EDA some columns have a lot of missing data, and we'll drop them entirely.\\
 It's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
 * computationally efficient\\
@@ -315,6 +325,7 @@ The examples that we show here are absolutely not exhaustive when it comes to fe
 	\end{matrix}\right]$}
 
 \end{frame}
+\note{It contains at what hour the crash occured at (ranging from 0-23). It did not make sense to me to treat this column as a numerical variable, since the model would interpret 2pm as twice 1pm... while that does not make logical sense. However, I felt that to treat each hour as it's own category wouldn't accurately capture the information that the hour conveys (for example, it would not capture the fact that 12pm and 12am are 12 hours apart, while 12pm and 1pm are next to each other), so I set out to transform this feature in order to convey more meaning to our algorithm. Here's what I did.}
 
 
 
@@ -395,11 +406,12 @@ There is some grey area between the two... maybe mention speedlimits or hour of 
 
 \begin{frame}{Data Processing: \textit{numerical variables}}
 \only<1>{\includegraphics[scale=.5]{Figures/numericals}}
-\only<2>{\includegraphics[scale=.5]{Figures/numericals_scaled}}
+\only<2>{\includegraphics[scale=.37]{Figures/numericals_scaled}}
 \end{frame}
 \note{Here, we have our numerical variables. One problem that we still face with these numerical variables is that when we feed our data through the algorithm, the computer will view an increase in 1 latitude of latitude as equivalent to an increase in 1 year of Age of the driver. In actuality and increase in 1 degree of latitude could land you in an entirely different neighborhood, while 37 y/o and 38 y/o are basically exactly the same.\\
 We will rescale the numerical variables through a process called standardization. This is not necessary for all ml algorithms, but generally will not hurt if we do it.\\
-When we standardize the variables, we rescale them so that they all have a mean of 0 and a S.D. of 1.}
+When we standardize the variables, we rescale them so that they all have a mean of 0 and a S.D. of 1.\\
+Notice that in this snippet, the number of injuries was 0 for all of them, and now is negative... this means that having 0 injuries in a car crash is below average...}
 
 \begin{frame}{Data Processing: \textit{categorical variables}}
 \only<1>{\includegraphics[scale=.35]{Figures/categoricals}}
@@ -414,7 +426,7 @@ This is just a snapshot, you see that our columns of categorical variables grew 
 
 \subsection{Step 4: Model Selection}
 
-\begin{frame}{Choosing a model.. or should i say algorithm??}
+\begin{frame}{Choosing a Model/Representation}
 \centering{\includegraphics[scale=.6]{Figures/ML_algos_table}}
 \end{frame}
 \note{And with that, our data is ready to be fed into a predictive model! The final step is to choose which predictive model to use. There are hundreds to choose from, and trade-offs associated with each. The good news is, as we alluded to earlier there are different types of machine learning problems and each come with their own set of algorithms -- so this narrows down our search considerably.\\
@@ -428,14 +440,27 @@ Remeber, the ultimate objective to choose a model that learns a predictive rule 
 \note{One critical aspect to take into consideration when choosing a model is called the bias-variance tradeoff\\
 So first, I'm going to define what I mean when I talk about the terms "bias" and "variance" in the context of machine learning, then we are going to look at some simplified examples (using this dataset here) in the regression context that I think really well convey the essence of applied machine learning:\\
 \textbf{Maybe still show my graphs?}\\
-\textbf{mention statistical techniques necessary to combat variance, like bagging}}
+\textbf{mention statistical techniques necessary to combat variance, like bagging}\\
+maybe mention regularization?}
 
 
 \subsection{Step 5: Cross-validation/Hyper-parameter tuning}
 
 \section{Building a Support Vector Machine from Scratch}
+\note{\textbf{Throughout this section, add notes for each of the headers in the jupyter notebook!}}
 
 \frame{\tableofcontents[currentsection]}
+
+\subsection{Representation}
+\note{\textbf{Representation}\\}
+\note{Definition of a hyperplane:\\
+}
+
+\subsection{Evaluation}
+\note{\textbf{Evaluation}\\}
+
+\subsection{Optimization}
+\note{\textbf{Optimization}\\}
 
 \section{Exploring Scikit-Learn and applying to GR Crash dataset}
 \frame{\tableofcontents[currentsection]}
