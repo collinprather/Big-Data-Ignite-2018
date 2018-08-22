@@ -447,14 +447,26 @@ maybe mention regularization?}
 \subsection{Step 5: Cross-validation/Hyper-parameter tuning}
 
 \section{Building a Support Vector Machine from Scratch}
-\note{\textbf{Throughout this section, add notes for each of the headers in the jupyter notebook!}\\\textbf{Also, do not forget to look over Lin alg for SVM notebook!}}
+\note{\textbf{Throughout this section, add notes for each of the headers in the jupyter notebook!}\\\textbf{Also, do not forget to look over Lin alg for SVM notebook!efz}}
 
 \frame{\tableofcontents[currentsection]}
 
 \subsection{Representation}
-\note{\textbf{Representation}\\}
-\note{Definition of a hyperplane:\\
-}
+\note{\textbf{Representation}: Support Vector Machine\\}
+
+
+\note{How do we find the optimal separating hyperplane?:\\
+It appears that there can be many different separating hyperplanes (often there is infinite). How do we choose the optimal one? Remember, the goal of the SVM is to maximize the margin of the training data. In other words, we're going to choose the hyperplane that is as far away as possible from each class of datapoints.\\
+We want to maximize the margin because It generalizes better to classifying unseen observations -> (meaning that it makes better predictions)\\
+If we have our usual equation for a line: y=mx+b, then all we need to do is find that optimal $m$ and $b$ that characterize the optimal hyperplane!}
+
+
+\note{Understanding the Definition of a hyperplane:\\
+As we've seen previously, the separating hyperplane that we keep referring to (in 2-d) is just a line. I'm confident that you're familiar with the way we define lines:\\
+Now, a quick refresher that b is just a constant that represents the y-intercept, m (usually defines the slope) is a coefficient to the variable x (also a constant) and the variable y even has a coefficient as well, in this case it's 1. With some algebraic manipulation, we get that:\\
+So, that looks a bit unnatural.. As we've mentioned, this is the equation of a line (hyperplane) in 2-d, if we try to expand this equation y=mx+b to more and more dimensions(variables), it's not a real great form to express it in. So instead, we
+choose to set the whole equation equal to zero, and represent all coefficients/constants with $\beta$, and all variables with $X_i$, so that we don't run out of variables to use.\\
+In our Crash data, we use 14 variables... }
 
 \subsection{Evaluation}
 \note{\textbf{Evaluation}\\}
