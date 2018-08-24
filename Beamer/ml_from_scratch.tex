@@ -449,27 +449,46 @@ maybe mention regularization?}
 \section{Building a Support Vector Machine from Scratch}
 \note{\textbf{Throughout this section, add notes for each of the headers in the jupyter notebook!}\\\textbf{Also, do not forget to look over Lin alg for SVM notebook!efz}}
 
+\note{Here we'll first be going through a general example of building an svm from scratch on a toy dataset, then apply some of Python's ml tools to our crash data set to predict whether or not a car crash was caused by a drunk driver!}
+
 \frame{\tableofcontents[currentsection]}
 
+\note{Here, we will begin by importing the necessary libraries -- (audience should just run these). So here is what our plotted data looks like.\\
+And here is a snapshot of data set. Note that for each data point (each row/each dot), we have an $x_1$ value, and $X_2$ value, and a $y$ value (which represents the target variable, which we are trying to predict). It may seem weird to call them $x_1$ and $x_2$, but we'll address why we do that in a little bit.}
+
 \subsection{Representation}
-\note{\textbf{Representation}: Support Vector Machine\\}
+\note{\textbf{Representation}: Support Vector Machine\\
+The first step in building any sort of predictive model is choosing a representation. For our example today, we choose a Support Vector Machine. Big picture - The goal of a SVM is to To find the optimal separating hyperplane which maximizes the margin of the training data.\\ 
+Now, a hyperplane is kind of like a fancy word for a line, or maybe better put, it's a general way to talk about a line. The black line on this graph of our dataset is a hyperplane that separate the two classes (red/blue). Since our data is two dimensional (we have an x, and a y (1, 2)) the hyperplane is a line}
 
 
 \note{How do we find the optimal separating hyperplane?:\\
-It appears that there can be many different separating hyperplanes (often there is infinite). How do we choose the optimal one? Remember, the goal of the SVM is to maximize the margin of the training data. In other words, we're going to choose the hyperplane that is as far away as possible from each class of datapoints.\\
+Now, as we mentioned, the goal of the hyperplane is to find the optimal separating hyperplane, so how do we do that? It appears that there can be many different separating hyperplanes (often there is infinite). We're going to choose the hyperplane that is as far away as possible from each class of datapoints.\\
 We want to maximize the margin because It generalizes better to classifying unseen observations -> (meaning that it makes better predictions)\\
 If we have our usual equation for a line: y=mx+b, then all we need to do is find that optimal $m$ and $b$ that characterize the optimal hyperplane!}
 
 
 \note{Understanding the Definition of a hyperplane:\\
 As we've seen previously, the separating hyperplane that we keep referring to (in 2-d) is just a line. I'm confident that you're familiar with the way we define lines:\\
-Now, a quick refresher that b is just a constant that represents the y-intercept, m (usually defines the slope) is a coefficient to the variable x (also a constant) and the variable y even has a coefficient as well, in this case it's 1. With some algebraic manipulation, we get that:\\
-So, that looks a bit unnatural.. As we've mentioned, this is the equation of a line (hyperplane) in 2-d, if we try to expand this equation y=mx+b to more and more dimensions(variables), it's not a real great form to express it in. So instead, we
-choose to set the whole equation equal to zero, and represent all coefficients/constants with $\beta$, and all variables with $X_i$, so that we don't run out of variables to use.\\
-In our Crash data, we use 14 variables... }
+Now, a quick refresher that b is just a constant that represents the y-intercept, m (usually defines the slope) is a coefficient to the variable x (also a constant) and the variable y even has a coefficient as well, in this case it's 1. if we try to expand this equation y=mx+b to more and more dimensions(variables), it's not a real great form to express it in. So instead, we
+choose to set the whole equation equal to zero. With some algebraic manipulation, we get that:\\
+So, that looks a bit unnatural..so its common convention to represent all coefficients/constants with $\beta$, and all variables with $X_i$, so that we don't run out of variables to use.\\
+In our Crash data, we use 14 variables...\\
+\textbf{maybe change the betas to w's?} }
 
 \subsection{Evaluation}
 \note{\textbf{Evaluation}\\}
+
+\note{\textbf{Quick refresher on the dot product:}\\
+Now, we're going to talk for a minute about the dot product. The dot product has many different names across fields of mathematics: inner product, and linear combination are also common. Regardless of its name, it is a useful operation to use between vectors. To put it simply, if you take the dot product of two vectors, you multiply all their corresponding elements and take the sum. (note that the vectors must have the same dimensions).}
+
+\note{\textbf{Dot product as distance from hyperplane:}\\
+Now you'll notice that this dot product indeed looks very similar to the way that we've defined the equation of a hyperplane. It turns out that, when we take the dot product of our weights vector $\overrightarrow{w}$ and a single datapoint $\overrightarrow{x^{(i)}}$, the resulting number that we get can be thought of as the distance from the data point to the hyperplane (how far away it is). Now, if we're being mathematically rigorous, we may want to frame that a bit differently, but at least for all intensive purposes, we can think of it this way!\\
+The fact that we've defined the equation of a hyperplane to be the dot product of our weights and features equal to zero implies that the hyperplane and the weights vectors are perpendicular (aka orthogonal). And since they are orthogonal, we're able to exploit some linear algebra constructs, and it is on those grounds that say that the dot product is equal to the distance from the hyperplane.}
+
+\note{\textbf{The Hinge Loss Function is defined as:}\\
+Now, armed with this ability to calculate how far away each data point, we can quantify how wrong each of our predictions are!\\
+Talk about how we will predict which class each data point comes from, then use the hinge loss to tell us how wrong we are. }
 
 \subsection{Optimization}
 \note{\textbf{Optimization}\\}

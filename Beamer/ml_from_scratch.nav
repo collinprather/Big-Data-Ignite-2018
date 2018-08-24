@@ -71,20 +71,20 @@
 \headcommand {\sectionentry {3}{Building a Support Vector Machine from Scratch}{65}{Building a Support Vector Machine from Scratch}{0}}
 \headcommand {\beamer@sectionpages {14}{64}}
 \headcommand {\beamer@subsectionpages {65}{64}}
-\headcommand {\slideentry {3}{0}{1}{66/66}{}{0}}
-\headcommand {\beamer@framepages {66}{66}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{67}{Representation}}\headcommand {\beamer@subsectionpages {65}{66}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{70}{Evaluation}}\headcommand {\beamer@subsectionpages {67}{69}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{71}{Optimization}}\headcommand {\beamer@subsectionpages {70}{70}}
-\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{72}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
-\headcommand {\beamer@sectionpages {65}{71}}
-\headcommand {\beamer@subsectionpages {71}{71}}
-\headcommand {\slideentry {4}{0}{1}{72/72}{}{0}}
-\headcommand {\beamer@framepages {72}{72}}
-\headcommand {\slideentry {4}{0}{2}{73/73}{}{0}}
-\headcommand {\beamer@framepages {73}{73}}
-\headcommand {\beamer@partpages {1}{73}}
-\headcommand {\beamer@subsectionpages {72}{73}}
-\headcommand {\beamer@sectionpages {72}{73}}
-\headcommand {\beamer@documentpages {73}}
+\headcommand {\slideentry {3}{0}{1}{67/67}{}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{69}{Representation}}\headcommand {\beamer@subsectionpages {65}{68}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{72}{Evaluation}}\headcommand {\beamer@subsectionpages {69}{71}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{76}{Optimization}}\headcommand {\beamer@subsectionpages {72}{75}}
+\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{77}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
+\headcommand {\beamer@sectionpages {65}{76}}
+\headcommand {\beamer@subsectionpages {76}{76}}
+\headcommand {\slideentry {4}{0}{1}{77/77}{}{0}}
+\headcommand {\beamer@framepages {77}{77}}
+\headcommand {\slideentry {4}{0}{2}{78/78}{}{0}}
+\headcommand {\beamer@framepages {78}{78}}
+\headcommand {\beamer@partpages {1}{78}}
+\headcommand {\beamer@subsectionpages {77}{78}}
+\headcommand {\beamer@sectionpages {77}{78}}
+\headcommand {\beamer@documentpages {78}}
 \headcommand {\def \inserttotalframenumber {32}}
