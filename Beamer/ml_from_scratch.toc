@@ -9,5 +9,5 @@
 \beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{65}{0}{3}
 \beamer@subsectionintoc {3}{1}{Representation}{69}{0}{3}
 \beamer@subsectionintoc {3}{2}{Evaluation}{72}{0}{3}
-\beamer@subsectionintoc {3}{3}{Optimization}{76}{0}{3}
-\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{77}{0}{4}
+\beamer@subsectionintoc {3}{3}{Optimization}{81}{0}{3}
+\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{84}{0}{4}

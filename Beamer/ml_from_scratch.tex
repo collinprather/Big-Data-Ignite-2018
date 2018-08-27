@@ -17,6 +17,7 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \usepackage[style=british]{csquotes}
 
@@ -427,7 +428,19 @@ This is just a snapshot, you see that our columns of categorical variables grew 
 \subsection{Step 4: Model Selection}
 
 \begin{frame}{Choosing a Model/Representation}
-\centering{\includegraphics[scale=.6]{Figures/ML_algos_table}}
+\begin{tabular}{|c|l|l|}\hline
+	&\textbf{Classification}&\textbf{Regression}\\\hline
+	\textbf{Supervised}&
+	\tabitem Logistic Regression&\tabitem Linear Regression\\
+	&\tabitem Naive-Bayes&\tabitem Decision Trees\\
+	&\tabitem KNN&\tabitem Random Forests\\
+	&\tabitem SVM&\\\hline
+	\textbf{Unsupervised}&
+	\tabitem Apriori&\tabitem PCA\\
+	&\tabitem Hidden Markov Model&\tabitem K-means\\
+	&&\tabitem SVD\\
+	\hline
+\end{tabular}
 \end{frame}
 \note{And with that, our data is ready to be fed into a predictive model! The final step is to choose which predictive model to use. There are hundreds to choose from, and trade-offs associated with each. The good news is, as we alluded to earlier there are different types of machine learning problems and each come with their own set of algorithms -- so this narrows down our search considerably.\\
 In our case, we're working on a supervised classification problem, so the upper left hand corner displays some common algorithms for problems like ours. It's very common to test a handful of them and choose the one that performs best on your dataset (or even combine some of them into an ensemble model.)\\
@@ -454,7 +467,7 @@ maybe mention regularization?}
 \frame{\tableofcontents[currentsection]}
 
 \note{Here, we will begin by importing the necessary libraries -- (audience should just run these). So here is what our plotted data looks like.\\
-And here is a snapshot of data set. Note that for each data point (each row/each dot), we have an $x_1$ value, and $X_2$ value, and a $y$ value (which represents the target variable, which we are trying to predict). It may seem weird to call them $x_1$ and $x_2$, but we'll address why we do that in a little bit.}
+And here is a snapshot of data set. Note that for each data point (each row/each dot), we have an $x_1$ value, and $X_2$ value, and a $y$ value (which represents the target variable, which we are trying to predict). In this case, we've rather defined the red data points to be labeled as -1 annd the blue data points to be labeled as 1. It may seem weird to call them $x_1$ and $x_2$, but we'll address why we do that in a little bit.}
 
 \subsection{Representation}
 \note{\textbf{Representation}: Support Vector Machine\\
@@ -480,18 +493,50 @@ In our Crash data, we use 14 variables...\\
 \note{\textbf{Evaluation}\\}
 
 \note{\textbf{Quick refresher on the dot product:}\\
-Now, we're going to talk for a minute about the dot product. The dot product has many different names across fields of mathematics: inner product, and linear combination are also common. Regardless of its name, it is a useful operation to use between vectors. To put it simply, if you take the dot product of two vectors, you multiply all their corresponding elements and take the sum. (note that the vectors must have the same dimensions).}
+Now, we're going to talk for a minute about the dot product. The dot product has many different names across fields of mathematics: inner product, and linear combination are also common. Regardless of its name, it is a useful operation to use between vectors. To put it simply, if you take the dot product of two vectors, you multiply all their corresponding elements and take the sum. (note that the vectors must have the same dimensions).\\
+The output of the dot product is not another vector, but just a scalar value.}
 
 \note{\textbf{Dot product as distance from hyperplane:}\\
-Now you'll notice that this dot product indeed looks very similar to the way that we've defined the equation of a hyperplane. It turns out that, when we take the dot product of our weights vector $\overrightarrow{w}$ and a single datapoint $\overrightarrow{x^{(i)}}$, the resulting number that we get can be thought of as the distance from the data point to the hyperplane (how far away it is). Now, if we're being mathematically rigorous, we may want to frame that a bit differently, but at least for all intensive purposes, we can think of it this way!\\
+Now you'll notice that this dot product indeed looks very similar to the way that we've defined the equation of a hyperplane. It turns out that, when we take the dot product of our weights vector $\overrightarrow{w}$ and a single datapoint $\overrightarrow{x^{(i)}}$, the resulting number that we get can be thought of as the distance from the data point to the hyperplane (how far away it is). And since we're trying to maximize the width of our margin, having an efficient way to calculate how far away each datapoint is from the hyperplane proves to be cruical.\\
+ Now, if we're being mathematically rigorous, we may want to frame that a bit differently, but at least for all intensive purposes, we can think of it this way!\\
 The fact that we've defined the equation of a hyperplane to be the dot product of our weights and features equal to zero implies that the hyperplane and the weights vectors are perpendicular (aka orthogonal). And since they are orthogonal, we're able to exploit some linear algebra constructs, and it is on those grounds that say that the dot product is equal to the distance from the hyperplane.}
 
 \note{\textbf{The Hinge Loss Function is defined as:}\\
-Now, armed with this ability to calculate how far away each data point, we can quantify how wrong each of our predictions are!\\
+Now, armed with this ability to calculate how far away each data pointis from the hyperplane, we can now use the Hinge Loss Function to quantify how wrong each of our predictions are!\\
+One more important thing to note about the dot product is that it is signed, meaning that it can be either positive or negative, namely, data points below the hyperplane will have a negative distance from the hyperplane, and datapoints above the hyperplane, will have a positive distance from hyperplane.\\
 Talk about how we will predict which class each data point comes from, then use the hinge loss to tell us how wrong we are. }
+
+\note{\textbf{The Hinge Loss Function is defined as (Part 2): Breaking it down}\\
+ 1 minus $y$ times the dot product of the weights vector and the datapoint itself.\\
+ Let's break this down piece by piece. First, we'll look at the inputs. $\overrightarrow{w}$ is a vector of weights (coefficients) in the linear equation. $\overrightarrow{x^{(i)}}$ is a vector representing a single datapoint (the $i^{th}$ datapoint), or a single row in our dataset. $y^{(i)}$ is the label associated with the datapoint (which is either 1 or -1). The ouput is a scalar value (a number) representing a penalty for how wrong our prediction was. The greater the penatly, the worse our estimated weights were in classifying the data.}
+
+
+\note{\textbf{The Hinge Loss Function is defined as (Part 3): little subscript plus sign}\\
+	One thing I've neglected to mention thus far is the little subscript plus sign at the end of the loss function. That little plus sign denotes that our loss function only looks at positive values, meaning that the output of function is a negative value, it's just going to change it to zero. This intuitively makes sense! If we get a negative penalty for our algorithm... that means that the prediction must be very correct, so instead, we'll just assign a penalty of 0, basically no penalty at all.\\}
+
+
+\note{\textbf{The Hinge Loss Function is defined as (Part 4): working it out}\\
+	Now, if you actually try to work this out with the datapoints, it can be a bit confusing, as there are lots of negatives and the sign of the function is constantly changing, so I've included this little table that works out small exmaples for all 4 cases, when the data point is correctly and incorrectly classified from the negative class, and when the data point was correctly and incorrectly classified from the postive class. For these little examples, I've assumed that the datapoint is 3 units away from the hyperplane. You'll notice if you skip to the bottom that the penalty for both incorrectly classified datapoints is 4, while the penalty for the correctly classified datapoints is 0.}
+	
+	
+\note{\textbf{The Hinge Loss Function is defined as (Part 5): essence of ml}\\
+	This is really worth emphasizing, because it doesn't just apply to SVM's but is the basis of machine learning. Machines learn by associating a quantitative penalty to incorrect predictions. The machine then sets out to minimize the penalty, which ultimately will result in making the maximium amount of correct predictions.\\
+	 This is the essence of the current state of artificial intelligence. All AI is based on this principle, everything from autonomous vehicles, to amazon's recommendation system.}
+
+\note{\textbf{Hinge Loss with regularization term:}\\
+Now, with the hinge loss function we've defined, when we try to minimize the loss function, we will (if possible) find a separating hyperplane that perfectly classifies the data i.e. no misclaassifications. Which sounds great! The only problem with that is that is there are any outliers in our dataset, it can seriously skew the hyperplane. Below we have two nearly identical datasets...the one on the right has one outlier (circle it with mouse) and it has completely changed our hyperplane.\\
+Again, we need to remember that we our goal is to find a hyperplane that will best classify new datapoints...so we don't want it to be affected by outliers.\\
+The $\lambda$ coefficient acts as a tuning parameter (in our example, we will explicitly, hard-code a value for lambda), but generally, as the value for lambda gets smaller and smaller (approaches 0), the margin grows wider (to the point of misclassifying data points). As the value for lambda gets larger and larger, the margin will get smaller and smaller (to the point of no misclassified data points.)}
 
 \subsection{Optimization}
 \note{\textbf{Optimization}\\}
+
+\note{\textbf{Optimization}\\
+Now, we've been talking quite a bit about minimizing the penalty to our algorithm for mis-classifying data points, but it is not immediately obvious how to minimize the penalty...}
+
+\note{\textbf{To do next:}\\
+Watch Andrew Ng's explanation of stochastic gradient descent and take notes in order to explain!\\
+Then also outline exactly how to calculate the gradient of the hinge loss function for misclassified and correctly classified datapoints, then explicitly show the update rules.}
 
 \section{Exploring Scikit-Learn and applying to GR Crash dataset}
 \frame{\tableofcontents[currentsection]}

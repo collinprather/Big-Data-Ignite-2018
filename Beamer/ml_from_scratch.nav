@@ -75,16 +75,16 @@
 \headcommand {\beamer@framepages {67}{67}}
 \headcommand {\beamer@subsectionentry {0}{3}{1}{69}{Representation}}\headcommand {\beamer@subsectionpages {65}{68}}
 \headcommand {\beamer@subsectionentry {0}{3}{2}{72}{Evaluation}}\headcommand {\beamer@subsectionpages {69}{71}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{76}{Optimization}}\headcommand {\beamer@subsectionpages {72}{75}}
-\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{77}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
-\headcommand {\beamer@sectionpages {65}{76}}
-\headcommand {\beamer@subsectionpages {76}{76}}
-\headcommand {\slideentry {4}{0}{1}{77/77}{}{0}}
-\headcommand {\beamer@framepages {77}{77}}
-\headcommand {\slideentry {4}{0}{2}{78/78}{}{0}}
-\headcommand {\beamer@framepages {78}{78}}
-\headcommand {\beamer@partpages {1}{78}}
-\headcommand {\beamer@subsectionpages {77}{78}}
-\headcommand {\beamer@sectionpages {77}{78}}
-\headcommand {\beamer@documentpages {78}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{81}{Optimization}}\headcommand {\beamer@subsectionpages {72}{80}}
+\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{84}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
+\headcommand {\beamer@sectionpages {65}{83}}
+\headcommand {\beamer@subsectionpages {81}{83}}
+\headcommand {\slideentry {4}{0}{1}{84/84}{}{0}}
+\headcommand {\beamer@framepages {84}{84}}
+\headcommand {\slideentry {4}{0}{2}{85/85}{}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\beamer@partpages {1}{85}}
+\headcommand {\beamer@subsectionpages {84}{85}}
+\headcommand {\beamer@sectionpages {84}{85}}
+\headcommand {\beamer@documentpages {85}}
 \headcommand {\def \inserttotalframenumber {32}}
