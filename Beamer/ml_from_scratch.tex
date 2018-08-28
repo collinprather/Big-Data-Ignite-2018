@@ -532,7 +532,26 @@ The $\lambda$ coefficient acts as a tuning parameter (in our example, we will ex
 \note{\textbf{Optimization}\\}
 
 \note{\textbf{Optimization}\\
-Now, we've been talking quite a bit about minimizing the penalty to our algorithm for mis-classifying data points, but it is not immediately obvious how to minimize the penalty...}
+Now, we've been talking quite a bit about minimizing the penalty to our algorithm for mis-classifying data points, but it is not immediately obvious how to minimize the penalty.\\
+We're going to use an algorithm called Stochastic Gradient Descent that will iteratively find the weights that minimize the total "loss" or "cost" to our Support Vector Machines, resulting in the very best possible predictions. \textbf{Look at this visually in two ways! 1. With stanford web demo, 2. with gradient descent drawing}}
+
+\note{\textbf{Stanford Web App}\\
+For one of its course, Stanford has created this awesome web demo that actively animates gradient descent. Here, they have three different classes (red, blue, green), while we only have two (red, blue), yet the principles are exactly the same. Gradient Descent begins with totally random separating boundaries, this means that we begin with random weights, $\overrightarrow{w}$, random coefficients in the equation of the separating hyperplane. (click randomize a few times)\\
+The algorithm then iteratively updates the weights little by little until the separating hyperplane is correctly classifying the data points.(start repeated update with softmax)\\
+So this is how gradient descent works.}
+
+\note{\textbf{Gradient Descent Drawing}\\
+I want to show you another angle we can look at this from. Take a look at this drawing. Imagine that this red line is the hinge loss function (preface: it's not. But it is a representative of the general concept of gradient descent), which, remember, outputs how wrong our predictions are, so we want to minimize this function, by finding the weights that correspond to the smallest possible output. All we have to do is move towards the bottom of this function, which is exactly what gradient descent does.
+}
+
+\note{\textbf{Transition to Math of GD}\\
+Pragmatically speaking, the algorithm is going to loop through each observation (row) in our dataset, and check if our current weights would have correctly or incorrectly classified it. If it would have incorrectly classified the data point, then the algorithm updates the weights accordingly.\\
+A natural question to ask then is, how are we going to update the weights? How do we move from the top of the function to the bottom? We will do so by using partial derivatives of the hinge loss function. We do this because:\\
+ - The derivative of the hinge loss function gives us the slope of our hinge loss function at our current values for $\overrightarrow{w}$. Given the slope, we want to "move" or update our weights in the direction that the slope is decreasing i.e heading towards the bottom of the function.}
+
+\note{\textbf{Calculating the partial derivatives:}\\
+Okay, so let's calculate the partial derivatives. Using a rule from calculus, we can separately calculate the partial derivative of the first and second terms of the hinge loss function (loss term and regularization term) separately.\\
+As we can see here, the partial derivative of the loss term depends on whether the datapoint was correctly or incorrectly classified. (0 if correctly classified, or -y times x if incorrectly classified). The partial derivative of the regularization term is 2 times lambda times w.}
 
 \note{\textbf{To do next:}\\
 Watch Andrew Ng's explanation of stochastic gradient descent and take notes in order to explain!\\

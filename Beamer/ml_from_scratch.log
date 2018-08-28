@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 AUG 2018 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 AUG 2018 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1398,9 +1398,17 @@ Overfull \vbox (9.74007pt too high) detected at line 529
 
 ] [83
 
-] (./ml_from_scratch.toc) [84
+] [84
 
 ] [85
+
+] [86
+
+] [87
+
+] (./ml_from_scratch.toc) [88
+
+] [89
 
  </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
 >]
@@ -1413,11 +1421,12 @@ Overfull \vbox (9.74007pt too high) detected at line 529
 \tf@snm=\write8
 \openout8 = `ml_from_scratch.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 560.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 560.
- (./ml_from_scratch.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 560.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 560.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 579.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 579.
+
+(./ml_from_scratch.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 579.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 579.
 Package rerunfilecheck Info: File `ml_from_scratch.out' has not changed.
 (rerunfilecheck)             Checksum: 6EC4A0F815C0925E72A3CB6703F7420B;959.
 
@@ -1430,8 +1439,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20979 strings out of 492995
- 412558 string characters out of 6132704
+ 20987 strings out of 492995
+ 412634 string characters out of 6132704
  482587 words of memory out of 5000000
  23857 multiletter control sequences out of 15000+600000
  16450 words of font info for 59 fonts, out of 8000000 for 9000
@@ -1452,10 +1461,10 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on ml_from_scratch.pdf (85 pages, 2306707 bytes).
+Output written on ml_from_scratch.pdf (89 pages, 2315277 bytes).
 PDF statistics:
- 2141 PDF objects out of 2487 (max. 8388607)
- 1823 compressed objects within 19 object streams
- 187 named destinations out of 1000 (max. 500000)
+ 2235 PDF objects out of 2487 (max. 8388607)
+ 1904 compressed objects within 20 object streams
+ 195 named destinations out of 1000 (max. 500000)
  252 words of extra memory for PDF output out of 10000 (max. 10000000)
 
