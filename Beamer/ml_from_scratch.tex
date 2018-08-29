@@ -553,6 +553,10 @@ A natural question to ask then is, how are we going to update the weights? How d
 Okay, so let's calculate the partial derivatives. Using a rule from calculus, we can separately calculate the partial derivative of the first and second terms of the hinge loss function (loss term and regularization term) separately.\\
 As we can see here, the partial derivative of the loss term depends on whether the datapoint was correctly or incorrectly classified. (0 if correctly classified, or -y times x if incorrectly classified). The partial derivative of the regularization term is 2 times lambda times w.}
 
+
+\note{\textbf{Update Rules:}\\
+}
+
 \note{\textbf{To do next:}\\
 Watch Andrew Ng's explanation of stochastic gradient descent and take notes in order to explain!\\
 Then also outline exactly how to calculate the gradient of the hinge loss function for misclassified and correctly classified datapoints, then explicitly show the update rules.}
