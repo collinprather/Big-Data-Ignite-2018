@@ -33,17 +33,25 @@
 
 \begin{document}
 
-
+\begin{frame}
+	Put content on this frame that directs them to binder or colab.research.google.com
+\end{frame}
+\note{Before we get going here, I'd like to direct you to colab.research.google.com to get things set up for the live coding demo that will take place in the second half of our time today. Follow the instructions on my github at...}
 	
 \frame{\titlepage}
 
-\note{\textbf{\Large Make sure that everyone launches binder or colab.google first!!}\\
-Also, give them a walkthrough of the whole presentation and tell them what we'll be building and what we'll be predicting!\\
-* we'll be talking about how to apply machine learning to problems!\\
-* mention the applied v. theoretical contrast. \\
-Part 1) Applied Machine Learning case study: Drunk Driving Car Crashes\\
+\frame{\tableofcontents}
+\note{
+\textbf{Part 1) Applied Machine Learning case study: Drunk Driving Car Crashes\\
 PArt 2) [We totally change gears] SVM from scratch that exemplifies/applies the general math process that each ML project follows (by that I mean: Representation, Evaluation, Optimization)\\
-The main goal here is to expose you to a wide spectrum of technical/theoretical machine learning considerations in as applied of a setting as possible.}
+The main goal here is to expose you to a wide spectrum of technical/theoretical machine learning considerations in as applied of a setting as possible.}\\
+
+Good morning, and thank you all for making it out this early! These conference days are long, and to be here bright and early on day 3 is no joke, so I'm glad you're here.\\
+We are going to be tackling machine learning from a bottom-up approach today. Can I get a quick show of hands, how many of us here have experience applying machine learning to solving problems?\\
+
+Before we really dive in, I want to tell you a bit about my talk today, and to do so, we're going to start with two things that help tremendously in successfully applying machine learning... (1) Understanding the math at play: a great way to build that intuitive understanding is to implement a machine learning algorithm from scratch! (2) Knowing how to process/manipulate the data to be ML ready. Now, the skills required for these two steps are admittedly a bit disparate, however, the skills needed to successfully apply ML is inherently interdisciplinary - so I think speaking on these two topics together is rather fitting. We will start with talking a lot about the data and steps we'll take to prepare it, and then we're going to totally switch gears and dive into the math at hand and even get into some code. It may seem like an abrupt switch, so I offer that as a brief disclaimer.\\
+
+So we will start by talking a bit more about what machine learning is.. defining some terms, things like that, then move into the steps in the machine learning process. As mentioned, we can't talk about machine learning without getting our hands dirty with some data, and so we'll walk-through a lot of that. After that, we will shift our focus on the math that fuels machine learning and even code a Supprt Vector Machine from scratch. At the very end, we'll take a look Python's ML tools and apply it to a Grand Rapids Car crash dataset, and that dataset will serve as a case study that will flow through the entire talk. It's going to be a lot of fun.}
 
 \begin{frame}{Special Thanks}
 	Dr. D\\
@@ -72,24 +80,14 @@ The main goal here is to expose you to a wide spectrum of technical/theoretical 
 \end{block}
 \end{frame}
 
-\note{Even according to the experts, the exact definifion of the field of machine learning is a bit fuzzy, but  As early as 1959, Arthur Samuel quote. .\\
-	
-\vspace{5pt}
-
-also, include Ng's explanation from MLYearning!}
-
-\begin{frame}{What is Machine Learning}
-	data + algorithms = predicting the future\\
-	combo of statistics, calculus, etc...
-\end{frame}
-
-\note{ML techniqes can be applied to a wide range of problems in diverse industries. In fact, ML has become ubiquitous in our everyday lives
-	* Siri/ Amazon Alexa\\
-	* Recommendation systems (amazon, netflix)\\
-	* Fraud Detection\\
-	* Disease diagnosis\\
-	* Supply Chain Optimization}
-
+\note{All this talk begs the question, what is machine learning? Even according to the experts, the exact definifion of the field of machine learning is a bit fuzzy, but  As early as 1959, Arthur Samuel was famously quoted as defining machine learning as...\\
+ML techniqes can be applied to a wide range of problems in diverse industries. In fact, ML has become ubiquitous in our everyday lives\\
+* Siri/ Amazon Alexa\\
+* Recommendation systems (amazon, netflix)\\
+* Fraud Detection\\
+* Disease diagnosis\\
+* Supply Chain Optimization\\
+The list goes on and on. With sufficient data, ML algorithms combines statistics and calculus and can often make very accurate predictions about the future.}
 
 
 \begin{frame}{According to Google...}
@@ -97,9 +95,12 @@ also, include Ng's explanation from MLYearning!}
 	\includegraphics[scale=.55]{Figures/google_trends}
 \end{center}
 \end{frame}
+\note{This may not be a surprise to you, but the world's google search history reflects a steady increase in interest in machine learning and other related terms like Data Science, Big Data, and Artificial Intelligence.\\
+This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends.}
+
+
 
 \begin{frame}{What has caused this spike?}
-	
 \begin{enumerate}
 	\item Data Availability
 	
@@ -110,7 +111,7 @@ also, include Ng's explanation from MLYearning!}
 		
 		\vspace{10pt}
 		
-		\item Iot (sensor data)
+		\item IoT (sensor data)
 		
 		\vspace{10pt}
 		
@@ -125,13 +126,16 @@ also, include Ng's explanation from MLYearning!}
 	\end{itemize}
 \end{enumerate}
 \end{frame}
-\note{The math that powers machine learning algorithms has been around for quite a few years... so what's changed?\\
+\note{What has caused this spike? The math that powers machine learning algorithms has been around for quite a few years... so what's changed? It really boils down to two things.\\
 1. Data Availability  (here we should just a few examples)\\
+	- Think of all the data that comes from cell phones, it's cheap to collect and there's a ton of it.\\
+	- Machines embedded with software/sensors (commonly reffered to as the Internet of Things or IoT) produce a lot of data as well.\\
 2. Computational Scale (NG MLY 01 pg 10)\\
 The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
 
 \section{Steps in the Machine Learning Process}
 \frame{\tableofcontents[currentsection]}
+\note{Now that we have some motivation for what machine learning is and what it can do, let's move into the steps of the machine learning process.}
 
 \subsection{Step 0: Identify The Problem}
 
@@ -207,7 +211,7 @@ In our case, we're lucky enough to have access to a meticulously maintained publ
 		\item Give direction to analysis
 	\end{itemize}
 \end{frame}
-\note{Step 2! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration} Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
+\note{Step 2 is to explore the data! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration} Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
 The main idea hear is to build an understanding of your data. Without an appreciation for the context of the data, it's just numbers. But when you see the data in context, it's fascinating, it's a story.\\
  More often than not, your exploration of the data leads to more questions than answers.}
 
@@ -228,8 +232,8 @@ The main idea hear is to build an understanding of your data. Without an appreci
 	\includegraphics[scale=.33]{Figures/coords_graphed_hitnrun}
 \end{center}
 \end{frame}
-\note{We may be interested in hit and runs...\\
-I should add a caption or title to this plot}
+\note{We may also be interested in hit and runs...\\
+This plot again shows each car crash, but this time with each red dot representing a hit and run}
 
 \begin{frame}{Check the variable's distribution}
 	\includegraphics[scale=.35]{Figures/veh3}
@@ -240,14 +244,14 @@ When we check the counts of the different values found in the "VEH3" column, we 
 \begin{frame}{Check the variable's distribution}
 \includegraphics[scale=.35]{Figures/driver1}
 \end{frame}
-\note{Continuing on, here we check the distribution of the age's of all the "DRIVER1"s recorded in the dataset. In my head, I would think that age would be an important feature in car crashes. And so we check it out, and i appears that there are a ton of instances bunched up between 1 and 100... that makes sense... then there is also a decent cluster of observations around 1000 years old... that does not make sense.}
+\note{Continuing on, here we check the distribution of the age's of all the "DRIVER1"s recorded in the dataset. In my head, I would think that age would be an important feature in car crashes. And so we check it out, and it appears that there are a ton of instances bunched up between 1 and 100... that makes sense... then there is also a decent cluster of observations around 1000 years old... that does not make sense.}
 
 \begin{frame}{Check the variable's distribution}
 \includegraphics[scale=.3]{Figures/driver1_num}
 \end{frame}
 \note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.\\
 
-\vspace{3pt}
+\vspace{20pt}
 
 Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.\\
 }
@@ -326,7 +330,8 @@ The examples that we show here are absolutely not exhaustive when it comes to fe
 	\end{matrix}\right]$}
 
 \end{frame}
-\note{It contains at what hour the crash occured at (ranging from 0-23). It did not make sense to me to treat this column as a numerical variable, since the model would interpret 2pm as twice 1pm... while that does not make logical sense. However, I felt that to treat each hour as it's own category wouldn't accurately capture the information that the hour conveys (for example, it would not capture the fact that 12pm and 12am are 12 hours apart, while 12pm and 1pm are next to each other), so I set out to transform this feature in order to convey more meaning to our algorithm. Here's what I did.}
+\note{For example, one of our columns contains the hour the crash occured at (ranging from 0-23). It did not make sense to me to treat this column as a numerical variable, since the model would interpret 2pm as twice 1pm... while that does not make logical sense. However, I felt that to treat each hour as it's own category wouldn't accurately capture the information that the hour conveys (for example, it would not capture the fact that 12pm and 12am are 12 hours apart, while 12pm and 1pm are next to each other), so I set out to transform this feature in order to convey more meaning to our algorithm. Here's what I did.\\
+On the left we have a vector containing a few of the hours that the crashes took place at. I sent this vector through this trigonometric function that we have here. }
 
 
 
@@ -359,13 +364,14 @@ The examples that we show here are absolutely not exhaustive when it comes to fe
 				\vdots
 			\end{matrix}\right]}_{cos(f(x))}$}}
 \end{frame}
-\note{Okay, so we have this new vector.. it doesn't look too helpful at the moment. But now we map that vector to two other vectors}
+\note{Okay, so we have this new vector, but it doesn't look too helpful at the moment. well, we take that output and map it to two separate vectors, a sin and cos transformed vector. }
 
 
 \begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
 	\includegraphics[scale=.37]{Figures/hour}
 \end{frame}
-\note{transferring that all into code...}
+\note{So.. why did we do all of that? Well, when we transfer that all into code, and graph the two vectors on the x-y plane, we see that they make a perfect circle... kind of like a clock..\\
+This is exactly what we want. We've mapped our single hour column to two separate hour colums (think of them like x and y coordinates for each hour). This cyclic representation of time conveys the hour of the car crash in a way that has meaning to the algorithm. This is a really important aspect of feature engineering.}
 
 
 
