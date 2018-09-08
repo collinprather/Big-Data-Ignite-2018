@@ -47,11 +47,11 @@ PArt 2) [We totally change gears] SVM from scratch that exemplifies/applies the 
 The main goal here is to expose you to a wide spectrum of technical/theoretical machine learning considerations in as applied of a setting as possible.}\\
 
 Good morning, and thank you all for making it out this early! These conference days are long, and to be here bright and early on day 3 is no joke, so I'm glad you're here.\\
-We are going to be tackling machine learning from a bottom-up approach today. Can I get a quick show of hands, how many of us here have experience applying machine learning to solving problems?\\
+We are going to be tackling machine learning from a ground-up approach today. Can I get a quick show of hands, how many of us here have experience applying machine learning to solving problems?\\
 
-Before we really dive in, I want to tell you a bit about my talk today, and to do so, we're going to start with two things that help tremendously in successfully applying machine learning... (1) Understanding the math at play: a great way to build that intuitive understanding is to implement a machine learning algorithm from scratch! (2) Knowing how to process/manipulate the data to be ML ready. Now, the skills required for these two steps are admittedly a bit disparate, however, the skills needed to successfully apply ML is inherently interdisciplinary - so I think speaking on these two topics together is rather fitting. We will start with talking a lot about the data and steps we'll take to prepare it, and then we're going to totally switch gears and dive into the math at hand and even get into some code. It may seem like an abrupt switch, so I offer that as a brief disclaimer.\\
+Before we really dive in, I want to tell you a bit about my talk today, and to do so, we're going to start with two things that help tremendously in successfully applying machine learning... (1) Understanding the math at play: a great way to build that intuitive understanding is to implement a machine learning algorithm from scratch! (2) Knowing how to process/manipulate the data to be ML ready. Now, the skills required for these two steps are admittedly a bit disparate, however, the skills needed to successfully apply ML is inherently interdisciplinary - so I think speaking on these two topics together is rather fitting. And we will, after a brief intro to ml, We will start with talking a lot about the data and do a bit of a case study on the steps in the ML process, and then we're going to totally switch gears and dive into the math at hand and even get into some code. It may seem like an abrupt switch, so I offer that as a brief disclaimer. I also offer this encouragement that having an understanding of the inner workings of ML can give you direction to advance to more complex algorithms and other subsets of artificial intelligence. It's a huge asset.\\
 
-So we will start by talking a bit more about what machine learning is.. defining some terms, things like that, then move into the steps in the machine learning process. As mentioned, we can't talk about machine learning without getting our hands dirty with some data, and so we'll walk-through a lot of that. After that, we will shift our focus on the math that fuels machine learning and even code a Supprt Vector Machine from scratch. At the very end, we'll take a look Python's ML tools and apply it to a Grand Rapids Car crash dataset, and that dataset will serve as a case study that will flow through the entire talk. It's going to be a lot of fun.}
+At the very end, we'll take a look Python's ML tools and apply it to a Grand Rapids Car crash dataset to make some interesting predictions, and that dataset will serve as a case study that will flow through the entire talk. It's going to be a lot of fun.}
 
 \begin{frame}{Special Thanks}
 	Dr. D\\
@@ -78,7 +78,7 @@ So we will start by talking a bit more about what machine learning is.. defining
 \begin{block}{Arthur Samuel:}
 	Machine learning is ``Field of study that gives computers the ability to learn without being explicitly programmed".
 \end{block}
-\end{frame}
+ \end{frame}
 
 \note{All this talk begs the question, what is machine learning? Even according to the experts, the exact definifion of the field of machine learning is a bit fuzzy, but  As early as 1959, Arthur Samuel was famously quoted as defining machine learning as...\\
 ML techniqes can be applied to a wide range of problems in diverse industries. In fact, ML has become ubiquitous in our everyday lives\\
@@ -87,7 +87,7 @@ ML techniqes can be applied to a wide range of problems in diverse industries. I
 * Fraud Detection\\
 * Disease diagnosis\\
 * Supply Chain Optimization\\
-The list goes on and on. With sufficient data, ML algorithms combines statistics and calculus and can often make very accurate predictions about the future.}
+The list goes on and on. ML algorithms are used to learn from historical data in order to make predictions about novel data.}
 
 
 \begin{frame}{According to Google...}
@@ -96,7 +96,7 @@ The list goes on and on. With sufficient data, ML algorithms combines statistics
 \end{center}
 \end{frame}
 \note{This may not be a surprise to you, but the world's google search history reflects a steady increase in interest in machine learning and other related terms like Data Science, Big Data, and Artificial Intelligence.\\
-This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends.}
+This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends. It's worth checking out.}
 
 
 
@@ -126,12 +126,13 @@ This graph was pulled pretty simply from trends.google.com, which is actually fa
 	\end{itemize}
 \end{enumerate}
 \end{frame}
-\note{What has caused this spike? The math that powers machine learning algorithms has been around for quite a few years... so what's changed? It really boils down to two things.\\
-1. Data Availability  (here we should just a few examples)\\
+\note{What has caused this spike in recent years? (Not just it's spike in google searches, but also in its use in industry!)The math that powers machine learning algorithms has been around for quite a few years... so what's changed? It really boils down to two things.\\
+1. Data Availability  \\
 	- Think of all the data that comes from cell phones, it's cheap to collect and there's a ton of it.\\
 	- Machines embedded with software/sensors (commonly reffered to as the Internet of Things or IoT) produce a lot of data as well.\\
+	- These are two of the most prominent examples.\\
 2. Computational Scale (NG MLY 01 pg 10)\\
-The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
+The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.\textbf{5:30}}
 
 \section{Steps in the Machine Learning Process}
 \frame{\tableofcontents[currentsection]}
@@ -139,13 +140,13 @@ The rise of the big data era has given us access to astounding amounts of data. 
 
 \subsection{Step 0: Identify The Problem}
 
-\begin{frame}
+\begin{frame}{Identify the Problem}
 \begin{center}
 	\includegraphics[scale=.45]{Figures/gr_logo}
 \end{center}
 \note{Setp 0 is to identify a problem that can be framed in such a way that it can be solved using machine learning.\\
-Let's say that you work for the city of Grand Rapids, and you find that there are an increased number of hit and runs when the driver 1 was drinkin.\\
-\textbf{Do some research, maybe find a way to graph this?? You can do it!}}
+Let's say that you work for the city of Grand Rapids, and you've observed an influx in hit and run car crashes in recent years. This is a very concerning thing for the city and you decide that it is time to really start cracking down on the perpetrators. Now the investigative team is obviously interested in gaining any info they can on these fleeing drivers. One characteristic that may heavily inform their investigation is whether or not the driver was drunk. For example, If they knew that the driver at fault was drunk, maybe they could start at local bars near the crash site, trace some steps back. It may not be certain, but it surely be helpful, at least could point them in the right direction. Is it possible to know if a driver was drunk after the fact?\\
+This is a perliminary step of any machine learning project, asking the questions, can this problem be solved with data? Can we learn from historical data to make predictions about new data? These are the questions we will try to answer.}
 	
 \end{frame}
 
@@ -450,7 +451,8 @@ This is just a snapshot, you see that our columns of categorical variables grew 
 \end{frame}
 \note{And with that, our data is ready to be fed into a predictive model! The final step is to choose which predictive model to use. There are hundreds to choose from, and trade-offs associated with each. The good news is, as we alluded to earlier there are different types of machine learning problems and each come with their own set of algorithms -- so this narrows down our search considerably.\\
 In our case, we're working on a supervised classification problem, so the upper left hand corner displays some common algorithms for problems like ours. It's very common to test a handful of them and choose the one that performs best on your dataset (or even combine some of them into an ensemble model.)\\
-Remeber, the ultimate objective to choose a model that learns a predictive rule (which comes in the form of a equation) that can be generalized to new observations (both for classification and regression)}
+Remeber, the ultimate objective to choose a model that learns a predictive rule (which comes in the form of a equation) that can be generalized to new observations (both for classification and regression)\\
+\textbf{Talk about difference between supervised/unsupervised and maybe even mention reinforcement learning?}}
 
 
 \begin{frame}{Bias-Variance Tradeoff}
@@ -463,7 +465,6 @@ So first, I'm going to define what I mean when I talk about the terms "bias" and
 maybe mention regularization?}
 
 
-\subsection{Step 5: Cross-validation/Hyper-parameter tuning}
 
 \section{Building a Support Vector Machine from Scratch}
 \note{\textbf{Throughout this section, add notes for each of the headers in the jupyter notebook!}\\\textbf{Also, do not forget to look over Lin alg for SVM notebook!efz}}
@@ -478,11 +479,12 @@ And here is a snapshot of data set. Note that for each data point (each row/each
 \subsection{Representation}
 \note{\textbf{Representation}: Support Vector Machine\\
 The first step in building any sort of predictive model is choosing a representation. For our example today, we choose a Support Vector Machine. Big picture - The goal of a SVM is to To find the optimal separating hyperplane which maximizes the margin of the training data.\\ 
-Now, a hyperplane is kind of like a fancy word for a line, or maybe better put, it's a general way to talk about a line. The black line on this graph of our dataset is a hyperplane that separate the two classes (red/blue). Since our data is two dimensional (we have an x, and a y (1, 2)) the hyperplane is a line}
+Now, a hyperplane is kind of like a fancy word for a line, or maybe better put, it's a general way to talk about a line. The black line on this graph of our dataset is a hyperplane that separate the two classes (red/blue). Since our data is two dimensional (we have an x, and a y (1, 2)) the hyperplane is a line\\
+The margin of the training data refers to how much is between the hyperplane and the two classes of data on each side.}
 
 
 \note{How do we find the optimal separating hyperplane?:\\
-Now, as we mentioned, the goal of the hyperplane is to find the optimal separating hyperplane, so how do we do that? It appears that there can be many different separating hyperplanes (often there is infinite). We're going to choose the hyperplane that is as far away as possible from each class of datapoints.\\
+Now, as we mentioned, the goal of the SVM is to find the optimal separating hyperplane, so how do we do that? It appears that there can be many different separating hyperplanes (often there is infinite). We're going to choose the hyperplane that is as far away as possible from each class of datapoints.\\
 We want to maximize the margin because It generalizes better to classifying unseen observations -> (meaning that it makes better predictions)\\
 If we have our usual equation for a line: y=mx+b, then all we need to do is find that optimal $m$ and $b$ that characterize the optimal hyperplane!}
 

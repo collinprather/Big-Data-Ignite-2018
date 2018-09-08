@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 SEP 2018 20:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 SEP 2018 17:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -964,7 +964,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 ] (./ml_from_scratch.toc) [4
 
 ]
-Overfull \vbox (241.98453pt too high) detected at line 54
+Overfull \vbox (221.9845pt too high) detected at line 54
  []
 
 [5
@@ -978,7 +978,7 @@ Overfull \vbox (241.98453pt too high) detected at line 54
 ] [9
 
 ]
-<Figures/mlcoursera1.png, id=298, 871.255pt x 324.21124pt>
+<Figures/mlcoursera1.png, id=290, 871.255pt x 324.21124pt>
 File: Figures/mlcoursera1.png Graphic file (type png)
 
 <use Figures/mlcoursera1.png>
@@ -989,7 +989,7 @@ Package pdftex.def Info: Figures/mlcoursera1.png used on input line 81.
  <./Figures/mlcoursera1.png>] [11
 
 ]
-<Figures/google_trends.png, id=337, 504.88625pt x 346.29375pt>
+<Figures/google_trends.png, id=329, 504.88625pt x 346.29375pt>
 File: Figures/google_trends.png Graphic file (type png)
 
 <use Figures/google_trends.png>
@@ -1025,34 +1025,38 @@ thkerncmss.
 ] [17
 
 ]
-<Figures/gr_logo.jpg, id=475, 422.5386pt x 215.8464pt>
+<Figures/gr_logo.jpg, id=465, 422.5386pt x 215.8464pt>
 File: Figures/gr_logo.jpg Graphic file (type jpg)
 
 <use Figures/gr_logo.jpg>
-Package pdftex.def Info: Figures/gr_logo.jpg used on input line 150.
+Package pdftex.def Info: Figures/gr_logo.jpg used on input line 151.
 (pdftex.def)             Requested size: 190.14061pt x 97.12997pt.
  [18
 
- <./Figures/gr_logo.jpg>] [19
+ <./Figures/gr_logo.jpg>]
+Overfull \vbox (5.9845pt too high) detected at line 151
+ []
+
+[19
 
 ] [20
 
 ] [21
 
 ]
-Overfull \vbox (3.69005pt too high) detected at line 182
+Overfull \vbox (3.69005pt too high) detected at line 183
  []
 
 [22
 
-] <Figures/crash_head.png, id=591, 909.3975pt x 358.33875pt>
+] <Figures/crash_head.png, id=581, 909.3975pt x 358.33875pt>
 File: Figures/crash_head.png Graphic file (type png)
 
 <use Figures/crash_head.png>
-Package pdftex.def Info: Figures/crash_head.png used on input line 190.
+Package pdftex.def Info: Figures/crash_head.png used on input line 191.
 (pdftex.def)             Requested size: 318.2939pt x 125.42044pt.
 
-Overfull \hbox (11.00403pt too wide) in paragraph at lines 190--190
+Overfull \hbox (11.00403pt too wide) in paragraph at lines 191--191
 [][]  
  []
 
@@ -1069,10 +1073,10 @@ Missing character: There is no ô in font cmss10!
  [26
 
 ]
-<Figures/coords.png, id=677, 182.6825pt x 393.47pt>
+<Figures/coords.png, id=667, 182.6825pt x 393.47pt>
 File: Figures/coords.png Graphic file (type png)
  <use Figures/coords.png>
-Package pdftex.def Info: Figures/coords.png used on input line 221.
+Package pdftex.def Info: Figures/coords.png used on input line 222.
 (pdftex.def)             Requested size: 82.20634pt x 177.05986pt.
 
 [27
@@ -1080,14 +1084,14 @@ Package pdftex.def Info: Figures/coords.png used on input line 221.
  <./Figures/coords.png>]
 File: Figures/coords.png Graphic file (type png)
  <use Figures/coords.png>
-Package pdftex.def Info: Figures/coords.png used on input line 221.
+Package pdftex.def Info: Figures/coords.png used on input line 222.
 (pdftex.def)             Requested size: 82.20634pt x 177.05986pt.
 
-<Figures/coords_graphed.png, id=711, 744.7825pt x 628.3475pt>
+<Figures/coords_graphed.png, id=701, 744.7825pt x 628.3475pt>
 File: Figures/coords_graphed.png Graphic file (type png)
 
 <use Figures/coords_graphed.png>
-Package pdftex.def Info: Figures/coords_graphed.png used on input line 221.
+Package pdftex.def Info: Figures/coords_graphed.png used on input line 222.
 (pdftex.def)             Requested size: 223.43648pt x 188.50569pt.
  [28
 
@@ -1097,17 +1101,17 @@ Package pdftex.def Info: Figures/coords_graphed.png used on input line 221.
 File: Figures/coords_graphed.png Graphic file (type png)
 
 <use Figures/coords_graphed.png>
-Package pdftex.def Info: Figures/coords_graphed.png used on input line 227.
+Package pdftex.def Info: Figures/coords_graphed.png used on input line 228.
 (pdftex.def)             Requested size: 171.29637pt x 144.51688pt.
 
-<Figures/gr_map.png, id=752, 695.59875pt x 637.38126pt>
+<Figures/gr_map.png, id=742, 695.59875pt x 637.38126pt>
 File: Figures/gr_map.png Graphic file (type png)
 
 <use Figures/gr_map.png>
-Package pdftex.def Info: Figures/gr_map.png used on input line 227.
+Package pdftex.def Info: Figures/gr_map.png used on input line 228.
 (pdftex.def)             Requested size: 146.08005pt x 133.854pt.
 
-Overfull \hbox (10.08655pt too wide) in paragraph at lines 227--227
+Overfull \hbox (10.08655pt too wide) in paragraph at lines 228--228
 [][][]  
  []
 
@@ -1116,15 +1120,15 @@ Overfull \hbox (10.08655pt too wide) in paragraph at lines 227--227
  <./Figures/gr_map.png>] [31
 
 ]
-<Figures/coords_graphed_hitnrun.png, id=795, 867.24pt x 722.7pt>
+<Figures/coords_graphed_hitnrun.png, id=785, 867.24pt x 722.7pt>
 File: Figures/coords_graphed_hitnrun.png Graphic file (type png)
 
 <use Figures/coords_graphed_hitnrun.png>
 Package pdftex.def Info: Figures/coords_graphed_hitnrun.png used on input line 
-234.
+235.
 (pdftex.def)             Requested size: 286.1901pt x 238.49173pt.
 
-Overfull \vbox (17.34499pt too high) detected at line 234
+Overfull \vbox (17.34499pt too high) detected at line 235
  []
 
 [32
@@ -1132,13 +1136,13 @@ Overfull \vbox (17.34499pt too high) detected at line 234
  <./Figures/coords_graphed_hitnrun.png>] [33
 
 ]
-<Figures/veh3.png, id=837, 908.39375pt x 495.8525pt>
+<Figures/veh3.png, id=827, 908.39375pt x 495.8525pt>
 File: Figures/veh3.png Graphic file (type png)
  <use Figures/veh3.png>
-Package pdftex.def Info: Figures/veh3.png used on input line 240.
+Package pdftex.def Info: Figures/veh3.png used on input line 241.
 (pdftex.def)             Requested size: 317.94258pt x 173.55096pt.
 
-Overfull \hbox (10.65271pt too wide) in paragraph at lines 240--240
+Overfull \hbox (10.65271pt too wide) in paragraph at lines 241--241
 [][]  
  []
 
@@ -1147,22 +1151,22 @@ Overfull \hbox (10.65271pt too wide) in paragraph at lines 240--240
  <./Figures/veh3.png>] [35
 
 ]
-<Figures/driver1.png, id=880, 827.09pt x 502.87875pt>
+<Figures/driver1.png, id=870, 827.09pt x 502.87875pt>
 File: Figures/driver1.png Graphic file (type png)
 
 <use Figures/driver1.png>
-Package pdftex.def Info: Figures/driver1.png used on input line 246.
+Package pdftex.def Info: Figures/driver1.png used on input line 247.
 (pdftex.def)             Requested size: 289.48582pt x 176.0102pt.
  [36
 
  <./Figures/driver1.png>] [37
 
 ]
-<Figures/driver1_num.png, id=923, 995.72pt x 553.06625pt>
+<Figures/driver1_num.png, id=913, 995.72pt x 553.06625pt>
 File: Figures/driver1_num.png Graphic file (type png)
 
 <use Figures/driver1_num.png>
-Package pdftex.def Info: Figures/driver1_num.png used on input line 251.
+Package pdftex.def Info: Figures/driver1_num.png used on input line 252.
 (pdftex.def)             Requested size: 298.7183pt x 165.92114pt.
  [38
 
@@ -1171,29 +1175,29 @@ Package pdftex.def Info: Figures/driver1_num.png used on input line 251.
 ] [40
 
 ]
-<Figures/data_selection.png, id=997, 831.105pt x 198.7425pt>
+<Figures/data_selection.png, id=987, 831.105pt x 198.7425pt>
 File: Figures/data_selection.png Graphic file (type png)
 
 <use Figures/data_selection.png>
-Package pdftex.def Info: Figures/data_selection.png used on input line 279.
+Package pdftex.def Info: Figures/data_selection.png used on input line 280.
 (pdftex.def)             Requested size: 332.43611pt x 79.49557pt.
 
-Overfull \hbox (25.14624pt too wide) in paragraph at lines 279--279
+Overfull \hbox (25.14624pt too wide) in paragraph at lines 280--280
 []  
  []
 
 [41
 
  <./Figures/data_selection.png>]
-Overfull \vbox (38.78448pt too high) detected at line 289
+Overfull \vbox (38.78448pt too high) detected at line 290
  []
 
 [42
 
-] <Figures/ng.png, id=1037, 598.235pt x 751.80875pt>
+] <Figures/ng.png, id=1027, 598.235pt x 751.80875pt>
 File: Figures/ng.png Graphic file (type png)
  <use Figures/ng.png>
-Package pdftex.def Info: Figures/ng.png used on input line 304.
+Package pdftex.def Info: Figures/ng.png used on input line 305.
 (pdftex.def)             Requested size: 41.88072pt x 52.63199pt.
 Missing character: There is no ‚ in font cmssi10!
 Missing character: There is no Ä in font cmssi10!
@@ -1202,17 +1206,17 @@ Missing character: There is no ‚ in font cmssi10!
 Missing character: There is no Ä in font cmssi10!
 Missing character: There is no ô in font cmssi10!
 
-Overfull \hbox (41.88072pt too wide) in paragraph at lines 304--304
+Overfull \hbox (41.88072pt too wide) in paragraph at lines 305--305
 [][][][][][][][][][][]  
  []
 
-<Figures/domingo.png, id=1038, 457.71pt x 646.415pt>
+<Figures/domingo.png, id=1028, 457.71pt x 646.415pt>
 File: Figures/domingo.png Graphic file (type png)
  <use Figures/domingo.png>
-Package pdftex.def Info: Figures/domingo.png used on input line 304.
+Package pdftex.def Info: Figures/domingo.png used on input line 305.
 (pdftex.def)             Requested size: 41.19212pt x 58.17484pt.
 
-Overfull \hbox (41.19212pt too wide) in paragraph at lines 304--304
+Overfull \hbox (41.19212pt too wide) in paragraph at lines 305--305
 [][][][][][][][][][][]  
  []
 
@@ -1226,7 +1230,7 @@ Missing character: There is no ‚ in font cmss10!
 Missing character: There is no Ä in font cmss10!
 Missing character: There is no ù in font cmss10!
 
-Overfull \vbox (2.78448pt too high) detected at line 309
+Overfull \vbox (2.78448pt too high) detected at line 310
  []
 
 [44
@@ -1244,10 +1248,10 @@ Overfull \vbox (2.78448pt too high) detected at line 309
 ] [50
 
 ]
-<Figures/hour.png, id=1236, 829.0975pt x 472.76625pt>
+<Figures/hour.png, id=1225, 829.0975pt x 472.76625pt>
 File: Figures/hour.png Graphic file (type png)
  <use Figures/hour.png>
-Package pdftex.def Info: Figures/hour.png used on input line 372.
+Package pdftex.def Info: Figures/hour.png used on input line 373.
 (pdftex.def)             Requested size: 306.76128pt x 174.92076pt.
 
 [51
@@ -1257,16 +1261,16 @@ Package pdftex.def Info: Figures/hour.png used on input line 372.
 ]
 File: Figures/driver1_num.png Graphic file (type png)
  <use Figures/driver1_num.png>
-Package pdftex.def Info: Figures/driver1_num.png used on input line 381.
+Package pdftex.def Info: Figures/driver1_num.png used on input line 382.
 (pdftex.def)             Requested size: 298.7183pt x 165.92114pt.
  [53
 
 ]
-<Figures/driver1_imputed.png, id=1310, 873.2625pt x 521.95pt>
+<Figures/driver1_imputed.png, id=1300, 873.2625pt x 521.95pt>
 File: Figures/driver1_imputed.png Graphic file (type png)
 
 <use Figures/driver1_imputed.png>
-Package pdftex.def Info: Figures/driver1_imputed.png used on input line 381.
+Package pdftex.def Info: Figures/driver1_imputed.png used on input line 382.
 (pdftex.def)             Requested size: 261.98076pt x 156.5862pt.
  [54
 
@@ -1276,33 +1280,33 @@ Package pdftex.def Info: Figures/driver1_imputed.png used on input line 381.
 [56
 
 ]
-Overfull \vbox (14.78448pt too high) detected at line 412
+Overfull \vbox (14.78448pt too high) detected at line 413
  []
 
 [57
 
-] <Figures/numericals.png, id=1392, 623.32875pt x 216.81pt>
+] <Figures/numericals.png, id=1382, 623.32875pt x 216.81pt>
 File: Figures/numericals.png Graphic file (type png)
 
 <use Figures/numericals.png>
-Package pdftex.def Info: Figures/numericals.png used on input line 417.
+Package pdftex.def Info: Figures/numericals.png used on input line 418.
 (pdftex.def)             Requested size: 311.6636pt x 108.40472pt.
 
-Overfull \hbox (4.37373pt too wide) in paragraph at lines 417--417
+Overfull \hbox (4.37373pt too wide) in paragraph at lines 418--418
 [][]  
  []
 
 [58
 
  <./Figures/numericals.png>]
-<Figures/numericals_scaled.png, id=1426, 854.19125pt x 305.14pt>
+<Figures/numericals_scaled.png, id=1416, 854.19125pt x 305.14pt>
 File: Figures/numericals_scaled.png Graphic file (type png)
 
 <use Figures/numericals_scaled.png>
-Package pdftex.def Info: Figures/numericals_scaled.png used on input line 417.
+Package pdftex.def Info: Figures/numericals_scaled.png used on input line 418.
 (pdftex.def)             Requested size: 316.04582pt x 112.90002pt.
 
-Overfull \hbox (8.75595pt too wide) in paragraph at lines 417--417
+Overfull \hbox (8.75595pt too wide) in paragraph at lines 418--418
 [][]  
  []
 
@@ -1311,20 +1315,20 @@ Overfull \hbox (8.75595pt too wide) in paragraph at lines 417--417
  <./Figures/numericals_scaled.png>] [60
 
 ]
-<Figures/categoricals.png, id=1466, 841.1425pt x 218.8175pt>
+<Figures/categoricals.png, id=1456, 841.1425pt x 218.8175pt>
 File: Figures/categoricals.png Graphic file (type png)
 
 <use Figures/categoricals.png>
-Package pdftex.def Info: Figures/categoricals.png used on input line 426.
+Package pdftex.def Info: Figures/categoricals.png used on input line 427.
 (pdftex.def)             Requested size: 294.40428pt x 76.58727pt.
  [61
 
  <./Figures/categoricals.png>]
-<Figures/categoricals_scaled.png, id=1501, 835.12pt x 279.0425pt>
+<Figures/categoricals_scaled.png, id=1491, 835.12pt x 279.0425pt>
 File: Figures/categoricals_scaled.png Graphic file (type png)
 
 <use Figures/categoricals_scaled.png>
-Package pdftex.def Info: Figures/categoricals_scaled.png used on input line 426
+Package pdftex.def Info: Figures/categoricals_scaled.png used on input line 427
 .
 (pdftex.def)             Requested size: 292.29637pt x 97.66634pt.
  [62
@@ -1333,17 +1337,17 @@ Package pdftex.def Info: Figures/categoricals_scaled.png used on input line 426
 [63
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 450
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 451
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 450.
+LaTeX Font Info:    No file OMScmss.fd. on input line 451.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 450.
+(Font)              for symbol `textbullet' on input line 451.
 
 
-Overfull \hbox (5.41418pt too wide) in paragraph at lines 450--450
+Overfull \hbox (5.41418pt too wide) in paragraph at lines 451--451
 [][]  
  []
 
@@ -1351,11 +1355,11 @@ Overfull \hbox (5.41418pt too wide) in paragraph at lines 450--450
 
 ] [65
 
-] <Figures/bias_variance.png, id=1580, 459.7175pt x 450.68375pt>
+] <Figures/bias_variance.png, id=1570, 459.7175pt x 450.68375pt>
 File: Figures/bias_variance.png Graphic file (type png)
 
 <use Figures/bias_variance.png>
-Package pdftex.def Info: Figures/bias_variance.png used on input line 458.
+Package pdftex.def Info: Figures/bias_variance.png used on input line 460.
 (pdftex.def)             Requested size: 183.88373pt x 180.2703pt.
  [66
 
@@ -1381,7 +1385,7 @@ Package pdftex.def Info: Figures/bias_variance.png used on input line 458.
 ] [76
 
 ]
-Overfull \vbox (24.67662pt too high) detected at line 508
+Overfull \vbox (24.67662pt too high) detected at line 510
  []
 
 [77
@@ -1397,7 +1401,7 @@ Overfull \vbox (24.67662pt too high) detected at line 508
 ] [82
 
 ]
-Overfull \vbox (9.74007pt too high) detected at line 535
+Overfull \vbox (9.74007pt too high) detected at line 537
  []
 
 [83
@@ -1434,13 +1438,13 @@ Overfull \vbox (9.74007pt too high) detected at line 535
 \tf@snm=\write8
 \openout8 = `ml_from_scratch.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 589.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 589.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 591.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 591.
  (./ml_from_scratch.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 589.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 589.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 591.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 591.
 Package rerunfilecheck Info: File `ml_from_scratch.out' has not changed.
-(rerunfilecheck)             Checksum: ED8889A6B4D6C4259324FBA22B185747;959.
+(rerunfilecheck)             Checksum: 59AA1F588FC739C9BF06017443526D52;861.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1451,13 +1455,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20998 strings out of 492995
- 412750 string characters out of 6132704
- 482587 words of memory out of 5000000
- 23858 multiletter control sequences out of 15000+600000
+ 20994 strings out of 492995
+ 412700 string characters out of 6132704
+ 490894 words of memory out of 5000000
+ 23855 multiletter control sequences out of 15000+600000
  16156 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,17n,59p,916b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,59p,1196b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
@@ -1473,10 +1477,10 @@ cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on ml_from_scratch.pdf (93 pages, 2325496 bytes).
+Output written on ml_from_scratch.pdf (93 pages, 2324915 bytes).
 PDF statistics:
- 2337 PDF objects out of 2487 (max. 8388607)
- 2000 compressed objects within 20 object streams
- 203 named destinations out of 1000 (max. 500000)
- 252 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2304 PDF objects out of 2487 (max. 8388607)
+ 1967 compressed objects within 20 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 244 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -69,10 +69,9 @@
 \headcommand {\beamer@framepages {64}{64}}
 \headcommand {\slideentry {2}{5}{2}{66/66}{Step 4: Model Selection}{0}}
 \headcommand {\beamer@framepages {66}{66}}
-\headcommand {\beamer@subsectionentry {0}{2}{6}{68}{Step 5: Cross-validation/Hyper-parameter tuning}}\headcommand {\beamer@subsectionpages {64}{67}}
 \headcommand {\sectionentry {3}{Building a Support Vector Machine from Scratch}{68}{Building a Support Vector Machine from Scratch}{0}}
 \headcommand {\beamer@sectionpages {16}{67}}
-\headcommand {\beamer@subsectionpages {68}{67}}
+\headcommand {\beamer@subsectionpages {64}{67}}
 \headcommand {\slideentry {3}{0}{1}{70/70}{}{0}}
 \headcommand {\beamer@framepages {70}{70}}
 \headcommand {\beamer@subsectionentry {0}{3}{1}{72}{Representation}}\headcommand {\beamer@subsectionpages {68}{71}}

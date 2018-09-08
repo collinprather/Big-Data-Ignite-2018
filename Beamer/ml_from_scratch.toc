@@ -5,7 +5,6 @@
 \beamer@subsectionintoc {2}{3}{Step 2: Data Exploration}{25}{0}{2}
 \beamer@subsectionintoc {2}{4}{Step 3: Data Preparation}{40}{0}{2}
 \beamer@subsectionintoc {2}{5}{Step 4: Model Selection}{64}{0}{2}
-\beamer@subsectionintoc {2}{6}{Step 5: Cross-validation/Hyper-parameter tuning}{68}{0}{2}
 \beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{68}{0}{3}
 \beamer@subsectionintoc {3}{1}{Representation}{72}{0}{3}
 \beamer@subsectionintoc {3}{2}{Evaluation}{75}{0}{3}
