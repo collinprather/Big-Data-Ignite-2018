@@ -459,15 +459,15 @@ Remeber, the ultimate objective to choose a model that learns a predictive rule 
 	\centering{\includegraphics[scale=.4]{Figures/bias_variance}}
 \end{frame}
 \note{One critical aspect to take into consideration when choosing a model is called the bias-variance tradeoff\\
-So first, I'm going to define what I mean when I talk about the terms "bias" and "variance" in the context of machine learning, then we are going to look at some simplified examples (using this dataset here) in the regression context that I think really well convey the essence of applied machine learning:\\
-\textbf{Maybe still show my graphs?}\\
-\textbf{mention statistical techniques necessary to combat variance, like bagging}\\
-maybe mention regularization?}
+These dartboards create a great analogy for understanding the bias-variance trade-off. I got this analogy for a paper written by Pedro Domingos, I'm not positive that he was the creator, but regardless, I think it's incredibly useful.\\
+Bias and Variance have some specific definitions in statistics, but in this context, they are words that we use to describe the behavior of a machine learning model.\\
+For example, If I were to say that our SVM has high variance, then that means that its predictions would vary significantly if we were to train it on a different sample of our dataset.\\
+If I were to say that our model was highly biased, then that would mean that it's predictions are very consistent, regardless of the sample of data that we trained it on. (that does not necessarily mean accurate, as we see in the bottom left corner.)\\
+Generally, bias and variance are inversely related, and controlled by the complexity of our model. If it is a highly complex model, like a neural network, it is likely to be high in variance. If it's a relatively simple model like a linear regression, it's likely to be more biased. Regardless, when applying ML, this is something to be aware of.}
 
 
 
 \section{Building a Support Vector Machine from Scratch}
-\note{\textbf{Throughout this section, add notes for each of the headers in the jupyter notebook!}\\\textbf{Also, do not forget to look over Lin alg for SVM notebook!efz}}
 
 \note{Here we'll first be going through a general example of building an svm from scratch on a toy dataset, then apply some of Python's ml tools to our crash data set to predict whether or not a car crash was caused by a drunk driver!}
 
@@ -534,7 +534,7 @@ Talk about how we will predict which class each data point comes from, then use 
 \note{\textbf{Hinge Loss with regularization term:}\\
 Now, with the hinge loss function we've defined, when we try to minimize the loss function, we will (if possible) find a separating hyperplane that perfectly classifies the data i.e. no misclaassifications. Which sounds great! The only problem with that is that is there are any outliers in our dataset, it can seriously skew the hyperplane. Below we have two nearly identical datasets...the one on the right has one outlier (circle it with mouse) and it has completely changed our hyperplane.\\
 Again, we need to remember that we our goal is to find a hyperplane that will best classify new datapoints...so we don't want it to be affected by outliers.\\
-The $\lambda$ coefficient acts as a tuning parameter (in our example, we will explicitly, hard-code a value for lambda), but generally, as the value for lambda gets smaller and smaller (approaches 0), the margin grows wider (to the point of misclassifying data points). As the value for lambda gets larger and larger, the margin will get smaller and smaller (to the point of no misclassified data points.)}
+In order to defend against the outlier, we will introduce a regularization term to the end of our hinge loss function, parameterized by the coefficient $\lambda$. The $\lambda$ coefficient acts as a tuning parameter (in our example, we will explicitly, hard-code a value for lambda), that helps to balance the bias-variance tradeoff. Generally, as the value for lambda gets smaller and smaller (approaches 0), the margin grows wider (to the point of misclassifying data points). As the value for lambda gets larger and larger, the margin will get smaller and smaller (to the point of no misclassified data points.)}
 
 \subsection{Optimization}
 \note{\textbf{Optimization}\\}

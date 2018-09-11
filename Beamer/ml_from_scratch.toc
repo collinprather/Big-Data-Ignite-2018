@@ -6,7 +6,7 @@
 \beamer@subsectionintoc {2}{4}{Step 3: Data Preparation}{40}{0}{2}
 \beamer@subsectionintoc {2}{5}{Step 4: Model Selection}{64}{0}{2}
 \beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{68}{0}{3}
-\beamer@subsectionintoc {3}{1}{Representation}{72}{0}{3}
-\beamer@subsectionintoc {3}{2}{Evaluation}{75}{0}{3}
-\beamer@subsectionintoc {3}{3}{Optimization}{84}{0}{3}
-\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{92}{0}{4}
+\beamer@subsectionintoc {3}{1}{Representation}{71}{0}{3}
+\beamer@subsectionintoc {3}{2}{Evaluation}{74}{0}{3}
+\beamer@subsectionintoc {3}{3}{Optimization}{83}{0}{3}
+\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{91}{0}{4}

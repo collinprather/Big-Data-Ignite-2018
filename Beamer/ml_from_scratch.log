@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 SEP 2018 05:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 SEP 2018 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1363,14 +1363,17 @@ Package pdftex.def Info: Figures/bias_variance.png used on input line 460.
 (pdftex.def)             Requested size: 183.88373pt x 180.2703pt.
  [66
 
- <./Figures/bias_variance.png>] [67
+ <./Figures/bias_variance.png>]
+Overfull \vbox (55.5845pt too high) detected at line 466
+ []
 
-]
-[68
+[67
 
-] [69
+] [68
 
-] (./ml_from_scratch.toc) [70
+] (./ml_from_scratch.toc) [69
+
+] [70
 
 ] [71
 
@@ -1382,13 +1385,13 @@ Package pdftex.def Info: Figures/bias_variance.png used on input line 460.
 
 ] [75
 
-] [76
-
 ]
 Overfull \vbox (24.67662pt too high) detected at line 510
  []
 
-[77
+[76
+
+] [77
 
 ] [78
 
@@ -1398,13 +1401,13 @@ Overfull \vbox (24.67662pt too high) detected at line 510
 
 ] [81
 
-] [82
-
 ]
-Overfull \vbox (9.74007pt too high) detected at line 537
+Overfull \vbox (50.54008pt too high) detected at line 537
  []
 
-[83
+[82
+
+] [83
 
 ] [84
 
@@ -1420,12 +1423,10 @@ Overfull \vbox (9.74007pt too high) detected at line 537
 
 ] [90
 
-] [91
-
-] (./ml_from_scratch.toc) [92
+] (./ml_from_scratch.toc) [91
 
 ]
-[93
+[92
 
  </usr/local/texlive/2017/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
 >]
@@ -1443,9 +1444,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 591.
  (./ml_from_scratch.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 591.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 591.
-Package rerunfilecheck Info: File `ml_from_scratch.out' has not changed.
-(rerunfilecheck)             Checksum: 59AA1F588FC739C9BF06017443526D52;861.
 
+
+Package rerunfilecheck Warning: File `ml_from_scratch.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ml_from_scratch.out':
+(rerunfilecheck)             Before: 59AA1F588FC739C9BF06017443526D52;861
+(rerunfilecheck)             After:  E6F43DC3CF709FA00B2CC0F3E4CAA0DC;861.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1455,32 +1462,44 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20994 strings out of 492995
- 412700 string characters out of 6132704
- 490893 words of memory out of 5000000
+ 20996 strings out of 492995
+ 412738 string characters out of 6132704
+ 490894 words of memory out of 5000000
  23855 multiletter control sequences out of 15000+600000
  16156 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,17n,59p,1196b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on ml_from_scratch.pdf (93 pages, 2324998 bytes).
+pdfTeX warning (dest): name{Navigation93} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.3.3.84} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.3.2.75} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.3.1.72} has been referenced but does not e
+xist, replaced by a fixed one
+
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on ml_from_scratch.pdf (92 pages, 2324650 bytes).
 PDF statistics:
- 2304 PDF objects out of 2487 (max. 8388607)
- 1967 compressed objects within 20 object streams
- 202 named destinations out of 1000 (max. 500000)
+ 2300 PDF objects out of 2487 (max. 8388607)
+ 1965 compressed objects within 20 object streams
+ 204 named destinations out of 1000 (max. 500000)
  244 words of extra memory for PDF output out of 10000 (max. 10000000)
 
