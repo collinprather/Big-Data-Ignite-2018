@@ -6,12 +6,13 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{multicol}
 \newtheorem{thm}{Theorem}
 \newtheorem{ra}{Ranking Algorithm}
 \newtheorem{result}{Result}
 \title{Machine Learning From Scratch}
 \author{Collin Prather}
-\date{April 25th, 2018}
+\date{September 21st, 2018}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -33,20 +34,27 @@
 
 \begin{document}
 
-\begin{frame}
-	Put content on this frame that directs them to binder or colab.research.google.com
+\begin{frame}{Welcome!}
+\textbf{While you're waiting...}
+I've prepared a Jupyter notebook that we will use to explore our data and build a machine learning algorithm from scratch. In order to get the notebook up and running on your computer:\\
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item[1.)] Head to https://github.com/collinprather
+		\item[2.)] Click on the ``BDI-2018-JupyterHub" repository
+		\item[3.)] Scroll down and follow the step-by-step instructions in the readme.md
+	\end{enumerate}
+	\columnbreak
+	\begin{flushright}
+		\includegraphics[scale=.122]{Figures/github_profile}
+	\end{flushright}
+\end{multicols}
 \end{frame}
 \note{Before we get going here, I'd like to direct you to colab.research.google.com to get things set up for the live coding demo that will take place in the second half of our time today. Follow the instructions on my github at...}
 	
 \frame{\titlepage}
 
 \frame{\tableofcontents}
-\note{
-\textbf{Part 1) Applied Machine Learning case study: Drunk Driving Car Crashes\\
-PArt 2) [We totally change gears] SVM from scratch that exemplifies/applies the general math process that each ML project follows (by that I mean: Representation, Evaluation, Optimization)\\
-The main goal here is to expose you to a wide spectrum of technical/theoretical machine learning considerations in as applied of a setting as possible.}\\
-
-Good morning, and thank you all for making it out this early! These conference days are long, and to be here bright and early on day 3 is no joke, so I'm glad you're here.\\
+\note{Good morning, and thank you all for making it out this early! These conference days are long, and to be here bright and early on day 3 is no joke, so I'm glad you're here.\\
 We are going to be tackling machine learning from a ground-up approach today. Can I get a quick show of hands, how many of us here have experience applying machine learning to solving problems?\\
 
 Before we really dive in, I want to tell you a bit about my talk today, and to do so, we're going to start with two things that help tremendously in successfully applying machine learning... (1) Understanding the math at play: a great way to build that intuitive understanding is to implement a machine learning algorithm from scratch! (2) Knowing how to process/manipulate the data to be ML ready. Now, the skills required for these two steps are admittedly a bit disparate, however, the skills needed to successfully apply ML is inherently interdisciplinary - so I think speaking on these two topics together is rather fitting. And we will, after a brief intro to ml, We will start with talking a lot about the data and do a bit of a case study on the steps in the ML process, and then we're going to totally switch gears and dive into the math at hand and even get into some code. It may seem like an abrupt switch, so I offer that as a brief disclaimer. I also offer this encouragement that having an understanding of the inner workings of ML can give you direction to advance to more complex algorithms and other subsets of artificial intelligence. It's a huge asset.\\
@@ -145,7 +153,7 @@ The rise of the big data era has given us access to astounding amounts of data. 
 	\includegraphics[scale=.45]{Figures/gr_logo}
 \end{center}
 \note{Setp 0 is to identify a problem that can be framed in such a way that it can be solved using machine learning.\\
-Let's say that you work for the city of Grand Rapids, and you've observed an influx in hit and run car crashes in recent years. This is a very concerning thing for the city and you decide that it is time to really start cracking down on the perpetrators. Now the investigative team is obviously interested in gaining any info they can on these fleeing drivers. One characteristic that may heavily inform their investigation is whether or not the driver was drunk. For example, If they knew that the driver at fault was drunk, maybe they could start at local bars near the crash site, trace some steps back. It may not be certain, but it surely be helpful, at least could point them in the right direction. Is it possible to know if a driver was drunk after the fact?\\
+Let's say that you work for the city of Grand Rapids, and you've observed an influx in hit and run car crashes in recent years. This is a very concerning thing for the city and you decide that it is time to really start cracking down on the perpetrators. Now the investigative team is obviously interested in gaining any info they can on these fleeing drivers. One characteristic that may heavily inform their investigation is whether or not the driver was drunk. For example, If they knew that the driver at fault was drunk, maybe they could start at local bars near the crash site, trace some steps back. It may not be certain, but it surely be helpful, at least could point them in the right direction. Is it possible to know if a driver was drunk after the fact? Do we have data that help us answer this question?\\
 This is a perliminary step of any machine learning project, asking the questions, can this problem be solved with data? Can we learn from historical data to make predictions about new data? These are the questions we will try to answer.}
 	
 \end{frame}
@@ -307,7 +315,7 @@ You'll see here the python code I've used to index our dataframe and select the 
 “Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.” - Jason Brownlee \cite{DS_blog}
 \\
 We acknowledge, however, that the data that's being recorded (from those UD10 reports) isn't necessarily guaranteed to accurately represent reality. Which is an important thing if we want to build accurate, stable predictive models.\\
-The examples that we show here are absolutely not exhaustive when it comes to feature engineering...}
+We're going to walk-through two steps that I took to engineer features out of our data. The examples that we show here are absolutely not exhaustive when it comes to feature engineering, but I believe do build some intuition for the nature of feature engineering.}
 
 \begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
 \only<1-3>{$\left[\begin{matrix}
@@ -459,9 +467,9 @@ Remeber, the ultimate objective to choose a model that learns a predictive rule 
 	\centering{\includegraphics[scale=.4]{Figures/bias_variance}}
 \end{frame}
 \note{One critical aspect to take into consideration when choosing a model is called the bias-variance tradeoff\\
-These dartboards create a great analogy for understanding the bias-variance trade-off. I got this analogy for a paper written by Pedro Domingos, I'm not positive that he was the creator, but regardless, I think it's incredibly useful.\\
+These dartboards create a great analogy for understanding the bias-variance trade-off. I got this analogy from a paper written by Pedro Domingos, I'm not positive that he was the creator, but regardless, I think it's incredibly useful.\\
 Bias and Variance have some specific definitions in statistics, but in this context, they are words that we use to describe the behavior of a machine learning model.\\
-For example, If I were to say that our SVM has high variance, then that means that its predictions would vary significantly if we were to train it on a different sample of our dataset.\\
+For example, If I were to say that our model has high variance, then that means that its predictions would vary significantly if we were to train it on a different sample of our dataset.\\
 If I were to say that our model was highly biased, then that would mean that it's predictions are very consistent, regardless of the sample of data that we trained it on. (that does not necessarily mean accurate, as we see in the bottom left corner.)\\
 Generally, bias and variance are inversely related, and controlled by the complexity of our model. If it is a highly complex model, like a neural network, it is likely to be high in variance. If it's a relatively simple model like a linear regression, it's likely to be more biased. Regardless, when applying ML, this is something to be aware of.}
 
@@ -572,6 +580,11 @@ Then also outline exactly how to calculate the gradient of the hinge loss functi
 \section{Exploring Scikit-Learn and applying to GR Crash dataset}
 \frame{\tableofcontents[currentsection]}
 
+\note{\textbf{Conclusion}
+Now, Admittedly, I found and explored this dataset for the purpose of presenting here, (look up notes from michael to better explain this?)\\
+But truly, the challenge in ML is not the math (the machine will do it for you), and often it's not the data itself (as aforementioned, it's becoming increasingly more accessible). The challenge is often building a ML model that is stable, has "business`` value, and is able to be used in production.\\
+I thought that maybe I can leave you with this challenge: If you knew, as we've shown today, that given data from the Police's U10 reports, you could accurately predict if causes were caused by drunk drivers, how would that be helpful? What could that be used for? How could we apply it/put it into use?\\
+These are the questions that should drive us as data scientists.}
 
 \begin{frame}
 	\begin{thebibliography}{9}
