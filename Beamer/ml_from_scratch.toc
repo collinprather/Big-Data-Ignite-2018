@@ -1,12 +1,12 @@
-\beamer@sectionintoc {1}{Machine Learning Overview}{8}{0}{1}
-\beamer@sectionintoc {2}{Steps in the Machine Learning Process}{16}{0}{2}
-\beamer@subsectionintoc {2}{1}{Step 0: Identify The Problem}{18}{0}{2}
-\beamer@subsectionintoc {2}{2}{Step 1: Get the Data}{20}{0}{2}
-\beamer@subsectionintoc {2}{3}{Step 2: Data Exploration}{25}{0}{2}
-\beamer@subsectionintoc {2}{4}{Step 3: Data Preparation}{40}{0}{2}
-\beamer@subsectionintoc {2}{5}{Step 4: Model Selection}{64}{0}{2}
-\beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{68}{0}{3}
-\beamer@subsectionintoc {3}{1}{Representation}{71}{0}{3}
-\beamer@subsectionintoc {3}{2}{Evaluation}{74}{0}{3}
-\beamer@subsectionintoc {3}{3}{Optimization}{83}{0}{3}
-\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{91}{0}{4}
+\beamer@sectionintoc {1}{Machine Learning Overview}{6}{0}{1}
+\beamer@sectionintoc {2}{Steps in the Machine Learning Process}{13}{0}{2}
+\beamer@subsectionintoc {2}{1}{Step 0: Identify The Problem}{13}{0}{2}
+\beamer@subsectionintoc {2}{2}{Step 1: Get the Data}{17}{0}{2}
+\beamer@subsectionintoc {2}{3}{Step 2: Data Exploration}{23}{0}{2}
+\beamer@subsectionintoc {2}{4}{Step 3: Data Preparation}{38}{0}{2}
+\beamer@subsectionintoc {2}{5}{Step 4: Model Selection}{67}{0}{2}
+\beamer@sectionintoc {3}{Building a Support Vector Machine from Scratch}{72}{0}{3}
+\beamer@subsectionintoc {3}{1}{Representation}{75}{0}{3}
+\beamer@subsectionintoc {3}{2}{Evaluation}{78}{0}{3}
+\beamer@subsectionintoc {3}{3}{Optimization}{87}{0}{3}
+\beamer@sectionintoc {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{94}{0}{4}

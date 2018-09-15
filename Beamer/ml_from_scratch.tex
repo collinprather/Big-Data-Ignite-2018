@@ -39,7 +39,7 @@
 I've prepared a Jupyter notebook that we will use to explore our data and build a machine learning algorithm from scratch. In order to get the notebook up and running on your computer:\\
 \begin{multicols}{2}
 	\begin{enumerate}
-		\item[1.)] Head to https://github.com/collinprather
+		\item[1.)] Head to \textit{https://github.com/collinprather}
 		\item[2.)] Click on the ``BDI-2018-JupyterHub" repository
 		\item[3.)] Scroll down and follow the step-by-step instructions in the readme.md
 	\end{enumerate}
@@ -61,23 +61,8 @@ Before we really dive in, I want to tell you a bit about my talk today, and to d
 
 At the very end, we'll take a look Python's ML tools and apply it to a Grand Rapids Car crash dataset to make some interesting predictions, and that dataset will serve as a case study that will flow through the entire talk. It's going to be a lot of fun.}
 
-\begin{frame}{Special Thanks}
-	Dr. D\\
-	Dr. Michael Bloem
-\end{frame}
-\note{I'd like to offer a very special thank you to Dr.Devereaux and Dr. Michael Bloem for all that they've done to help me in putting this together -- would not be possible without them!}
-
 \section{Machine Learning Overview}
 \frame{\tableofcontents[currentsection]}
-
-\note{Pull a graph of google search trends indicating how terms like "Data Science" and "Machine Learning" have blown up. \\
-	Try to form talk around hitting on the theoretical mathematical side of ML as well as the difficluties/complexities faced in Applied ML\\
-	data + algorthms = predicting the future
-	(it's really a lot more than this -- understanding context and how to frame the question (usually) from a business perspective is huge)\\
-	classification v. regression\\
-	supervised/unsupervised/reinforcement learning\\
-		when talking on reinforcement learning, mention and recommend AlphaGo documentary (it's on netflix!)\\
-		considerations/complexities in building ML models}
 
 \begin{frame}{What is Machine Learning?}
 \begin{center}
@@ -143,10 +128,12 @@ This graph was pulled pretty simply from trends.google.com, which is actually fa
 The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.\textbf{5:30}}
 
 \section{Steps in the Machine Learning Process}
-\frame{\tableofcontents[currentsection]}
-\note{Now that we have some motivation for what machine learning is and what it can do, let's move into the steps of the machine learning process.}
+
 
 \subsection{Step 0: Identify The Problem}
+
+\frame{\tableofcontents[currentsubsection]}
+\note{Now that we have some motivation for what machine learning is and what it can do, let's move into the steps of the machine learning process.}
 
 \begin{frame}{Identify the Problem}
 \begin{center}
@@ -159,7 +146,7 @@ This is a perliminary step of any machine learning project, asking the questions
 \end{frame}
 
 \subsection{Step 1: Get the Data}
-
+\frame{\tableofcontents[currentsubsection]}
 \begin{frame}{Get the Data}
 	This may look like:
 	
@@ -202,7 +189,8 @@ In our case, we're lucky enough to have access to a meticulously maintained publ
 
 
 \subsection{Step 2: Data Exploration}
-
+\frame{\tableofcontents[currentsubsection]}
+\note{Step 2 is to explore the data! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration}}
 \begin{frame}{Explore the Data}
 	\begin{itemize}
 		\item Verify data
@@ -220,7 +208,7 @@ In our case, we're lucky enough to have access to a meticulously maintained publ
 		\item Give direction to analysis
 	\end{itemize}
 \end{frame}
-\note{Step 2 is to explore the data! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration} Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
+\note{ Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
 The main idea hear is to build an understanding of your data. Without an appreciation for the context of the data, it's just numbers. But when you see the data in context, it's fascinating, it's a story.\\
  More often than not, your exploration of the data leads to more questions than answers.}
 
@@ -244,11 +232,11 @@ The main idea hear is to build an understanding of your data. Without an appreci
 \note{We may also be interested in hit and runs...\\
 This plot again shows each car crash, but this time with each red dot representing a hit and run}
 
-\begin{frame}{Check the variable's distribution}
-	\includegraphics[scale=.35]{Figures/veh3}
-\end{frame}
-\note{It's also often very helpful to check the distribution of the different variables. For example, our dataset contains many characteristics about what it defines as "DRIVER1", "DRIVER2", "DRIVER3". When I first came across that, I was impressed, like that's some seriously accurate data! But upon further examination, we find that many of the "DRIVER2" and "DRIVER3" columns are empty or contain errors. (This makes sense... not all crashes involve 3 driver!)\\
-When we check the counts of the different values found in the "VEH3" column, we see that over 67,000 of them are errors! Now, this doesn't mean that the column is useless, but in terms of building a predictive model, this column probably won't be much help, so as we'll see in the data processing step, we'll end up dropping it. }
+%\begin{frame}{Check the variable's distribution}
+%	\includegraphics[scale=.35]{Figures/veh3}
+%\end{frame}
+%\note{It's also often very helpful to check the distribution of the different variables. For example, our dataset contains many characteristics about what it defines as "DRIVER1", "DRIVER2", "DRIVER3". When I first came across that, I was impressed, like that's some seriously accurate data! But upon further examination, we find that many of the "DRIVER2" and "DRIVER3" columns are empty or contain errors. (This makes sense... not all crashes involve 3 driver!)\\
+%When we check the counts of the different values found in the "VEH3" column, we see that over 67,000 of them are errors! Now, this doesn't mean that the column is useless, but in terms of building a predictive model, this column probably won't be much help, so as we'll see in the data processing step, we'll end up dropping it. }
 
 \begin{frame}{Check the variable's distribution}
 \includegraphics[scale=.35]{Figures/driver1}
@@ -258,15 +246,14 @@ When we check the counts of the different values found in the "VEH3" column, we 
 \begin{frame}{Check the variable's distribution}
 \includegraphics[scale=.3]{Figures/driver1_num}
 \end{frame}
-\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.\\
-
-\vspace{20pt}
-
-Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.\\
-}
+\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.}
 
 
 \subsection{Step 3: Data Preparation}
+
+
+\frame{\tableofcontents[currentsubsection]}
+\note{Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.}
 
 \begin{frame}{Data Selection}
 Use as minimal features as possible\\
@@ -286,16 +273,14 @@ Use as minimal features as possible\\
 \end{enumerate}
 \only<2>{\includegraphics[scale=.4]{Figures/data_selection}}
 \end{frame}
-\note{This kicks off step 3, Data Preparation! The first part in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model.
-As seen in our EDA some columns have a lot of missing data, and we'll drop them entirely.\\
-It's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
-* computationally efficient\\
-* more easily interpretable\\
-* simpler is better\\
+\note{The first part in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model. It's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
+* computationally efficient, * more easily interpretable, * simpler is better\\
 So how do we actually determine which features to use?, we can use various statistical tests, and even some algorithms to determine which features are going to be most relevant to predicting our target variable (which for us is whether or not the driver who caused the crash was drinking).We won't go into detail here.\\
-
 When you are first beginning to iterate through different ml models, it is okay to kind of eyeball it, or use what you know about the context of the data to choose some features.\\
 You'll see here the python code I've used to index our dataframe and select the feature's we'll use in building our predictive model.}
+
+\note{So now we have our 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
+We'll use a process called feature engineering to augment our model's ability to make accurate predictions. I'll give you a moment to read what these two prominent figures in ML have to say about machine learning.}
 
 
 \begin{frame}{Feature Engineering}
@@ -311,7 +296,7 @@ You'll see here the python code I've used to index our dataframe and select the 
 		At the end of the day, some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.    
 	\end{aquote}
 \end{frame}
-\note{So now we have our 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
+\note{
 “Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.” - Jason Brownlee \cite{DS_blog}
 \\
 We acknowledge, however, that the data that's being recorded (from those UD10 reports) isn't necessarily guaranteed to accurately represent reality. Which is an important thing if we want to build accurate, stable predictive models.\\
@@ -327,7 +312,7 @@ We're going to walk-through two steps that I took to engineer features out of ou
 	6\\
 	\vdots
 \end{matrix}\right]$}
-\only<2-3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}f(x) = \frac{2\cdot\pi\cdot(\text{hour})}{24}$}
+\only<2-3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}f(hour) = \frac{2\cdot\pi\cdot(\text{hour})}{24}$}
 \only<3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}\left[\begin{matrix}
 	3.14\\
 	0.52\\
@@ -362,7 +347,7 @@ On the left we have a vector containing a few of the hours that the crashes took
 			-0.97\\
 			1.0\\
 			\vdots
-			\end{matrix}\right]}_{sin(f(x))},\ 
+			\end{matrix}\right]}_{sin(f(hour))},\ 
 		\underbrace{\left[\begin{matrix}
 				-1.0\\
 				0.87\\
@@ -371,7 +356,7 @@ On the left we have a vector containing a few of the hours that the crashes took
 				-0.26\\
 				0.001\\
 				\vdots
-			\end{matrix}\right]}_{cos(f(x))}$}}
+			\end{matrix}\right]}_{cos(f(hour))}$}}
 \end{frame}
 \note{Okay, so we have this new vector, but it doesn't look too helpful at the moment. well, we take that output and map it to two separate vectors, a sin and cos transformed vector. }
 
@@ -401,14 +386,14 @@ For most cases, one of those two options will work just fine. In our case, with 
 	\vspace{10pt}
 	
 	\begin{itemize}
-		\item Numerical variables (Quantitative)
+		\item<2-> Numerical variables (Quantitative)
 		\begin{itemize}
 			\item Driver 1 age, number of injuries, etc
 		\end{itemize}
 	
 	\vspace{5pt}
 	
-		\item Categorical variables (Qualitative)
+		\item<3-> Categorical variables (Qualitative)
 		\begin{itemize}
 			\item Hit and run, motorcycle involved, etc
 		\end{itemize}
@@ -417,7 +402,7 @@ For most cases, one of those two options will work just fine. In our case, with 
 \note{Now, we move onto processing the data that we've selcted. the data processing stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
 It's important to note that some of the preprocessing steps we'll talk about here may actually be necessary for you to do to get the data in a format where you can explore it.\\
 Numerical variables are quantitative -- it's something you can measure. In our case, some numerical variables are Driver1 age, and number of injuries.\\
-Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories, for example, which car insurance provider you choose: (Nationwide, Statefarm, BlueCross BlueShield) There is obviously a lot of them, but all drivers fit into one of those categories... or at least they should.\\
+Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories.\\
 There is some grey area between the two... maybe mention speedlimits or hour of day?}
 
 \begin{frame}{Data Processing: \textit{numerical variables}}
@@ -441,7 +426,7 @@ This is just a snapshot, you see that our columns of categorical variables grew 
 \textbf{Come up with more concrete explanation}}
 
 \subsection{Step 4: Model Selection}
-
+\frame{\tableofcontents[currentsubsection]}
 \begin{frame}{Choosing a Model/Representation}
 \begin{tabular}{|c|l|l|}\hline
 	&\textbf{Classification}&\textbf{Regression}\\\hline
@@ -466,9 +451,7 @@ Remeber, the ultimate objective to choose a model that learns a predictive rule 
 \begin{frame}{Bias-Variance Tradeoff}
 	\centering{\includegraphics[scale=.4]{Figures/bias_variance}}
 \end{frame}
-\note{One critical aspect to take into consideration when choosing a model is called the bias-variance tradeoff\\
-These dartboards create a great analogy for understanding the bias-variance trade-off. I got this analogy from a paper written by Pedro Domingos, I'm not positive that he was the creator, but regardless, I think it's incredibly useful.\\
-Bias and Variance have some specific definitions in statistics, but in this context, they are words that we use to describe the behavior of a machine learning model.\\
+\note{One critical aspect to take into consideration when choosing a model is called the bias-variance tradeoff. These dartboards create a great analogy for understanding the bias-variance trade-off. I got this analogy from a paper written by Pedro Domingos, I'm not positive that he was the creator, but regardless, I think it's incredibly useful. Bias and Variance have some specific definitions in statistics, but in this context, they are words that we use to describe the behavior of a machine learning model.\\
 For example, If I were to say that our model has high variance, then that means that its predictions would vary significantly if we were to train it on a different sample of our dataset.\\
 If I were to say that our model was highly biased, then that would mean that it's predictions are very consistent, regardless of the sample of data that we trained it on. (that does not necessarily mean accurate, as we see in the bottom left corner.)\\
 Generally, bias and variance are inversely related, and controlled by the complexity of our model. If it is a highly complex model, like a neural network, it is likely to be high in variance. If it's a relatively simple model like a linear regression, it's likely to be more biased. Regardless, when applying ML, this is something to be aware of.}
@@ -491,19 +474,18 @@ Now, a hyperplane is kind of like a fancy word for a line, or maybe better put, 
 The margin of the training data refers to how much is between the hyperplane and the two classes of data on each side.}
 
 
-\note{How do we find the optimal separating hyperplane?:\\
+\note{\textbf{How do we find the optimal separating hyperplane?}:\\
 Now, as we mentioned, the goal of the SVM is to find the optimal separating hyperplane, so how do we do that? It appears that there can be many different separating hyperplanes (often there is infinite). We're going to choose the hyperplane that is as far away as possible from each class of datapoints.\\
 We want to maximize the margin because It generalizes better to classifying unseen observations -> (meaning that it makes better predictions)\\
 If we have our usual equation for a line: y=mx+b, then all we need to do is find that optimal $m$ and $b$ that characterize the optimal hyperplane!}
 
 
-\note{Understanding the Definition of a hyperplane:\\
+\note{\textbf{Understanding the Definition of a hyperplane:}\\
 As we've seen previously, the separating hyperplane that we keep referring to (in 2-d) is just a line. I'm confident that you're familiar with the way we define lines:\\
 Now, a quick refresher that b is just a constant that represents the y-intercept, m (usually defines the slope) is a coefficient to the variable x (also a constant) and the variable y even has a coefficient as well, in this case it's 1. if we try to expand this equation y=mx+b to more and more dimensions(variables), it's not a real great form to express it in. So instead, we
 choose to set the whole equation equal to zero. With some algebraic manipulation, we get that:\\
 So, that looks a bit unnatural..so its common convention to represent all coefficients/constants with $\beta$, and all variables with $X_i$, so that we don't run out of variables to use.\\
-In our Crash data, we use 14 variables...\\
-\textbf{maybe change the betas to w's?} }
+In our Crash data, we use 14 variables...\\}
 
 \subsection{Evaluation}
 \note{\textbf{Evaluation}\\}
@@ -573,9 +555,6 @@ As we can see here, the partial derivative of the loss term depends on whether t
 \note{\textbf{Update Rules:}\\
 }
 
-\note{\textbf{To do next:}\\
-Watch Andrew Ng's explanation of stochastic gradient descent and take notes in order to explain!\\
-Then also outline exactly how to calculate the gradient of the hinge loss function for misclassified and correctly classified datapoints, then explicitly show the update rules.}
 
 \section{Exploring Scikit-Learn and applying to GR Crash dataset}
 \frame{\tableofcontents[currentsection]}
