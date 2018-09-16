@@ -1,4 +1,4 @@
-\documentclass[notes]{beamer}
+\documentclass{beamer}
 
 \mode<presentation>{\usetheme{Montpellier}}
 %\usecolortheme{beaver}
@@ -89,43 +89,11 @@ The list goes on and on. ML algorithms are used to learn from historical data in
 \end{center}
 \end{frame}
 \note{This may not be a surprise to you, but the world's google search history reflects a steady increase in interest in machine learning and other related terms like Data Science, Big Data, and Artificial Intelligence.\\
-This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends. It's worth checking out.}
+This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends. It's worth checking out.\\
+The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
 
 
 
-\begin{frame}{What has caused this spike?}
-\begin{enumerate}
-	\item Data Availability
-	
-	\vspace{10pt}
-	
-	\begin{itemize}
-		\item digital data
-		
-		\vspace{10pt}
-		
-		\item IoT (sensor data)
-		
-		\vspace{10pt}
-		
-	
-	\end{itemize}
-	\item Computational Scale
-	
-	\vspace{10pt}
-	
-	\begin{itemize}
-		\item Moore's Law
-	\end{itemize}
-\end{enumerate}
-\end{frame}
-\note{What has caused this spike in recent years? (Not just it's spike in google searches, but also in its use in industry!)The math that powers machine learning algorithms has been around for quite a few years... so what's changed? It really boils down to two things.\\
-1. Data Availability  \\
-	- Think of all the data that comes from cell phones, it's cheap to collect and there's a ton of it.\\
-	- Machines embedded with software/sensors (commonly reffered to as the Internet of Things or IoT) produce a lot of data as well.\\
-	- These are two of the most prominent examples.\\
-2. Computational Scale (NG MLY 01 pg 10)\\
-The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.\textbf{5:30}}
 
 \section{Steps in the Machine Learning Process}
 
@@ -148,33 +116,9 @@ This is a perliminary step of any machine learning project, asking the questions
 \subsection{Step 1: Get the Data}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}{Get the Data}
-	This may look like:
-	
-	\vspace{10pt}
-	
-	\begin{itemize}
-		\item<1-2> SQL query
-		
-		\vspace{5pt}
-		
-		\item<1-2> CSV download
-		
-		\vspace{5pt}
-		
-		\item<1-2> Web-scraping
-		
-		\vspace{5pt}
-		
-		\item<1-2> Designing experiments/surveys and collecting data yourself
-	\end{itemize}
-
-	\vspace{10pt}
-
-	\only<2->{In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}.}
+	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
 \end{frame}
-\note{Step 1! Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity -- For particular social research, you may need to scrape the web. In some cases, you may even need to collect some data yourself! Here are two examples:\\
-1. You're developing a new data product at your company and are collecting data to fuel it\\
-2. You're in public health and are working to make healthcare accessible to all residents of the greater GR area. You may need to conduct your own research to identify what may be inhibitting people from reaching healthcare.\\
+\note{Step 1! Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity\\
 In our case, we're lucky enough to have access to a meticulously maintained public database on the city of GR: GRData. Scroll through, show them the site and data, etc.}
 
 \begin{frame}{Get the Data}
@@ -237,16 +181,16 @@ This plot again shows each car crash, but this time with each red dot representi
 %\end{frame}
 %\note{It's also often very helpful to check the distribution of the different variables. For example, our dataset contains many characteristics about what it defines as "DRIVER1", "DRIVER2", "DRIVER3". When I first came across that, I was impressed, like that's some seriously accurate data! But upon further examination, we find that many of the "DRIVER2" and "DRIVER3" columns are empty or contain errors. (This makes sense... not all crashes involve 3 driver!)\\
 %When we check the counts of the different values found in the "VEH3" column, we see that over 67,000 of them are errors! Now, this doesn't mean that the column is useless, but in terms of building a predictive model, this column probably won't be much help, so as we'll see in the data processing step, we'll end up dropping it. }
-
-\begin{frame}{Check the variable's distribution}
-\includegraphics[scale=.35]{Figures/driver1}
-\end{frame}
-\note{Continuing on, here we check the distribution of the age's of all the "DRIVER1"s recorded in the dataset. In my head, I would think that age would be an important feature in car crashes. And so we check it out, and it appears that there are a ton of instances bunched up between 1 and 100... that makes sense... then there is also a decent cluster of observations around 1000 years old... that does not make sense.}
-
-\begin{frame}{Check the variable's distribution}
-\includegraphics[scale=.3]{Figures/driver1_num}
-\end{frame}
-\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.}
+%
+%\begin{frame}{Check the variable's distribution}
+%\includegraphics[scale=.35]{Figures/driver1}
+%\end{frame}
+%\note{Continuing on, here we check the distribution of the age's of all the "DRIVER1"s recorded in the dataset. In my head, I would think that age would be an important feature in car crashes. And so we check it out, and it appears that there are a ton of instances bunched up between 1 and 100... that makes sense... then there is also a decent cluster of observations around 1000 years old... that does not make sense.}
+%
+%\begin{frame}{Check the variable's distribution}
+%\includegraphics[scale=.3]{Figures/driver1_num}
+%\end{frame}
+%\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.}
 
 
 \subsection{Step 3: Data Preparation}
@@ -255,31 +199,9 @@ This plot again shows each car crash, but this time with each red dot representi
 \frame{\tableofcontents[currentsubsection]}
 \note{Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.}
 
-\begin{frame}{Data Selection}
-Use as minimal features as possible\\
 
-\vspace{10pt}
-
-\begin{enumerate}
-	\item Computationally efficient
-	
-	\vspace{5pt}
-	
-	\item Easier to interpret
-	
-	\vspace{5pt}
-	
-	\item Simpler is better
-\end{enumerate}
-\only<2>{\includegraphics[scale=.4]{Figures/data_selection}}
-\end{frame}
-\note{The first part in preparing the data is simply choosing which features (you can think of as columns in the spreadsheet) you'll want to use in your model. It's generally regarded as best practice to use as minimal amount of features as possible, such that your predictive model still predicts as accurately as you need it to.\\
-* computationally efficient, * more easily interpretable, * simpler is better\\
-So how do we actually determine which features to use?, we can use various statistical tests, and even some algorithms to determine which features are going to be most relevant to predicting our target variable (which for us is whether or not the driver who caused the crash was drinking).We won't go into detail here.\\
-When you are first beginning to iterate through different ml models, it is okay to kind of eyeball it, or use what you know about the context of the data to choose some features.\\
-You'll see here the python code I've used to index our dataframe and select the feature's we'll use in building our predictive model.}
-
-\note{So now we have our 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
+\note{Once you've chosen the columns in your dataset that you'll be using, there's still more that you can and should do to engineer your variables into features.\\
+In our case, there are 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
 We'll use a process called feature engineering to augment our model's ability to make accurate predictions. I'll give you a moment to read what these two prominent figures in ML have to say about machine learning.}
 
 
@@ -368,16 +290,16 @@ On the left we have a vector containing a few of the hours that the crashes took
 This is exactly what we want. We've mapped our single hour column to two separate hour colums (think of them like x and y coordinates for each hour). This cyclic representation of time conveys the hour of the car crash in a way that has meaning to the algorithm. This is a really important aspect of feature engineering.}
 
 
-
-\begin{frame}{Feature Engineering: \textit{imputing missing ages} }
-\only<1>{\includegraphics[scale=.3]{Figures/driver1_num}}
-\only<2>{\includegraphics[scale=.3]{Figures/driver1_imputed}}
-\end{frame}
-\note{Now, earlier when we were exploring our data and checking the distribution of the ages, we found that there are about 9,000 erraneous ages.\\
-When you have erraneous/outright missing data you have a couple different options.\\
-1. drop them entirely\\
-2. impute mean/median (make this choice depending on distribution of data)\\
-For most cases, one of those two options will work just fine. In our case, with nearly 9,000 errors, I'm not sure any of those would make sense, so we'll opt for a bit more involved technique. (The technical term is "Multiple Imputation by Chained Equations", affectionately known as MICE). What this means is that we will fit a linear regression model to our data to predict what the missing ages could be. We can think of these as making an educated guess.}
+%
+%\begin{frame}{Feature Engineering: \textit{imputing missing ages} }
+%\only<1>{\includegraphics[scale=.3]{Figures/driver1_num}}
+%\only<2>{\includegraphics[scale=.3]{Figures/driver1_imputed}}
+%\end{frame}
+%\note{Now, earlier when we were exploring our data and checking the distribution of the ages, we found that there are about 9,000 erraneous ages.\\
+%When you have erraneous/outright missing data you have a couple different options.\\
+%1. drop them entirely\\
+%2. impute mean/median (make this choice depending on distribution of data)\\
+%For most cases, one of those two options will work just fine. In our case, with nearly 9,000 errors, I'm not sure any of those would make sense, so we'll opt for a bit more involved technique. (The technical term is "Multiple Imputation by Chained Equations", affectionately known as MICE). What this means is that we will fit a linear regression model to our data to predict what the missing ages could be. We can think of these as making an educated guess.}
 
 
 \begin{frame}{Data Processing}
@@ -400,30 +322,28 @@ For most cases, one of those two options will work just fine. In our case, with 
 	\end{itemize}
 \end{frame}
 \note{Now, we move onto processing the data that we've selcted. the data processing stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
-It's important to note that some of the preprocessing steps we'll talk about here may actually be necessary for you to do to get the data in a format where you can explore it.\\
 Numerical variables are quantitative -- it's something you can measure. In our case, some numerical variables are Driver1 age, and number of injuries.\\
-Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories.\\
-There is some grey area between the two... maybe mention speedlimits or hour of day?}
+Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories.}
 
-\begin{frame}{Data Processing: \textit{numerical variables}}
-\only<1>{\includegraphics[scale=.5]{Figures/numericals}}
-\only<2>{\includegraphics[scale=.37]{Figures/numericals_scaled}}
-\end{frame}
-\note{Here, we have our numerical variables. One problem that we still face with these numerical variables is that when we feed our data through the algorithm, the computer will view an increase in 1 latitude of latitude as equivalent to an increase in 1 year of Age of the driver. In actuality and increase in 1 degree of latitude could land you in an entirely different neighborhood, while 37 y/o and 38 y/o are basically exactly the same.\\
-We will rescale the numerical variables through a process called standardization. This is not necessary for all ml algorithms, but generally will not hurt if we do it.\\
-When we standardize the variables, we rescale them so that they all have a mean of 0 and a S.D. of 1.\\
-Notice that in this snippet, the number of injuries was 0 for all of them, and now is negative... this means that having 0 injuries in a car crash is below average...}
+%\begin{frame}{Data Processing: \textit{numerical variables}}
+%\only<1>{\includegraphics[scale=.5]{Figures/numericals}}
+%\only<2>{\includegraphics[scale=.37]{Figures/numericals_scaled}}
+%\end{frame}
+%\note{Here, we have our numerical variables. One problem that we still face with these numerical variables is that when we feed our data through the algorithm, the computer will view an increase in 1 latitude of latitude as equivalent to an increase in 1 year of Age of the driver. In actuality and increase in 1 degree of latitude could land you in an entirely different neighborhood, while 37 y/o and 38 y/o are basically exactly the same.\\
+%We will rescale the numerical variables through a process called standardization. This is not necessary for all ml algorithms, but generally will not hurt if we do it.\\
+%When we standardize the variables, we rescale them so that they all have a mean of 0 and a S.D. of 1.\\
+%Notice that in this snippet, the number of injuries was 0 for all of them, and now is negative... this means that having 0 injuries in a car crash is below average...}
 
-\begin{frame}{Data Processing: \textit{categorical variables}}
-\only<1>{\includegraphics[scale=.35]{Figures/categoricals}}
-\only<2>{\includegraphics[scale=.35]{Figures/categoricals_scaled}}
-\end{frame}
-\note{Here we have our categorical variables. In our excel spreadsheet, this looks great, nice and clean.., but if we want to squeeze this data into a model, we need to manipulate it into a format that makes sense for math. \\
-Basically, we are going to turn all of our categories into 1's and 0's, representing yes' and no's. You can think of this as transforming the data to turn everything into a yes or no question.\\
-Was the driver sex male? No. Was the driver sex female? yes.\\
-I've seen this called creating dummy variables, or one-hot-encoding\\
-This is just a snapshot, you see that our columns of categorical variables grew from 7 to 21\\
-\textbf{Come up with more concrete explanation}}
+%\begin{frame}{Data Processing: \textit{categorical variables}}
+%\only<1>{\includegraphics[scale=.35]{Figures/categoricals}}
+%\only<2>{\includegraphics[scale=.35]{Figures/categoricals_scaled}}
+%\end{frame}
+%\note{Here we have our categorical variables. In our excel spreadsheet, this looks great, nice and clean.., but if we want to squeeze this data into a model, we need to manipulate it into a format that makes sense for math. \\
+%Basically, we are going to turn all of our categories into 1's and 0's, representing yes' and no's. You can think of this as transforming the data to turn everything into a yes or no question.\\
+%Was the driver sex male? No. Was the driver sex female? yes.\\
+%I've seen this called creating dummy variables, or one-hot-encoding\\
+%This is just a snapshot, you see that our columns of categorical variables grew from 7 to 21\\
+%\textbf{Come up with more concrete explanation}}
 
 \subsection{Step 4: Model Selection}
 \frame{\tableofcontents[currentsubsection]}
