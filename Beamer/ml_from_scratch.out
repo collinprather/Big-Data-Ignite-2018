@@ -1,12 +1,9 @@
 \BOOKMARK [2][]{Outline0.1}{Machine Learning Overview}{}% 1
-\BOOKMARK [2][]{Outline0.2}{Steps in the Machine Learning Process}{}% 2
-\BOOKMARK [3][]{Outline0.2.1.11}{Step 0: Identify The Problem}{Outline0.2}% 3
-\BOOKMARK [3][]{Outline0.2.2.15}{Step 1: Get the Data}{Outline0.2}% 4
-\BOOKMARK [3][]{Outline0.2.3.20}{Step 2: Data Exploration}{Outline0.2}% 5
-\BOOKMARK [3][]{Outline0.2.4.31}{Step 3: Data Preparation}{Outline0.2}% 6
-\BOOKMARK [3][]{Outline0.2.5.48}{Step 4: Model Selection}{Outline0.2}% 7
-\BOOKMARK [2][]{Outline0.3}{Building a Support Vector Machine from Scratch}{}% 8
-\BOOKMARK [3][]{Outline0.3.1.54}{Representation}{Outline0.3}% 9
-\BOOKMARK [3][]{Outline0.3.2.57}{Evaluation}{Outline0.3}% 10
-\BOOKMARK [3][]{Outline0.3.3.67}{Optimization}{Outline0.3}% 11
-\BOOKMARK [2][]{Outline0.4}{Exploring Scikit-Learn and applying to GR Crash dataset}{}% 12
+\BOOKMARK [3][]{Outline0.1.1.10}{Model Selection}{Outline0.1}% 2
+\BOOKMARK [3][]{Outline0.1.2.12}{Problem Identification}{Outline0.1}% 3
+\BOOKMARK [3][]{Outline0.1.3.16}{Getting the Data}{Outline0.1}% 4
+\BOOKMARK [2][]{Outline0.2}{Building a Support Vector Machine from Scratch}{}% 5
+\BOOKMARK [3][]{Outline0.2.1.22}{Representation}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.2.25}{Evaluation}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.3.35}{Optimization}{Outline0.2}% 8
+\BOOKMARK [2][]{Outline0.3}{Exploring Scikit-Learn and applying to GR Crash dataset}{}% 9

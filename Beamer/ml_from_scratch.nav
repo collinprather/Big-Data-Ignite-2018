@@ -1,79 +1,46 @@
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\slideentry {0}{0}{2}{3/3}{}{0}}
+\headcommand {\sectionentry {1}{Machine Learning Overview}{3}{Machine Learning Overview}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {0}{0}{3}{4/4}{}{0}}
+\headcommand {\slideentry {1}{0}{2}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\sectionentry {1}{Machine Learning Overview}{6}{Machine Learning Overview}{0}}
-\headcommand {\beamer@sectionpages {1}{5}}
-\headcommand {\beamer@subsectionpages {1}{5}}
-\headcommand {\slideentry {1}{0}{1}{6/6}{}{0}}
+\headcommand {\slideentry {1}{0}{3}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {1}{0}{2}{7/7}{}{0}}
-\headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {1}{0}{3}{9/9}{}{0}}
-\headcommand {\beamer@framepages {9}{9}}
-\headcommand {\sectionentry {2}{Steps in the Machine Learning Process}{11}{Steps in the Machine Learning Process}{0}}
-\headcommand {\beamer@sectionpages {6}{10}}
-\headcommand {\beamer@subsectionpages {6}{10}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{11}{Step 0: Identify The Problem}}\headcommand {\beamer@subsectionpages {11}{10}}
-\headcommand {\slideentry {2}{1}{1}{11/11}{Step 0: Identify The Problem}{0}}
-\headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {2}{1}{2}{13/13}{Step 0: Identify The Problem}{0}}
-\headcommand {\beamer@framepages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{15}{Step 1: Get the Data}}\headcommand {\beamer@subsectionpages {11}{14}}
-\headcommand {\slideentry {2}{2}{1}{15/15}{Step 1: Get the Data}{0}}
-\headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {2}{2}{2}{16/16}{Step 1: Get the Data}{0}}
+\headcommand {\slideentry {1}{0}{4}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{10}{Model Selection}}\headcommand {\beamer@subsectionpages {3}{9}}
+\headcommand {\slideentry {1}{1}{1}{10/10}{Model Selection}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{12}{Problem Identification}}\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\slideentry {1}{2}{1}{12/12}{Problem Identification}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {1}{2}{2}{14/14}{Problem Identification}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{16}{Getting the Data}}\headcommand {\beamer@subsectionpages {12}{15}}
+\headcommand {\slideentry {1}{3}{1}{16/16}{Getting the Data}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {2}{2}{3}{18/18}{Step 1: Get the Data}{0}}
-\headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{20}{Step 2: Data Exploration}}\headcommand {\beamer@subsectionpages {15}{19}}
-\headcommand {\slideentry {2}{3}{1}{20/20}{Step 2: Data Exploration}{0}}
+\headcommand {\slideentry {1}{3}{2}{17/17}{Getting the Data}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\sectionentry {2}{Building a Support Vector Machine from Scratch}{19}{Building a Support Vector Machine from Scratch}{0}}
+\headcommand {\beamer@sectionpages {3}{18}}
+\headcommand {\beamer@subsectionpages {16}{18}}
+\headcommand {\slideentry {2}{0}{1}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {2}{3}{2}{22/22}{Step 2: Data Exploration}{0}}
-\headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {2}{3}{3}{24/25}{Step 2: Data Exploration}{0}}
-\headcommand {\beamer@framepages {24}{25}}
-\headcommand {\slideentry {2}{3}{4}{27/27}{Step 2: Data Exploration}{0}}
-\headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {2}{3}{5}{29/29}{Step 2: Data Exploration}{0}}
-\headcommand {\beamer@framepages {29}{29}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{31}{Step 3: Data Preparation}}\headcommand {\beamer@subsectionpages {20}{30}}
-\headcommand {\slideentry {2}{4}{1}{31/31}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {2}{4}{2}{34/34}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {2}{4}{3}{36/38}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {36}{38}}
-\headcommand {\slideentry {2}{4}{4}{40/40}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {2}{4}{5}{42/42}{Step 3: Data Preparation}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{22}{Representation}}\headcommand {\beamer@subsectionpages {19}{21}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{25}{Evaluation}}\headcommand {\beamer@subsectionpages {22}{24}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{35}{Optimization}}\headcommand {\beamer@subsectionpages {25}{34}}
+\headcommand {\sectionentry {3}{Exploring Scikit-Learn and applying to GR Crash dataset}{42}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
+\headcommand {\beamer@sectionpages {19}{41}}
+\headcommand {\beamer@subsectionpages {35}{41}}
+\headcommand {\slideentry {3}{0}{1}{42/42}{}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\slideentry {2}{4}{6}{44/46}{Step 3: Data Preparation}{0}}
-\headcommand {\beamer@framepages {44}{46}}
-\headcommand {\beamer@subsectionentry {0}{2}{5}{48}{Step 4: Model Selection}}\headcommand {\beamer@subsectionpages {31}{47}}
-\headcommand {\slideentry {2}{5}{1}{48/48}{Step 4: Model Selection}{0}}
-\headcommand {\beamer@framepages {48}{48}}
-\headcommand {\slideentry {2}{5}{2}{49/49}{Step 4: Model Selection}{0}}
-\headcommand {\beamer@framepages {49}{49}}
-\headcommand {\sectionentry {3}{Building a Support Vector Machine from Scratch}{51}{Building a Support Vector Machine from Scratch}{0}}
-\headcommand {\beamer@sectionpages {11}{50}}
-\headcommand {\beamer@subsectionpages {48}{50}}
-\headcommand {\slideentry {3}{0}{1}{52/52}{}{0}}
-\headcommand {\beamer@framepages {52}{52}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{54}{Representation}}\headcommand {\beamer@subsectionpages {51}{53}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{57}{Evaluation}}\headcommand {\beamer@subsectionpages {54}{56}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{67}{Optimization}}\headcommand {\beamer@subsectionpages {57}{66}}
-\headcommand {\sectionentry {4}{Exploring Scikit-Learn and applying to GR Crash dataset}{74}{Exploring Scikit-Learn and applying to GR Crash dataset}{0}}
-\headcommand {\beamer@sectionpages {51}{73}}
-\headcommand {\beamer@subsectionpages {67}{73}}
-\headcommand {\slideentry {4}{0}{1}{74/74}{}{0}}
-\headcommand {\beamer@framepages {74}{74}}
-\headcommand {\slideentry {4}{0}{2}{76/76}{}{0}}
-\headcommand {\beamer@framepages {76}{76}}
-\headcommand {\beamer@partpages {1}{76}}
-\headcommand {\beamer@subsectionpages {74}{76}}
-\headcommand {\beamer@sectionpages {74}{76}}
-\headcommand {\beamer@documentpages {76}}
-\headcommand {\def \inserttotalframenumber {27}}
+\headcommand {\slideentry {3}{0}{2}{44/44}{}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\beamer@partpages {1}{44}}
+\headcommand {\beamer@subsectionpages {42}{44}}
+\headcommand {\beamer@sectionpages {42}{44}}
+\headcommand {\beamer@documentpages {44}}
+\headcommand {\def \inserttotalframenumber {13}}

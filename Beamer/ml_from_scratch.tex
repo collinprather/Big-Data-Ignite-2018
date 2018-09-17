@@ -50,7 +50,8 @@ I've prepared a Jupyter notebook that we will use to explore our data and build 
 \end{multicols}
 \end{frame}
 \note{Before we get going here, I'd like to direct you to colab.research.google.com to get things set up for the live coding demo that will take place in the second half of our time today. Follow the instructions on my github at...}
-	
+
+\section{Machine Learning Overview}
 \frame{\titlepage}
 
 \frame{\tableofcontents}
@@ -61,8 +62,7 @@ Before we really dive in, I want to tell you a bit about my talk today, and to d
 
 At the very end, we'll take a look Python's ML tools and apply it to a Grand Rapids Car crash dataset to make some interesting predictions, and that dataset will serve as a case study that will flow through the entire talk. It's going to be a lot of fun.}
 
-\section{Machine Learning Overview}
-\frame{\tableofcontents[currentsection]}
+
 
 \begin{frame}{What is Machine Learning?}
 \begin{center}
@@ -92,13 +92,32 @@ The list goes on and on. ML algorithms are used to learn from historical data in
 This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends. It's worth checking out.\\
 The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
 
+\subsection{Model Selection}
+\begin{frame}{Choosing a Model/Representation}
+\begin{tabular}{|c|l|l|}\hline
+	&\textbf{Classification}&\textbf{Regression}\\\hline
+	\textbf{Supervised}&
+	\tabitem Logistic Regression&\tabitem Linear Regression\\
+	&\tabitem Naive-Bayes&\tabitem Decision Trees\\
+	&\tabitem KNN&\tabitem Random Forests\\
+	&\tabitem SVM&\\\hline
+	\textbf{Unsupervised}&
+	\tabitem Apriori&\tabitem PCA\\
+	&\tabitem Hidden Markov Model&\tabitem K-means\\
+	&&\tabitem SVD\\
+	\hline
+\end{tabular}
+\end{frame}
+\note{Now, we mentioned that machine learning is used to learn from historical data in order to make predictions about novel data, but as I've alluded to, given the diverse use-cases, not all ML looks alike. There are hundreds of models to choose from, and trade-offs associated with each. The good news is, with each type of machine learning problem comes its own little subset of algorithms -- so this narrows down our search considerably.\\
+In our case, we're working on a supervised classification problem, so the upper left hand corner displays some common algorithms for problems like ours. It's very common to test a handful of them and choose the one that performs best on your dataset (or even combine some of them into an ensemble model.)\\
+Remeber, the ultimate objective to choose a model that learns a predictive rule (which comes in the form of a equation) that can be generalized to new observations (both for classification and regression)\\
+\textbf{Find examples of all 4 different types of ML}}
 
 
 
-\section{Steps in the Machine Learning Process}
 
 
-\subsection{Step 0: Identify The Problem}
+\subsection{Problem Identification}
 
 \frame{\tableofcontents[currentsubsection]}
 \note{Now that we have some motivation for what machine learning is and what it can do, let's move into the steps of the machine learning process.}
@@ -113,7 +132,7 @@ This is a perliminary step of any machine learning project, asking the questions
 	
 \end{frame}
 
-\subsection{Step 1: Get the Data}
+\subsection{Getting the Data}
 \frame{\tableofcontents[currentsubsection]}
 \begin{frame}{Get the Data}
 	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
@@ -121,60 +140,60 @@ This is a perliminary step of any machine learning project, asking the questions
 \note{Step 1! Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity\\
 In our case, we're lucky enough to have access to a meticulously maintained public database on the city of GR: GRData. Scroll through, show them the site and data, etc.}
 
-\begin{frame}{Get the Data}
-	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
-	
-	\vspace{10pt}
-	
-	\includegraphics[scale=.35]{Figures/crash_head}
-\end{frame}
-\note{After downloading the csv file, we can read the file into a pandas dataframe and explore it in our Jupyter notebook.\\
-* note something about how we'll often refer to each row as an observation and each column as a feature}
+%\begin{frame}{Get the Data}
+%	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
+%	
+%	\vspace{10pt}
+%	
+%	\includegraphics[scale=.35]{Figures/crash_head}
+%\end{frame}
+%\note{After downloading the csv file, we can read the file into a pandas dataframe and explore it in our Jupyter notebook.\\
+%* note something about how we'll often refer to each row as an observation and each column as a feature}
 
 
-\subsection{Step 2: Data Exploration}
-\frame{\tableofcontents[currentsubsection]}
-\note{Step 2 is to explore the data! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration}}
-\begin{frame}{Explore the Data}
-	\begin{itemize}
-		\item Verify data
-		
-		\vspace{5pt}
-		
-		\item Visualize data
-		
-		\vspace{5pt}
-		
-		\item Identify patterns
-		
-		\vspace{5pt}
-		
-		\item Give direction to analysis
-	\end{itemize}
-\end{frame}
-\note{ Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
-The main idea hear is to build an understanding of your data. Without an appreciation for the context of the data, it's just numbers. But when you see the data in context, it's fascinating, it's a story.\\
- More often than not, your exploration of the data leads to more questions than answers.}
-
-\begin{frame}
-\includegraphics[scale=.45]{Figures/coords}
-\only<2>{\includegraphics[scale=.3]{Figures/coords_graphed}}
-\end{frame}
-\note{With our dataset, on car crashes, a logical place to begin would be the first two columns, containing latitudes and longitudes of each crash. This is just a snapshot of the data on the left side, and on the right, each dot represents a car crash.}
-
-\begin{frame}
-\includegraphics[scale=.23]{Figures/coords_graphed}
-\includegraphics[scale=.21]{Figures/gr_map}
-\end{frame}
-\note{Now, this is pretty telling about our data, remember, there is nearly 73,000 crashes recorded, and if we juxtapose this plot with the city of GR, we actually see that the plot of crashes outline the city boundaries!}
-
-\begin{frame}
-\begin{center}
-	\includegraphics[scale=.33]{Figures/coords_graphed_hitnrun}
-\end{center}
-\end{frame}
-\note{We may also be interested in hit and runs...\\
-This plot again shows each car crash, but this time with each red dot representing a hit and run}
+%\subsection{Step 2: Data Exploration}
+%\frame{\tableofcontents[currentsubsection]}
+%\note{Step 2 is to explore the data! This is kind of an unstructured approach to understanding initial patterns in the data and potentially points of interest.This process isn’t meant to reveal every bit of information a dataset holds, but rather give you direction in your analysis and potentially give you clues in how to process/model the data.\cite{Data_exploration}}
+%\begin{frame}{Explore the Data}
+%	\begin{itemize}
+%		\item Verify data
+%		
+%		\vspace{5pt}
+%		
+%		\item Visualize data
+%		
+%		\vspace{5pt}
+%		
+%		\item Identify patterns
+%		
+%		\vspace{5pt}
+%		
+%		\item Give direction to analysis
+%	\end{itemize}
+%\end{frame}
+%\note{ Now, if you're just emailed a csv file, this step is especially crucial, and it may take you some time to explore the data, get a feeling for what you're dealing with. If you are analyzing data that you work with day in and day out, this "exploration" process may be a bit more implicit.\\
+%The main idea hear is to build an understanding of your data. Without an appreciation for the context of the data, it's just numbers. But when you see the data in context, it's fascinating, it's a story.\\
+% More often than not, your exploration of the data leads to more questions than answers.}
+%
+%\begin{frame}
+%\includegraphics[scale=.45]{Figures/coords}
+%\only<2>{\includegraphics[scale=.3]{Figures/coords_graphed}}
+%\end{frame}
+%\note{With our dataset, on car crashes, a logical place to begin would be the first two columns, containing latitudes and longitudes of each crash. This is just a snapshot of the data on the left side, and on the right, each dot represents a car crash.}
+%
+%\begin{frame}
+%\includegraphics[scale=.23]{Figures/coords_graphed}
+%\includegraphics[scale=.21]{Figures/gr_map}
+%\end{frame}
+%\note{Now, this is pretty telling about our data, remember, there is nearly 73,000 crashes recorded, and if we juxtapose this plot with the city of GR, we actually see that the plot of crashes outline the city boundaries!}
+%
+%\begin{frame}
+%\begin{center}
+%	\includegraphics[scale=.33]{Figures/coords_graphed_hitnrun}
+%\end{center}
+%\end{frame}
+%\note{We may also be interested in hit and runs...\\
+%This plot again shows each car crash, but this time with each red dot representing a hit and run}
 
 %\begin{frame}{Check the variable's distribution}
 %	\includegraphics[scale=.35]{Figures/veh3}
@@ -192,102 +211,102 @@ This plot again shows each car crash, but this time with each red dot representi
 %\end{frame}
 %\note{Nearly 9,000 driver 1's are recorded as being 999 years-old.. That is a good thing to know before trying to build a predictive model, as it serously skews the data. We'll address that in our data processing stage.}
 
-
-\subsection{Step 3: Data Preparation}
-
-
-\frame{\tableofcontents[currentsubsection]}
-\note{Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.}
-
-
-\note{Once you've chosen the columns in your dataset that you'll be using, there's still more that you can and should do to engineer your variables into features.\\
-In our case, there are 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
-We'll use a process called feature engineering to augment our model's ability to make accurate predictions. I'll give you a moment to read what these two prominent figures in ML have to say about machine learning.}
-
-
-\begin{frame}{Feature Engineering}
-\includegraphics[scale=.07]{Figures/ng}
-	\begin{aquote}{Prof. Andrew Ng}
-		Coming up with features is difficult, time-consuming, requires expert knowledge. ‘Applied machine learning’ is basically feature engineering.    
-	\end{aquote}
-
-\vspace{1cm}
-
-\includegraphics[scale=.09]{Figures/domingo}
-	\begin{aquote}{Prof. Pedro Domingos}
-		At the end of the day, some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.    
-	\end{aquote}
-\end{frame}
-\note{
-“Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.” - Jason Brownlee \cite{DS_blog}
-\\
-We acknowledge, however, that the data that's being recorded (from those UD10 reports) isn't necessarily guaranteed to accurately represent reality. Which is an important thing if we want to build accurate, stable predictive models.\\
-We're going to walk-through two steps that I took to engineer features out of our data. The examples that we show here are absolutely not exhaustive when it comes to feature engineering, but I believe do build some intuition for the nature of feature engineering.}
-
-\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
-\only<1-3>{$\left[\begin{matrix}
-	12\\
-	2\\
-	4\\
-	18\\
-	19\\
-	6\\
-	\vdots
-\end{matrix}\right]$}
-\only<2-3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}f(hour) = \frac{2\cdot\pi\cdot(\text{hour})}{24}$}
-\only<3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}\left[\begin{matrix}
-	3.14\\
-	0.52\\
-	1.03\\
-	4.71\\
-	4.98\\
-	1.57\\
-	\vdots
-	\end{matrix}\right]$}
-
-\end{frame}
-\note{For example, one of our columns contains the hour the crash occured at (ranging from 0-23). It did not make sense to me to treat this column as a numerical variable, since the model would interpret 2pm as twice 1pm... while that does not make logical sense. However, I felt that to treat each hour as it's own category wouldn't accurately capture the information that the hour conveys (for example, it would not capture the fact that 12pm and 12am are 12 hours apart, while 12pm and 1pm are next to each other), so I set out to transform this feature in order to convey more meaning to our algorithm. Here's what I did.\\
-On the left we have a vector containing a few of the hours that the crashes took place at. I sent this vector through this trigonometric function that we have here. }
-
-
-
-\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
-\only<1>{\centering{$\left[\begin{matrix}
-3.14\\
-0.52\\
-1.03\\
-4.71\\
-4.98\\
-1.57\\
-\vdots
-\end{matrix}\right]$}}
-\only<1>{\centering{$\hspace{10pt}\Longrightarrow\hspace{10pt}\underbrace{\left[\begin{matrix}
-			0.00\\
-			0.47\\
-			0.86\\
-			-0.99\\
-			-0.97\\
-			1.0\\
-			\vdots
-			\end{matrix}\right]}_{sin(f(hour))},\ 
-		\underbrace{\left[\begin{matrix}
-				-1.0\\
-				0.87\\
-				0.51\\
-				-0.002\\
-				-0.26\\
-				0.001\\
-				\vdots
-			\end{matrix}\right]}_{cos(f(hour))}$}}
-\end{frame}
-\note{Okay, so we have this new vector, but it doesn't look too helpful at the moment. well, we take that output and map it to two separate vectors, a sin and cos transformed vector. }
-
-
-\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
-	\includegraphics[scale=.37]{Figures/hour}
-\end{frame}
-\note{So.. why did we do all of that? Well, when we transfer that all into code, and graph the two vectors on the x-y plane, we see that they make a perfect circle... kind of like a clock..\\
-This is exactly what we want. We've mapped our single hour column to two separate hour colums (think of them like x and y coordinates for each hour). This cyclic representation of time conveys the hour of the car crash in a way that has meaning to the algorithm. This is a really important aspect of feature engineering.}
+%
+%\subsection{Step 3: Data Preparation}
+%
+%
+%\frame{\tableofcontents[currentsubsection]}
+%\note{Next, we move onto data preparation. This is the stage where we make the final manipulations to our data before feeding it into our ML algorithm. Now, you could make an argument that preparing the data is the most important part of the machine learning workflow. After all it's the data that fuels the algorithm, garbage in, garbage out! It's been shown time and time again that more/bigger data beats a better algorithm everytime. Though it usually appears to be straightforward, this step can often reqiure a lot of creativity.}
+%
+%
+%\note{Once you've chosen the columns in your dataset that you'll be using, there's still more that you can and should do to engineer your variables into features.\\
+%In our case, there are 13 features that we've chosen to use, and we could just send these raw features into our algorithm, and it may perform well, but it may not. It's importatnt to remember that our ultimate goal is to build a predictive model that can make accurate predictions on new/unseen observations. When all the data comes in from a car crash that just happened, we want to be able to accurately predict whether or not it was a drunk driver that caused it.\\
+%We'll use a process called feature engineering to augment our model's ability to make accurate predictions. I'll give you a moment to read what these two prominent figures in ML have to say about machine learning.}
+%
+%
+%\begin{frame}{Feature Engineering}
+%\includegraphics[scale=.07]{Figures/ng}
+%	\begin{aquote}{Prof. Andrew Ng}
+%		Coming up with features is difficult, time-consuming, requires expert knowledge. ‘Applied machine learning’ is basically feature engineering.    
+%	\end{aquote}
+%
+%\vspace{1cm}
+%
+%\includegraphics[scale=.09]{Figures/domingo}
+%	\begin{aquote}{Prof. Pedro Domingos}
+%		At the end of the day, some machine learning projects succeed and some fail. What makes the difference? Easily the most important factor is the features used.    
+%	\end{aquote}
+%\end{frame}
+%\note{
+%“Feature engineering is the process of transforming raw data into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.” - Jason Brownlee \cite{DS_blog}
+%\\
+%We acknowledge, however, that the data that's being recorded (from those UD10 reports) isn't necessarily guaranteed to accurately represent reality. Which is an important thing if we want to build accurate, stable predictive models.\\
+%We're going to walk-through two steps that I took to engineer features out of our data. The examples that we show here are absolutely not exhaustive when it comes to feature engineering, but I believe do build some intuition for the nature of feature engineering.}
+%
+%\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
+%\only<1-3>{$\left[\begin{matrix}
+%	12\\
+%	2\\
+%	4\\
+%	18\\
+%	19\\
+%	6\\
+%	\vdots
+%\end{matrix}\right]$}
+%\only<2-3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}f(hour) = \frac{2\cdot\pi\cdot(\text{hour})}{24}$}
+%\only<3>{$\hspace{10pt}\Longrightarrow\hspace{10pt}\left[\begin{matrix}
+%	3.14\\
+%	0.52\\
+%	1.03\\
+%	4.71\\
+%	4.98\\
+%	1.57\\
+%	\vdots
+%	\end{matrix}\right]$}
+%
+%\end{frame}
+%\note{For example, one of our columns contains the hour the crash occured at (ranging from 0-23). It did not make sense to me to treat this column as a numerical variable, since the model would interpret 2pm as twice 1pm... while that does not make logical sense. However, I felt that to treat each hour as it's own category wouldn't accurately capture the information that the hour conveys (for example, it would not capture the fact that 12pm and 12am are 12 hours apart, while 12pm and 1pm are next to each other), so I set out to transform this feature in order to convey more meaning to our algorithm. Here's what I did.\\
+%On the left we have a vector containing a few of the hours that the crashes took place at. I sent this vector through this trigonometric function that we have here. }
+%
+%
+%
+%\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
+%\only<1>{\centering{$\left[\begin{matrix}
+%3.14\\
+%0.52\\
+%1.03\\
+%4.71\\
+%4.98\\
+%1.57\\
+%\vdots
+%\end{matrix}\right]$}}
+%\only<1>{\centering{$\hspace{10pt}\Longrightarrow\hspace{10pt}\underbrace{\left[\begin{matrix}
+%			0.00\\
+%			0.47\\
+%			0.86\\
+%			-0.99\\
+%			-0.97\\
+%			1.0\\
+%			\vdots
+%			\end{matrix}\right]}_{sin(f(hour))},\ 
+%		\underbrace{\left[\begin{matrix}
+%				-1.0\\
+%				0.87\\
+%				0.51\\
+%				-0.002\\
+%				-0.26\\
+%				0.001\\
+%				\vdots
+%			\end{matrix}\right]}_{cos(f(hour))}$}}
+%\end{frame}
+%\note{Okay, so we have this new vector, but it doesn't look too helpful at the moment. well, we take that output and map it to two separate vectors, a sin and cos transformed vector. }
+%
+%
+%\begin{frame}{Feature Engineering: \textit{transforming "hour" variable}}
+%	\includegraphics[scale=.37]{Figures/hour}
+%\end{frame}
+%\note{So.. why did we do all of that? Well, when we transfer that all into code, and graph the two vectors on the x-y plane, we see that they make a perfect circle... kind of like a clock..\\
+%This is exactly what we want. We've mapped our single hour column to two separate hour colums (think of them like x and y coordinates for each hour). This cyclic representation of time conveys the hour of the car crash in a way that has meaning to the algorithm. This is a really important aspect of feature engineering.}
 
 
 %
@@ -300,30 +319,30 @@ This is exactly what we want. We've mapped our single hour column to two separat
 %1. drop them entirely\\
 %2. impute mean/median (make this choice depending on distribution of data)\\
 %For most cases, one of those two options will work just fine. In our case, with nearly 9,000 errors, I'm not sure any of those would make sense, so we'll opt for a bit more involved technique. (The technical term is "Multiple Imputation by Chained Equations", affectionately known as MICE). What this means is that we will fit a linear regression model to our data to predict what the missing ages could be. We can think of these as making an educated guess.}
-
-
-\begin{frame}{Data Processing}
-	Two general types of data to deal with:\\
-	
-	\vspace{10pt}
-	
-	\begin{itemize}
-		\item<2-> Numerical variables (Quantitative)
-		\begin{itemize}
-			\item Driver 1 age, number of injuries, etc
-		\end{itemize}
-	
-	\vspace{5pt}
-	
-		\item<3-> Categorical variables (Qualitative)
-		\begin{itemize}
-			\item Hit and run, motorcycle involved, etc
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-\note{Now, we move onto processing the data that we've selcted. the data processing stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
-Numerical variables are quantitative -- it's something you can measure. In our case, some numerical variables are Driver1 age, and number of injuries.\\
-Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories.}
+%
+%
+%\begin{frame}{Data Processing}
+%	Two general types of data to deal with:\\
+%	
+%	\vspace{10pt}
+%	
+%	\begin{itemize}
+%		\item<2-> Numerical variables (Quantitative)
+%		\begin{itemize}
+%			\item Driver 1 age, number of injuries, etc
+%		\end{itemize}
+%	
+%	\vspace{5pt}
+%	
+%		\item<3-> Categorical variables (Qualitative)
+%		\begin{itemize}
+%			\item Hit and run, motorcycle involved, etc
+%		\end{itemize}
+%	\end{itemize}
+%\end{frame}
+%\note{Now, we move onto processing the data that we've selcted. the data processing stage naturally diverges into two substeps: dealing with numerical variables, and dealing with categorical variables.\\
+%Numerical variables are quantitative -- it's something you can measure. In our case, some numerical variables are Driver1 age, and number of injuries.\\
+%Categorical variables are qualitative, in our case, we have some binary categorical variables: like whether or not the crash was a hit and run, whether or not a mototcycle was involved. It's either one or the other. Variables can of course have multiple categories.}
 
 %\begin{frame}{Data Processing: \textit{numerical variables}}
 %\only<1>{\includegraphics[scale=.5]{Figures/numericals}}
@@ -345,27 +364,7 @@ Categorical variables are qualitative, in our case, we have some binary categori
 %This is just a snapshot, you see that our columns of categorical variables grew from 7 to 21\\
 %\textbf{Come up with more concrete explanation}}
 
-\subsection{Step 4: Model Selection}
-\frame{\tableofcontents[currentsubsection]}
-\begin{frame}{Choosing a Model/Representation}
-\begin{tabular}{|c|l|l|}\hline
-	&\textbf{Classification}&\textbf{Regression}\\\hline
-	\textbf{Supervised}&
-	\tabitem Logistic Regression&\tabitem Linear Regression\\
-	&\tabitem Naive-Bayes&\tabitem Decision Trees\\
-	&\tabitem KNN&\tabitem Random Forests\\
-	&\tabitem SVM&\\\hline
-	\textbf{Unsupervised}&
-	\tabitem Apriori&\tabitem PCA\\
-	&\tabitem Hidden Markov Model&\tabitem K-means\\
-	&&\tabitem SVD\\
-	\hline
-\end{tabular}
-\end{frame}
-\note{And with that, our data is ready to be fed into a predictive model! The final step is to choose which predictive model to use. There are hundreds to choose from, and trade-offs associated with each. The good news is, as we alluded to earlier there are different types of machine learning problems and each come with their own set of algorithms -- so this narrows down our search considerably.\\
-In our case, we're working on a supervised classification problem, so the upper left hand corner displays some common algorithms for problems like ours. It's very common to test a handful of them and choose the one that performs best on your dataset (or even combine some of them into an ensemble model.)\\
-Remeber, the ultimate objective to choose a model that learns a predictive rule (which comes in the form of a equation) that can be generalized to new observations (both for classification and regression)\\
-\textbf{Talk about difference between supervised/unsupervised and maybe even mention reinforcement learning?}}
+
 
 
 %\begin{frame}{Bias-Variance Tradeoff}
