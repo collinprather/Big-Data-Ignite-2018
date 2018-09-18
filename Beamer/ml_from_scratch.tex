@@ -1,4 +1,4 @@
-\documentclass[notes]{beamer}
+\documentclass{beamer}
 
 \mode<presentation>{\usetheme{Montpellier}}
 %\usecolortheme{beaver}
@@ -58,9 +58,12 @@ I've prepared a Jupyter notebook that we will use to explore our data and build 
 \note{Good morning, and thank you all for making it out this early! These conference days are long, and to be here bright and early on day 3 is no joke, so I'm glad you're here.\\
 We are going to be tackling machine learning from a ground-up approach today. Can I get a quick show of hands, how many of us here have experience applying machine learning to solving problems?\\
 
-Before we really dive in, I want to tell you a bit about my talk today, and to do so, we're going to start with two things that help tremendously in successfully applying machine learning... (1) Understanding the math at play: a great way to build that intuitive understanding is to implement a machine learning algorithm from scratch! (2) Knowing how to process/manipulate the data to be ML ready. Now, the skills required for these two steps are admittedly a bit disparate, however, the skills needed to successfully apply ML is inherently interdisciplinary - so I think speaking on these two topics together is rather fitting. And we will, after a brief intro to ml, We will start with talking a lot about the data and do a bit of a case study on the steps in the ML process, and then we're going to totally switch gears and dive into the math at hand and even get into some code. It may seem like an abrupt switch, so I offer that as a brief disclaimer. I also offer this encouragement that having an understanding of the inner workings of ML can give you direction to advance to more complex algorithms and other subsets of artificial intelligence. It's a huge asset.\\
+Before we really dive in, I want to offer some motivation for what we'll be talking about today. We're going to take a detailed look at the mathematical foundations that enable machines to learn from data. You may very well ask: Why? What's the point? You see we have modern software, much of it free that acts as like a magic black box: You put your data in one side and you get intelligent predictions out on the other side. This "off-the-shelf" software has made machine learning incredibly more accessible. Which is a great thing.\\
 
-At the very end, we'll take a look Python's ML tools and apply it to a Grand Rapids Car crash dataset to make some interesting predictions, and that dataset will serve as a case study that will flow through the entire talk. It's going to be a lot of fun.}
+I would assert that having an understanding of the trade-offs and complexities associated with the math that supports machine learning orients you in the best possible position to successfully apply machine learning to solve problems. This indeed is a difficult thing to do.\\
+In addition, having an understanding of the inner workings of ML can give you direction to advance to more complex algorithms and other subsets of artificial intelligence. It's a huge asset.\\
+
+Today, we're going to start with a brief overview of what machine learning is, then, we'll take a look at a dataset collected by the GR Police Department, and frame the machine learning problem that we'll tackle at the end. After peaking at that data, we'll totally switch gears and dive into the math at hand, and build our model from scratch. At the very end, we'll circle back around and apply python's machine learning tools to our Grand Rapids Crash dataset and make some interesting predictions. That will be a lot of fun.}
 
 
 
@@ -74,7 +77,7 @@ At the very end, we'll take a look Python's ML tools and apply it to a Grand Rap
  \end{frame}
 
 \note{All this talk begs the question, what is machine learning? Even according to the experts, the exact definifion of the field of machine learning is a bit fuzzy, but  As early as 1959, Arthur Samuel was famously quoted as defining machine learning as...\\
-ML techniqes can be applied to a wide range of problems in diverse industries. In fact, ML has become ubiquitous in our everyday lives\\
+ML techniqes can be applied to a wide range of problems across many industries. In fact, ML has become ubiquitous in our everyday lives\\
 * Siri/ Amazon Alexa\\
 * Recommendation systems (amazon, netflix)\\
 * Fraud Detection\\
@@ -82,18 +85,8 @@ ML techniqes can be applied to a wide range of problems in diverse industries. I
 * Supply Chain Optimization\\
 The list goes on and on. ML algorithms are used to learn from historical data in order to make predictions about novel data.}
 
-
-\begin{frame}{According to Google...}
-\begin{center}
-	\includegraphics[scale=.55]{Figures/google_trends}
-\end{center}
-\end{frame}
-\note{This may not be a surprise to you, but the world's google search history reflects a steady increase in interest in machine learning and other related terms like Data Science, Big Data, and Artificial Intelligence.\\
-This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends. It's worth checking out.\\
-The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
-
 \subsection{Model Selection}
-\begin{frame}{Choosing a Model/Representation}
+\begin{frame}{Types of Machine Learning Models}
 \begin{tabular}{|c|l|l|}\hline
 	&\textbf{Classification}&\textbf{Regression}\\\hline
 	\textbf{Supervised}&
@@ -108,10 +101,23 @@ The rise of the big data era has given us access to astounding amounts of data. 
 	\hline
 \end{tabular}
 \end{frame}
-\note{Now, we mentioned that machine learning is used to learn from historical data in order to make predictions about novel data, but as I've alluded to, given the diverse use-cases, not all ML looks alike. There are hundreds of models to choose from, and trade-offs associated with each. The good news is, with each type of machine learning problem comes its own little subset of algorithms -- so this narrows down our search considerably.\\
-In our case, we're working on a supervised classification problem, so the upper left hand corner displays some common algorithms for problems like ours. It's very common to test a handful of them and choose the one that performs best on your dataset (or even combine some of them into an ensemble model.)\\
-Remeber, the ultimate objective to choose a model that learns a predictive rule (which comes in the form of a equation) that can be generalized to new observations (both for classification and regression)\\
-\textbf{Find examples of all 4 different types of ML}}
+\note{Given its diverse use-cases, not all ML looks alike. There are hundreds of potential models to choose from, and trade-offs associated with each. The good news is, with each type of machine learning problem comes its own little subset of algorithms -- so this narrows down our search considerably. That's what these little bullet points are, different ML algorithms\\
+Regression problems are concerned with predicting a continuous variable (a real number). \textbf{examples: predicting housing prices, predicting someone's age}\\
+Classification problems on the other hand are concerned with separating or classifying the data, predicting a discrete variable. \textbf{examples: Predicting whether or not a customer will cancel their subscription, predicting if cancer cells are malignant or benign}.\\
+Supervised ML problems refer to the case when our training data has both input values (characteristics about the customer) and the associated label (whether the customer canceled their subscription). In unsupervised ML problems, we don't have access to that associated label... all that we have is the data! So we often use unsupervised learning to cluster our data, sometimes even generating those labels.\\
+The type of ML problem that we're dealing with has a lot to do with the way that we frame our initial problem. More on that in a moment...}
+
+
+\begin{frame}{According to Google...}
+\begin{center}
+	\includegraphics[scale=.55]{Figures/google_trends}
+\end{center}
+\end{frame}
+\note{This may not be a surprise to you, but the world's google search history reflects a steady increase in interest in machine learning and other related terms like Data Science, Big Data, and Artificial Intelligence.\\
+This graph was pulled pretty simply from trends.google.com, which is actually fascinating, they make it very simple to look up search history trends. It's worth checking out.\\
+The rise of the big data era has given us access to astounding amounts of data. That phenomenon paired with with the exponential growth we've experienced in computational advances, has created the perfect storm for the emergence of the field of machine learning.}
+
+
 
 
 
@@ -119,7 +125,6 @@ Remeber, the ultimate objective to choose a model that learns a predictive rule 
 
 \subsection{Problem Identification}
 
-\frame{\tableofcontents[currentsubsection]}
 \note{Now that we have some motivation for what machine learning is and what it can do, let's move into the steps of the machine learning process.}
 
 \begin{frame}{Identify the Problem}
@@ -133,12 +138,12 @@ This is a perliminary step of any machine learning project, asking the questions
 \end{frame}
 
 \subsection{Getting the Data}
-\frame{\tableofcontents[currentsubsection]}
 \begin{frame}{Get the Data}
 	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
 \end{frame}
 \note{Step 1! Obtaining the data you'll need looks very different depending on what domain you're working in. In some instances, it can be fairly simple and straightforward, for example, In a business context, most often it will require querying some sort of internal database. Could also be downloading a csv file. In other instances, it may require a bit more creativity\\
-In our case, we're lucky enough to have access to a meticulously maintained public database on the city of GR: GRData. Scroll through, show them the site and data, etc.}
+In our case, we're lucky enough to have access to a meticulously maintained public database on the city of GR: GRData. Scroll through, show them the site and data, etc.\\
+\textbf{note that this is a supervised classification problem}}
 
 %\begin{frame}{Get the Data}
 %	In our case, we'll head to \href{http://grdata-grandrapids.opendata.arcgis.com}{\color{blue}\underline{GRData}}
@@ -379,7 +384,8 @@ In our case, we're lucky enough to have access to a meticulously maintained publ
 
 \section{Building a Support Vector Machine from Scratch}
 
-\note{Here we'll first be going through a general example of building an svm from scratch on a toy dataset, then apply some of Python's ml tools to our crash data set to predict whether or not a car crash was caused by a drunk driver!}
+\note{\textbf{Moving to SVMscratch.ipynb}\\
+Here's what we're going to do: first we'll be going through a general example of building an svm from scratch on a generated dataset, (which will take the bulk of our time together). then apply some of Python's ml tools to our crash data set to predict whether or not a car crash was caused by a drunk driver!}
 
 \frame{\tableofcontents[currentsection]}
 
@@ -408,9 +414,10 @@ So, that looks a bit unnatural..so its common convention to represent all coeffi
 In our Crash data, we use 14 variables...\\}
 
 \subsection{Evaluation}
-\note{\textbf{Evaluation}\\}
 
-\note{\textbf{Quick refresher on the dot product:}\\
+
+\note{\textbf{Evaluation}\\
+\textbf{Quick refresher on the dot product:}\\
 Now that we have established a representation for our SVM, we'll move on to defining how we'll evaluate its accuracy. Let's start with talking for a minute about the dot product. The dot product has many different names across fields of mathematics: inner product, and linear combination are also common. Regardless of its name, it is a useful operation to use between vectors. To put it simply, if you take the dot product of two vectors, you multiply all their corresponding elements and take the sum. (note that the vectors must have the same dimensions).\\
 The output of the dot product is not another vector, but just a scalar value.}
 
@@ -456,7 +463,6 @@ The $\lambda$ coefficient acts as a tuning parameter that helps to balance the b
 Generally, as the value for lambda gets smaller and smaller (approaches 0), the margin grows wider (to the point of misclassifying data points). As the value for lambda gets larger and larger, the margin will get smaller and smaller (to the point of no misclassified data points.)}
 
 \subsection{Optimization}
-\note{\textbf{Optimization}\\}
 
 \note{\textbf{Optimization}\\
 Now, we've been talking quite a bit about minimizing the penalty to our algorithm for mis-classifying data points, but it is not immediately obvious how to minimize the penalty.\\
@@ -481,12 +487,12 @@ Okay, so let's calculate the partial derivatives. Using a rule from calculus, we
 As we can see here, the partial derivative of the loss term depends on whether the datapoint was correctly or incorrectly classified. (0 if correctly classified, or -y times x if incorrectly classified). The partial derivative of the regularization term is 2 times lambda times w.}
 
 
-\note{\textbf{Update Rules:}\\
-}
+\note{\textbf{Update Rules:}\\}
+\note{\textbf{SGD from Scratch}}
 
 
 \section{Exploring Scikit-Learn and applying to GR Crash dataset}
-\frame{\tableofcontents[currentsection]}
+\note{\textbf{Applyng Sci-kit learn to predict drunk drivers}}
 
 \note{\textbf{Conclusion}
 Now, Admittedly, I found and explored this dataset for the purpose of presenting here, (look up notes from michael to better explain this?)\\
@@ -494,15 +500,15 @@ But truly, the challenge in ML is not the math (the machine will do it for you),
 I thought that maybe I can leave you with this challenge: If you knew, as we've shown today, that given data from the Police's U10 reports, you could accurately predict if causes were caused by drunk drivers, how would that be helpful? What could that be used for? How could we apply it/put it into use?\\
 These are the questions that should drive us as data scientists.}
 
-\begin{frame}
-	\begin{thebibliography}{9}
-		\bibitem{Data_exploration} https://www.sisense.com/glossary/data-exploration/
-		\bibitem{DS_blog}
-		https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63
-		\bibitem{bias_variance_blog}
-		http://scott.fortmann-roe.com/docs/BiasVariance.html
-	\end{thebibliography}
-\end{frame}
+%\begin{frame}
+%	\begin{thebibliography}{9}
+%		\bibitem{Data_exploration} https://www.sisense.com/glossary/data-exploration/
+%		\bibitem{DS_blog}
+%		https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63
+%		\bibitem{bias_variance_blog}
+%		http://scott.fortmann-roe.com/docs/BiasVariance.html
+%	\end{thebibliography}
+%\end{frame}
 
 
 
