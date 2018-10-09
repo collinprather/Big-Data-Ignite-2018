@@ -1,6 +1,6 @@
 # Big Data Ignite Conference 2018
 
-This repository contains my code and presentation for my presentation, 'Machine Learning from Scratch', that I will be presenting on Friday, Sept. 21 2018, at the Devos Place in Grand Rapids, MI. Currently, this repo is a bit of a mess, as I'm producing many different drafts. As the conference nears, I'll be cleaning this up.
+This repository contains my code and presentation for my presentation, 'Machine Learning from Scratch', that I will be presenting on Friday, Sept. 21 2018, at the Devos Place in Grand Rapids, MI.
 
 ---
 
